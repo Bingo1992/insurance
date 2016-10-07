@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>选择投保方案</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+        <ul class="form-list border-list">
+            <li>
+                <span class="list-info">投保城市</span>
+                <div class="select-region">
+                    <input type="text" placeholder="选择城市" readonly>
+                    <i class="icon-right"></i>  
+                </div> 
+            </li>
+            <li>
+                <span class="list-info">投保区县</span>
+                <div class="select-region">
+                    <input type="text" placeholder="选择区县" readonly>
+                    <i class="icon-right"></i>  
+                </div> 
+            </li>
+        </ul>
+
+        <a class="btn">保存信息</a>
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+     <!-- 选择城市遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择城市</h4>
+        </a>
+        <ul class="dialog-start-list">
+            <li class="active">广东省</li>
+            <li>福建省</li>
+            <li>浙江省</li>
+            <li>四川省</li>
+            <li>安徽省</li>
+            <li>豫</li>
+            <li>鄂</li>
+            <li>湘</li>
+            <li>吉</li>
+            <li>沪</li>
+            <li>渝</li>
+            <li>云</li>
+            <li>晋</li>
+            <li>蒙</li>
+            <li>贵</li>
+            <li>京</li>
+            <li>陕</li>
+            <li>冀</li>
+            <li>辽</li>
+            <li>津</li>
+            <li>桂</li>
+            <li>闽</li>
+            <li>黑</li>
+            <li>新</li>
+            <li>琼</li>
+            <li>甘</li>
+            <li>青</li>
+            <li>宁</li>
+            <li>藏</li>
+        </ul>
+        <ul class="dialog-end-list">
+            <li>广州市</li>
+            <li>深圳市</li>
+            <li>茂名市</li>
+            <li>湛江市</li>
+            <li>江门市</li>
+            <li>肇庆市</li>
+        </ul>
+    </div>
+
+    <!-- 选择区县遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择区县</h4>
+        </a>
+        <ul class="dialog-end-list">
+            <li>天河区</li>
+            <li>海珠区</li>
+            <li>越秀区</li>
+            <li>番禺区</li>
+        </ul>
+    </div>
+   <script type="text/javascript">
+   $(function(){
+        $('.nav-tabs li').click(function(){
+            $(this).switchTabs('.nav-tabs li');
+        }); 
+   });
+   </script>
+</body>
+</html>

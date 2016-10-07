@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>账户余额</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="balance bg-show list-box">
+		<i class="icon-coin"></i>
+		<div class="list-info">
+			<h4>账户余额</h4>
+			<span class="font-theme"><span>5000.00</span>元</span>
+		</div>
+		<a class="btn-balance" href="balance_detail.html">账户明细</a>
+	</div>
+
+	<ul class="border-list form-list">
+		<li>
+			<label>充值金额</label>
+			<input class="list-info" type="text" placeholder="请输入金额0.1-99999">
+		</li>
+	</ul>
+
+	<p class="title-gray">选择支付方式</p>
+	<ul class="border-list">
+		<li class="list-box">
+			<span class="list-info">微信支付</span>
+			<div class="checkbox">
+				<input type="radio" name="pay" checked>
+				<i class="icon-hook"></i>
+			</div>
+		</li>
+		<li class="list-box">
+			<span class="list-info">支付宝支付</span>
+			<div class="checkbox">
+				<input type="radio" name="pay">
+				<i class="icon-hook"></i>
+			</div>
+		</li>
+	</ul>
+	<a href="#" class="btn">立即充值</a>
+</body>
+</html>

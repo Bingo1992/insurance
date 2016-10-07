@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>报价结果</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+		<ul class="sudoku bg-show">
+            <li>
+                <a href="#">
+                    <i class="icon-msg green"></i>
+                    <p>投保信息</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="icon-building red"></i>
+                    <p>投保公司 <span class="font-red">7</span></p>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="icon-order yellow"></i>
+                    <p>投保方案 <span class="font-red">7</span></p>
+                </a>
+            </li>
+        </ul>
+		<!-- 报价成功 -->
+        <ul class="border-list">
+        	<li class="list-box">
+        		<img class="border-img" src="images/logo1.jpg">
+        		<div class="list-info"><h4>平安车险</h4></div>
+        		<span class="font-red">￥ <span>5000.00</span></span>
+        		<a class="btn" href="">点击购买</a>
+        	</li>
+        	<li class="list-box">
+        		<img class="border-img" src="images/logo2.jpg">
+        		<div class="list-info"><h4>人保车险</h4></div>
+        		<span class="font-red">￥ <span>900.00</span></span>
+        		<a class="btn" href="">点击购买</a>
+        	</li>
+        </ul>
+        <!-- 报价失败 -->
+        <ul class="border-list">
+        	<li class="list-box">
+        		<img class="border-img" src="images/logo1.jpg">
+        		<div class="list-info"><h4>平安车险</h4></div>
+        		<span class="font-gray">报价失败</span>
+        		<a class="btn-failed btn-border" >失败原因</a>
+        	</li>
+        	<li class="list-box">
+        		<img class="border-img" src="images/logo1.jpg">
+        		<div class="list-info"><h4>平安车险</h4></div>
+        		<span class="font-gray">报价失败</span>
+        		<a class="btn-failed btn-border">失败原因</a>
+        	</li>
+        </ul>
+		<!-- 未报价公司 -->
+        <ul class="border-list">
+        	<li>
+        		<a class="list-box" href="not_quote.html">
+        			<div class="list-info">未报价公司</div>
+	        		<span class="font-gray"><span>6</span>家公司未报价</span>
+	        		<i class="icon-right"></i>
+        		</a>
+        	</li>
+        </ul>
+	</div>
+
+	<!-- 底部固定部分 -->
+	<div class="fixed-bottom">
+    	 <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+	</div>
+
+	<div class="ui-dialog">
+        <div class="dialog-cnt">
+            <h2>失败原因</h2>
+            <div class="dialog-content">1. 保费低至2.42元起；
+            2. 保障高，最高达290万元；
+            3. 保障期限选择多，7-365天可选；
+            4. 承保年龄30天-60周岁。
+           </div>
+        </div>
+    </div>
+  
+	<script type="text/javascript">
+	$(function(){
+		// 报价失败原因
+		 $('.btn-failed').showUiDiaolog('.ui-dialog');
+	});
+	</script>
+</body>
+</html>

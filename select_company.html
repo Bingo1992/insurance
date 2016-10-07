@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>选择投保公司</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner-2">
+		<ul class="border-list check-list">
+			<li class="list-box">
+				<img class="border-img" src="images/logo1.jpg">
+				<div class="list-info">
+					<h4>平安车险</h4>
+					<p>10个字内文字描述区域</p>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="company">
+					<i class="icon-hook"></i>
+				</div>
+			</li>
+			<li class="list-box">
+				<img class="border-img" src="images/logo2.jpg">
+				<div class="list-info">
+					<h4>人保车险</h4>
+					<p>10个字内文字描述区域</p>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="company">
+					<i class="icon-hook"></i>
+				</div>
+			</li>
+			<li class="list-box">
+				<img class="border-img"  src="images/logo3.jpg">
+				<div class="list-info">
+					<h4>安盛天平</h4>
+					<p>10个字内文字描述区域</p>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="company">
+					<i class="icon-hook"></i>
+				</div>
+			</li>
+			<li class="list-box">
+				<img class="border-img"  src="images/logo4.jpg">
+				<div class="list-info">
+					<h4>永安保险</h4>
+					<p>10个字内文字描述区域</p>
+				</div>
+				<div class="checkbox">
+					<input type="checkbox" name="company">
+					<i class="icon-hook"></i>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- 底部固定部分 -->
+	<div class="fixed-bottom">
+		<!-- 结账 -->
+        <div class="actionBar-container list-box border-top">
+            <label class="all-check list-info">
+                <input type="checkbox">
+                <i class="icon-hook"></i>
+                <span>全选</span>
+            </label>
+            <a class="btn btn-1" href="quote_result.html">确定</a>
+        </div>
+
+    	 <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li class="active">
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+	</div>
+	<script type="text/javascript">
+	$(function(){
+		//全选
+		var check = new AllCheck('.check-list');
+	});
+	</script>
+</body>
+</html>

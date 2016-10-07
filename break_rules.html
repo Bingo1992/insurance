@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>违章查办</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner-2">
+		<!-- 没有车辆时显示 -->
+		<div class="nothing hide">
+             <i class="icon-car"></i>
+             <h2>您还没有车辆</h2>
+             <p class="gray-font">赶紧去添加车辆吧！</p>
+        </div>
+
+        <!-- 车辆列表 -->
+		<ul class="break-rules">
+			<li>
+				<i class="icon-cancel"></i>
+				<div class="carnum">
+					<h2>粤AB95T1</h2>
+					<i class="icon-edit font-theme"></i>
+				</div>
+				<span class="font-gray">丰田凯美瑞</span>
+				<div class="rules-info">
+					<p>
+						<span class="font-theme">10</span>
+						笔违章记录
+					</p>
+					<p>
+						<span class="font-theme">2000</span>
+						元扣款
+					</p>
+					<p>
+						扣
+						<span class="font-theme">10</span>
+						分
+					</p>
+				</div>
+				<div class="list-box border-top">
+					<div class="list-info">
+						<p>上次查询 <span>2016-09-14</span></p>
+					</div>
+					<a href="breakRules_result.html" class="btn">查询</a>
+				</div>
+			</li>
+			<li>
+				<i class="icon-cancel"></i>
+				<div class="carnum">
+					<h2>粤AB95T2</h2>
+					<i class="icon-edit font-theme"></i>
+				</div>
+				<span class="font-gray">丰田凯美瑞</span>
+				<div class="rules-info">
+					<p>
+						<span class="font-theme">10</span>
+						笔违章记录
+					</p>
+					<p>
+						<span class="font-theme">2000</span>
+						元扣款
+					</p>
+					<p>
+						扣
+						<span class="font-theme">10</span>
+						分
+					</p>
+				</div>
+				<div class="list-box border-top">
+					<div class="list-info">
+						<p>上次查询 <span>2016-09-14</span></p>
+					</div>
+					<a href="breakRules_result.html" class="btn">查询</a>
+				</div>
+			</li>
+			<li>
+				<i class="icon-cancel"></i>
+				<div class="carnum">
+					<h2>粤AB95T3</h2>
+					<i class="icon-edit font-theme"></i>
+				</div>
+				<span class="font-gray">丰田凯美瑞</span>
+				<div class="rules-info">
+					<p>
+						<span class="font-theme">10</span>
+						笔违章记录
+					</p>
+					<p>
+						<span class="font-theme">2000</span>
+						元扣款
+					</p>
+					<p>
+						扣
+						<span class="font-theme">10</span>
+						分
+					</p>
+				</div>
+				<div class="list-box border-top">
+					<div class="list-info">
+						<p>上次查询 <span>2016-09-14</span></p>
+					</div>
+					<a href="#" class="btn">查询</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="fixed-bottom btn-addCar border-top">
+		<a href="addCar.html" class="btn">添加车辆</a>
+	</div>
+
+	<div class="ui-dialog">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="p-center">确定删除该车辆吗？</p>
+            </div>
+            
+            <div class="two-btn">
+                <a class="cancel">取消</a>
+                <a class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    $(function(){ 
+    	$('.break-rules').find('.icon-cancel').unbind('click').click(function(){
+    		
+    		var $li = $(this).closest('li');
+    		if(confirm('确定删除吗？')){
+    			$li.remove();
+    			if($('.break-rules li').length == 0){
+    				$('.nothing').removeClass('hide');
+    				//车辆为0时显示
+    			}
+    		}else{
+    			return;
+    		}
+    		// $(this).showUiDialog('.ui-dialog');
+    		
+    		// $('.confirm').click(function(){
+    		// 	$li.remove();
+    		// 	$('.ui-dialog').removeClass('show');
+    		// });
+    		
+    	});
+
+    });
+    </script>
+</body>
+</html>

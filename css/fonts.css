@@ -17,25 +17,16 @@
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  font-size: 1rem;
+  font-size: 24px;
+  display: inline-block;
+  vertical-align: middle;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-envelope-open .path1:before {
-  content: "\e900";
-  color: rgb(51, 51, 51);
-}
-.icon-envelope-open .path2:before {
+.icon-envelope-open:before {
   content: "\e901";
-  margin-left: -1em;
-  color: rgb(51, 51, 51);
-}
-.icon-envelope-open .path3:before {
-  content: "\e902";
-  margin-left: -1em;
-  color: rgb(211, 16, 90);
 }
 .icon-up:before {
   content: "\e601";

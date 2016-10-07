@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>通知中心</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+         <ul class="nav-tabs equably-layout border-bottom">
+            <li hidefocus="true" class="active">
+                <a>公告</a>
+                <span class="circlePoint">2</span>
+            </li>
+            <li hidefocus="true"><a>消息</a></li>
+            <li hidefocus="true">
+                <a>提醒</a>
+                <span class="semCirclePoint">10+</span>
+            </li>
+        </ul>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 每一列 -->
+                <div class="swiper-slide">
+                    <ul class="msg-list content-slide">
+                       <li>
+                           <div class="title-bar border-bottom">
+                               <i class="icon-envelope"></i>
+                               <span>无忧畅游送不停</span>
+                           </div>
+                           <span class="font-gray">2016-09-10</span>
+                           <img src="images/life1.jpg">
+                           <a class="list-box border-top">
+                               <h4 class="list-info">立刻查看</h4>
+                               <i class="icon-right"></i>
+                           </a>
+                       </li>
+                       <li>
+                           <div class="title-bar border-bottom">
+                               <i class="icon-envelope-open"></i>
+                               <span>无忧畅游送不停</span>
+                           </div>
+                           <span class="font-gray">2016-09-10</span>
+                           <img src="images/life1.jpg">
+                           <a class="list-box border-top">
+                               <h4 class="list-info">立刻查看</h4>
+                               <i class="icon-right"></i>
+                           </a>
+                       </li>
+                    </ul>
+                </div>
+                <!-- 每一列 -->
+                <div class="swiper-slide">
+                    <ul class="msg-list content-slide">
+                        <li>
+                           <div class="title-bar border-bottom">
+                               <i class="icon-envelope"></i>
+                               <span>无忧畅游送不停</span>
+                           </div>
+                           <span class="font-gray">2016-09-10</span>
+                           <img src="images/life1.jpg">
+                           <a class="list-box border-top">
+                               <h4 class="list-info">立刻查看</h4>
+                               <i class="icon-right"></i>
+                           </a>
+                       </li>
+                       <li>
+                           <div class="title-bar border-bottom">
+                               <i class="icon-envelope"></i>
+                               <span>无忧畅游送不停</span>
+                           </div>
+                           <span class="font-gray">2016-09-10</span>
+                           <img src="images/life1.jpg">
+                           <a class="list-box border-top">
+                               <h4 class="list-info">立刻查看</h4>
+                               <i class="icon-right"></i>
+                           </a>
+                       </li>
+                    </ul>
+                </div>
+                <!--  提醒 -->
+                <div class="swiper-slide">
+                    <ul class="warn-list content-slide">
+                        <li>
+                           <img src="images/kefu.png"> 
+                           <div class="bubble-box">
+                               <span class="bubble"></span>
+                               <span class="font-gray">2016-09-12 12:00:00</span>
+                               <p>忧郁系统升级，昨天和今天申请下单的用户需延迟到明天才能处理完毕，我们已经在加急处理中，给用户造成不便之处，敬请谅解！</p>
+                           </div>
+                       </li>
+                       <li>
+                           <img src="images/kefu.png"> 
+                           <div class="bubble-box">
+                               <span class="bubble"></span>
+                               <span class="font-gray">2016-09-12 12:00:00</span>
+                               <p>忧郁系统升级，昨天和今天申请下单的用户需延迟到明天才能处理完毕，我们已经在加急处理中，给用户造成不便之处，敬请谅解！</p>
+                           </div>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+       
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    // $(function(){
+    //     var height=0;
+    //     window.onload = function(){
+    //         height = $('.content-slide')[0].clientHeight;
+    //         $('.swiper-container').css('height',height+60+'px');
+    //     }
+       
+    //     var tabsSwiper = new Swiper('.swiper-container', {
+    //         speed: 500,
+    //         onSlideChangeStart: function() {
+    //             $(".nav-tabs .active").removeClass('active');
+    //             $(".nav-tabs li").eq(tabsSwiper.activeIndex).addClass('active');
+    //             height = $('.content-slide')[tabsSwiper.activeIndex].clientHeight;
+    //             $('.swiper-container').css('height',height+60+'px');
+    //         }
+    //     });
+
+    //     $(".nav-tabs li").on('touchstart mousedown', function(e) {
+    //         e.preventDefault()
+    //         $(".nav-tabs .active").removeClass('active');
+    //         $(this).addClass('active');
+    //         tabsSwiper.swipeTo($(this).index());
+    //     });
+
+    //     $(".nav-tabs li").click(function(e) {
+    //         e.preventDefault();
+    //     });
+
+    // })
+    </script>
+</body>
+
+</html>

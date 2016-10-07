@@ -2,3 +2,787 @@
 @import "compass";
 @import "partials/default";
 @import "partials/base";
+
+// ----------首页-----------
+// 
+// 导航栏
+.nav-bar {
+	background-color: #eee;
+	position: relative;
+	&:after{
+		@extend .border-top:after;
+	}
+	li{
+		a{
+			color: #999;
+			padding: 4px 0;
+			font-size: $md-font;
+		}
+		&.active a,&.active p{
+			color: $color-theme;
+		}
+	}	
+}
+
+.title-bar {
+    @include height(20px);
+    padding: 10px $gauge;   
+    font-size: $md-font;
+    h4{
+    	float: left;
+    	border-left: 3px solid $color-theme;
+    	padding-left: 6px;
+    }
+    .more {
+    	float: right;
+    	color: #999;
+    }
+}
+.new-insure {
+	font-size: $md-font;
+	margin-top: 8px;
+	line-height: 22px;
+}
+.n-label-cost{
+	@include btnBorder(20px,#ff7c48);
+	margin-left: 4px;
+	display: inline-block;
+	padding: 0 4px;
+}
+
+// ------保险业务--------
+.nav-tabs {
+	background-color:#fff;
+	@include height(48px);
+	box-sizing:border-box;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	width: 100%;
+	li {
+		position: relative;
+		a{
+			padding: 14px;
+	 		display: inline;
+		}
+		&.active a{
+			color: $color-theme;
+			border-bottom: 3px solid $color-theme;
+		}	
+	}			
+}
+.nav-tabs-2 li a{padding: 14px 0;}
+
+// 表单
+.form-list {
+	li {
+		@extend .list-box;
+	}
+	label {
+		width: 4rem;
+		display: inline-block;
+	}
+	// input {
+	// 	@if input[readonly=readonly]{
+	// 		display: block;
+	// 	}@else {
+	// 		@extend .list-info;
+	// 	}
+	// }
+	// input[type="text"],input[type="tel"]{
+	// 	@extend .list-info;
+	// }
+}
+.region {
+	@include btnBorder(30px,#ccc);
+	color: #333;
+	margin-right: 10px;
+	// h4 {
+	//     position: absolute;
+	//     width: 100%;
+	//     left: 0;
+	//     text-align: center;
+	// }
+	span {letter-spacing: .2rem;}
+	i{line-height: 30px !important;}
+}
+.dialog-list {
+	@extend .fixed-bottom;
+	background-color: #fff;
+	z-index: 4;
+	top: 0;
+	line-height: 40px;
+	box-sizing: border-box;
+	-webkit-transform: translateX(150%) translateZ(0);
+    -webkit-transition: all .4s linear 0s;
+	.dialog-start-list,.dialog-end-list {
+		width: 50%;
+		margin-top: 44px;
+		float: left;
+		text-align: center;
+		overflow: auto;
+		height: 100%;
+		li{
+			position: relative;
+			&:after {
+				@extend .border-bottom;
+			}
+		}
+	}
+	.dialog-start-list{
+		background-color: #eee;
+		li.active {
+			background-color: #fff;
+		}
+	}
+
+}
+.return-back {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	@include height;
+	padding: 0 $gauge;
+	box-sizing: border-box;
+	h4 {
+		text-align: center;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+}
+.upload-file {
+	position: relative;
+    overflow: hidden;
+	input[type="file"] {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    opacity: 0;
+	}
+	i{font-size:26px;}   
+
+}
+.select-box {
+	display: inline-block;
+    position: relative;
+    line-height: 24px;
+    select {
+    	padding: 0 30px;
+	    position: relative;
+	    z-index: 2;
+	}
+    .icon-right {
+    	position: absolute;
+	    right: 0;
+	    top: 0;
+    }
+}
+.tips {
+	padding: 0 $gauge;
+	overflow: hidden;
+}
+
+.btn-history{
+	@include semicircle(30px);
+	color:#666;
+	border:1px solid #ccc;
+	display: block;
+	margin: 20px auto;
+	width: 100px;
+	font-size: $md-font;
+}
+
+// ----------添加车辆----------
+// 添加驾驶证
+.camera-box {
+	position: relative;
+	background: url(../images/card.jpg) no-repeat;
+	background-size: 100% 100%;
+	width: 13.1rem;
+	height: 9.2rem;
+	text-align: center;
+	margin: 46px auto;
+	padding: 2rem 0;
+	box-sizing: border-box;
+	i {
+		@include circle(3.5rem);
+		color: #fff;
+		background-color: $color-theme;
+		font-size: 2rem;
+	}
+	p{
+		color: #fff;
+	    background-color: rgba(0, 0, 0, 0.6);
+	    width: 7rem;
+	    line-height: 1.2rem;
+	    border-radius: .6rem;
+	    margin: .5rem auto;
+	    font-size: .6rem;
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		z-index: 2;
+	}
+}
+// 协议
+.protocol {
+	margin: 10px $gauge;
+	font-size: $md-font;
+}
+
+// ------寿险产品---
+.content-list{
+    margin-bottom: $gauge; 
+    li{
+    	margin: $gauge $gauge 0 $gauge;
+	    padding: $gauge;
+	    position: relative;
+	    background-color: #fff;
+	    border-radius: .6rem;
+	    overflow: hidden;
+	    box-sizing:border-box;
+	    &:after {
+	    	@extend %mini-border;
+			border: 1px solid $border-color;
+	    }
+    } 
+}
+
+.swiper-container h2{
+    margin-top: .3rem;
+}
+
+.m-info {
+    font-size: $md-font;
+    color: #999;
+    line-height: 20px;
+}
+
+/*--选项卡触摸样式--*/
+.swiper-container {
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -ms-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    backface-visibility:hidden;
+    /* Fix of Webkit flickering */
+    z-index:1;
+    a.font-theme{
+    	position: absolute;
+	    bottom: .5rem;
+	    right: .5rem;
+	    font-size: 14px;
+    }
+}
+.swiper-wrapper {
+    position:relative;
+    width:100%;
+    -webkit-transition-property:-webkit-transform, left, top;
+    -webkit-transition-duration:0s;
+    -webkit-transform:translate3d(0px,0,0);
+    -webkit-transition-timing-function:ease;
+    transition-property:transform, left, top;
+    transition-duration:0s;
+    transform:translate3d(0px,0,0);
+    transition-timing-function:ease;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.swiper-free-mode > .swiper-wrapper {
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    margin: 0 auto;
+}
+.swiper-slide {
+    float: left;
+    box-sizing: content-box;
+	margin-top: 48px;
+}
+
+// -------寿险产品详情---
+.lifeInsure_detail {
+	margin: $gauge;
+	background-color: #fff;
+	position: relative;
+	&:after{
+		@extend %mini-border;
+		border-bottom: 1px solid $border-color;
+	}
+	h4 {
+		@include height(32px);
+		width: 100px;
+		color: #fff;
+		text-align: center;
+		border-top-right-radius: 16px;
+		border-bottom-right-radius: 16px;
+		&.title-orange{background-color:#ffa200;}
+		&.title-red{background-color:#fb5051;}
+		&.title-blue{background-color:#5ec0ee;}
+	}
+}
+.insure-state {
+	position: relative;
+	padding:  16px 30px;
+	margin-bottom: 16px;
+	color: #999;
+	font-size: $md-font;
+	&:after{
+		@extend %mini-border;
+		border-bottom: 1px solid $border-color;
+	}
+}
+.two-btn .btn-gray {
+	@extend .btn-history;
+	margin: 0 4px;
+	width: auto;
+	padding: 0 16px;
+}
+.border-img {
+	@include circle(50px);
+	border: 1px solid $border-color;
+	margin-right: 10px;
+}
+
+// -----选择保险公司---
+.banner-2 {
+	margin-bottom: 140px;
+}
+.actionBar-container {
+    background-color: #fff;
+    box-sizing:border-box;
+    padding: 0 0 0 $gauge;
+    @include height(62px);
+    .all-check {
+        display: -webkit-box;
+    }
+    .btn {margin: 0 $gauge;}
+    .btn-1 {width: 120px;}
+}
+
+// -----个人中心---、
+.person-top {
+    background: url(../images/bg1.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 16px 0;
+    color: #fff; 
+    h4 {font-size: $lg-font;} 
+    span{font-size:$md-font;}
+}
+.per-img {
+    position: relative;
+    img {
+        @include circle(70px);
+        border: 2px solid #fff;
+        margin-right: 10px;
+        box-sizing: border-box;
+    } 
+}
+.person-info {
+	display: -webkit-box;
+	-webkit-box-orient: horizontal;
+	-webkit-box-align: center;
+}
+
+.vip {
+	@include semicircle(24px);
+	color: #f78a31;
+	background-color: #fff;
+	padding: 0 6px 0 4px;
+	margin-left: 10px;
+	.vip-logo {
+		@include circle(16px);
+		background-color: #ffcc00;
+		border: 3px solid #fdeb04;
+		color: #fff;
+		font-size: $sm-font;
+		text-shadow: 1px 1px 1px #f78a31;
+	}
+}
+.btn-edit {
+	position: absolute;
+	right: $gauge;
+	top: $gauge;
+	@include btnBorder(24px,#fff);
+	i {font-size: 20px;}
+}
+
+.equably-layout {
+	p {
+		color: $color-gray;
+	    font-size: $md-font;
+	}
+	.circlePoint {
+		top: 10px;
+    	right: 1.2rem;
+	}   
+	.semCirclePoint {
+		top: 10px;
+    	right: .5rem;
+	}   
+}
+.person-icon i{
+	font-size: 26px;
+}
+
+// -----未报价公司----
+.title-company {
+	padding: 10px $gauge;
+	line-height: 30px;
+	img {
+	height: 30px;
+	width: auto;
+	float: left;
+	vertical-align: middle;
+	margin-right: 10px;
+	}
+	p{
+		display: inline-block;
+		font-size: $lg-font;
+	}
+
+}
+.c-text{
+	color: #ccc;
+	padding: 10px;
+	font-size: $md-font;
+	text-align: justify;
+}
+// ------账户余额----
+.balance {
+	padding: $gauge*2 $gauge;
+	.icon-coin {
+		font-size: 40px;
+		color: $color-theme;
+	}
+
+	.font-theme {font-size: 14px;}
+}
+	
+.btn-balance {
+	@include btnBorder(26px,$color-theme);
+	font-size: $md-font;
+}
+.title-gray {
+	padding-left: $gauge;
+	padding-top: $bgMargin;
+	color:#999;
+}
+// -------账户明细-----
+.table {
+	width: 100%;
+    background-color: #fff;
+    margin: $bgMargin auto;
+    color: #999;
+    font-size: $md-font;
+    @include height(60px);
+    td {
+    	position: relative;
+    	padding: 0 $gauge;
+    	
+    	&:after {
+    		@extend .border-bottom:after;
+    	}
+    }
+}
+
+.table-2 {
+	 @include height;
+	 text-align: center;
+	 margin-top: 0;
+	th {
+		font-weight: normal;
+		position: relative;
+		&:after {
+    		@extend .border-bottom:after;
+    	}
+	}
+}
+// -------违章查办------
+.break-rules {
+	li {
+		position: relative;
+		background-color: #fff;
+		padding: 10px $gauge;
+		box-sizing: border-box;
+		margin: $bgMargin $gauge;
+		overflow: hidden;
+		border-radius: 10px;
+		&:after {
+			@extend %mini-border;
+			border: 1px solid $border-color;
+		}
+		.btn {
+			margin: 0;
+			@include height(30px);
+		}
+		.icon-cancel {
+			position: absolute;
+		    right: $gauge;
+		    top: 10px;
+		    font-size: 18px;
+		    color: #999;
+		}	
+		.list-box {padding: 10px 0;}
+	}
+}
+.carnum {
+	h2 {
+		font-size: 16px;
+		float: left;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+	.icon-edit {
+		font-size: 20px;
+	}
+}
+.rules-info {
+	overflow:hidden;
+	line-height: 44px;
+	font-size: $md-font;
+	&.fr p{
+		margin-right: $gauge;
+	}
+	&.fl p{
+		margin-left: $gauge;
+	}
+	p {
+		float: left;
+		color: #999;
+	}
+	.checkbox input{margin-right:0;}
+}
+.btn-addCar {
+	background-color: #fff;
+}
+// ------查询结果----
+.title-rule {	
+	padding: 0 $gauge;
+	@include height;
+	h2 {
+		font-size: $lg-font;
+		float: left;
+	}
+	.font-theme {padding: 0 4px;font-size: 14px;}
+
+}
+.result-content {
+	padding: 10px $gauge;
+	p {
+		color: #999;
+		font-size: $md-font;
+	}
+	h4 {line-height: 30px;}
+}
+.total-cal {
+	text-align: right;
+	line-height: 20px;
+	p{padding:0;}
+	h4 span {font-size: 14px;}
+}
+
+// ------订单提交----
+.order-top {
+	li {
+		padding: 20px $gauge;
+		text-align: left;
+		i {
+			@include circle(40px);
+			background-color: #d7acf3;
+			color: #fff;
+			margin-right: 10px;
+		}
+		&:nth-child(2) i{
+			background-color: #8abdf8;
+		}
+	}		
+}
+
+// -----订单列表----、
+.order-list {
+	padding-top: 44px;
+	li{
+		padding: 0 $gauge;
+	}
+}
+.title-order{
+	@include height(50px);
+	font-size: $md-font;
+
+}
+.order-sort {
+	position: fixed;
+	left: 0;
+	top: 48px;
+	background-color: #fff;
+	width: 100%;
+	z-index:3;
+}
+.order-content {
+	line-height: 32px;
+	color: #999;
+	font-size: $md-font;
+	padding: 10px 0;
+	p>span{padding-left: 10px;}
+}
+
+.order-pay {
+	color: #999;
+	font-size: $md-font;
+	span {
+		padding-left: 10px;
+		@include height(50px);
+	}
+	.btn-border,.btn {
+		display: block;
+		float: left;
+		@include height(28px);
+		margin: 10px 0 10px 10px;
+	}
+	.btn{
+		width: 50px;
+		@include height(30px);
+	}
+}
+
+// -------分享页---
+.share-img {
+	width: 100px;
+	height: 70px;
+	margin-right: 10px;
+}
+
+.rich-box {
+	padding: $gauge;
+	box-sizing: border-box;
+	.new-insure {
+		padding-bottom: 8px;
+	}
+	h2 {
+		font-size: $lg-font;
+		line-height: 30px;
+	}
+	p{
+		color: #999;
+		font-size: $md-font;
+		margin-bottom: 10px;
+	}
+	img {
+		margin-bottom: 10px;
+	}
+}
+i.icon-wchat {
+	background-color: #5fc755;
+	@include btnRadius(24px);
+	width: 24px;
+	color: #fff;
+	display: inline-block;
+	font-size: 18px;
+}
+
+// -----通知中心----、
+.msg-list {
+	padding-top: $gauge;
+	.icon-envelope {
+		color: #ffab34;
+	}
+	.icon-envelope-open {
+		color: #ccc;
+	}
+	.font-gray {
+		padding-top : 10px;
+		padding-left: $gauge;
+		display: inline-block;
+	}
+	li {
+		background-color: #fff;
+		margin-bottom: $gauge;
+		position: relative;
+		&:after {
+			@extend %mini-border;
+			border-top: 1px solid $border-color;
+			border-bottom: 1px solid $border-color;
+		}
+	}
+	img {
+		padding: 10px $gauge;
+		box-sizing: border-box;
+	}
+}
+.warn-list {
+	background-color: #fff;
+	font-size: $md-font;
+	padding-bottom: $bgMargin;
+	li { 
+		padding: $bgMargin $gauge 0 $gauge;
+		overflow: hidden;
+	}
+	img {
+		width: 2rem;
+	    height: 2rem;
+	    float: left;
+	    margin-right: 1rem;
+	}
+}
+.bubble-box {
+	position: relative;
+    background-color: #e5e5ea;
+    border-radius: .4rem;
+    padding: 10px;
+    float: left;
+    width: 13rem;
+	.bubble {
+		position: absolute;
+		top: -.2rem;
+    	left: -.4rem;
+		background: url(../images/bubble.png) no-repeat;
+		width: 1.5rem;
+    	height: 1.3rem;
+		display: block;
+		background-size: 100% 100%;
+	}
+}
+
+
+
+// -----红包----
+.big-red {
+	color: #ff5e4b;
+	font-size: $lg-font;
+}
+.red-img {
+	width: 50px;
+	margin-right: 20px;
+}
+.failure {
+	position: relative;
+	width: 72px;
+	text-align: right;
+	img {
+		position: absolute;
+		top: -25px;
+		left: 0;
+		width: 72px;
+	}
+	p{color: #ccc !important;}
+}
+// ---最后---
+.show {display:block;}
+.hide {display: none;}
+.more-wp-open {
+    -webkit-transform: translateX(0) translateZ(0) !important;
+    -webkit-transition: all .4s;
+}

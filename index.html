@@ -9,10 +9,307 @@
 	<title>首页</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
-	
+	<div class="banner">
+	<!--banner轮播-->
+        <div class="slide" id="slide">
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="images/banner.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+            <div class="dot">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!--banner end-->
+        <!-- 九宫格 -->
+        <ul class="sudoku bg-show">
+            <li>
+                <a href="insurance.html">
+                    <i class="icon-car yellow"></i>
+                    <p>车险比价</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="insurance.html">
+                    <i class="icon-life-insure orange"></i>
+                    <p>寿险比价</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="break_rules.html">
+                    <i class="icon-breakRules green"></i>
+                    <p>违章查办</p>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 车险比价 -->
+        <form>
+            <ul class="form-list border-list">
+                <li>
+                    <label>车牌号码</label>
+                    <div class="region">
+                        <span class="slideValue">苏A</span>
+                        <i class="icon-down"></i>
+                    </div>
+                    <input class="list-info" type="tel" placeholder="输入车牌号码">
+                    <div class="slide-btn">
+                        <input type="checkbox" checked="">
+                    </div>
+                </li>
+                <li>
+                    <span class="list-info">去年投保公司</span>
+                    <div class="select-box">
+                        <select>
+                            <option>请选择投保公司</option>
+                        </select>
+                        <i class="icon-right"></i>
+                    </div>
+                </li>
+                <li>
+                    <label>车主姓名</label>
+                    <input class="list-info" type="text" placeholder="请输入车主姓名">
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input  class="list-info" type="text" placeholder="请输入真实身份证号码">
+                    <div class="upload-file">
+                        <i class="icon-camera"></i>
+                        <input class="file" type="file">
+                    </div>
+                </li>
+            </ul>
+            <div class="tips">
+                <p class="font-gray fr">目前只支持9座以下非营运私家车辆</p>
+            </div>
+            <a class="btn">保存信息</a>
+            <a class="btn-history" href="history_car.html">最近查看历史</a>
+        </form>
+           
+
+        <div class="bg-show">
+        	<div class="title-bar">
+        		<h4>新品保险</h4>
+        		<a class="more" href="#">更多</a>
+        	</div>
+        	<ul class="border-list">
+        		<li>
+        			<a class="list-box" href="#">
+        				<div class="list-info">
+        					<h4 class="nowrap">
+        						<span class="label-theme">热销</span>
+        						学习无忧疾病医疗学平险计划
+        					</h4>
+        					<p class="nowrap-2">涵盖意外伤害、以外门诊医疗基础保障，特含疾病身故和住院医疗特色保障，保障经济全面。</p>
+        					<div class="new-insure clearfix">
+        						<div class="fl">
+        							<span class="font-red">￥<span>20.00</span>起</span>
+        							<span class="n-label-cost">推广费10%</span>
+        						</div>
+        						<div class="font-gray fr">销量：<span>804</span></div>
+        					</div>
+        				</div>
+        				<img class="list-img" src="images/p1.jpg">
+        			</a>
+        		</li>
+                <li>
+                    <a class="list-box" href="#">
+                        <div class="list-info">
+                            <h4 class="nowrap">
+                                <span class="label-yellow">优惠</span>
+                                全年综合意外险人身意外医全年综合意外险人身意外医
+                            </h4>
+                            <p class="nowrap-2">被保险人遭受意外伤害，并自该意外伤害发生之日起一百八十日内因该意外伤害导致身故的，按约定.</p>
+                            <div class="new-insure clearfix">
+                                <div class="fl">
+                                    <span class="font-red">￥<span>20.00</span>起</span>
+                                    <span class="n-label-cost">推广费10%</span>
+                                </div>
+                                <div class="font-gray fr">销量：<span>804</span></div>
+                            </div>
+                        </div>
+                        <img class="list-img" src="images/p2.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a class="list-box" href="#">
+                        <div class="list-info">
+                            <h4 class="nowrap">
+                                <span class="label-green">新品</span>
+                               安家乐家庭财产盗抢台风房安家乐家庭财产盗抢台风房
+                            </h4>
+                            <p class="nowrap-2">被保险人遭受意外伤害，并自该意外伤害发生之日起一百八十日内因该意外伤害导致身故的，按约定.</p>
+                            <div class="new-insure clearfix">
+                                <div class="fl">
+                                    <span class="font-red">￥<span>20.00</span>起</span>
+                                    <span class="n-label-cost">推广费10%</span>
+                                </div>
+                                <div class="font-gray fr">销量：<span>804</span></div>
+                            </div>
+                        </div>
+                        <img class="list-img" src="images/p3.jpg">
+                    </a>
+                </li>
+        	</ul>
+        </div>
+
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li class="active">
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+     <!-- 选择车牌号遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择车牌号</h4>
+        </a>
+        <ul class="dialog-start-list">
+            <li class="active">苏</li>
+            <li>鲁</li>
+            <li>浙</li>
+            <li>川</li>
+            <li>皖</li>
+            <li>豫</li>
+            <li>粤</li>
+            <li>鄂</li>
+            <li>湘</li>
+            <li>吉</li>
+            <li>沪</li>
+            <li>渝</li>
+            <li>云</li>
+            <li>晋</li>
+            <li>蒙</li>
+            <li>贵</li>
+            <li>京</li>
+            <li>陕</li>
+            <li>冀</li>
+            <li>辽</li>
+            <li>津</li>
+            <li>桂</li>
+            <li>闽</li>
+            <li>黑</li>
+            <li>新</li>
+            <li>琼</li>
+            <li>甘</li>
+            <li>青</li>
+            <li>宁</li>
+            <li>藏</li>
+        </ul>
+        <ul class="dialog-end-list">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+            <li>F</li>
+            <li>G</li>
+            <li>H</li>
+            <li>I</li>
+            <li>J</li>
+            <li>K</li>
+            <li>L</li>
+            <li>M</li>
+            <li>N</li>
+            <li>O</li>
+            <li>P</li>
+            <li>Q</li>
+            <li>R</li>
+            <li>S</li>
+            <li>T</li>
+            <li>U</li>
+            <li>V</li>
+            <li>W</li>
+            <li>X</li>
+            <li>Y</li>
+            <li>Z</li>
+        </ul>
+    </div>
+     <script type="text/javascript">
+    $(function(){
+      //banner图片只有一张时，隐藏圆点
+        window.onload = function() {
+                var len = $('#slide li').length;
+                if (len <= 1) {
+                    $('.dot').addClass('hide');
+                }  
+            }
+        //首页banner 图片轮播效果
+        $('#slide').swipeSlide({
+            continuousScroll: true,
+            speed: 3000,
+            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            callback: function(i) {
+                $('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                var dotWidth = $('.dot').width();
+                $('.dot').css('margin-left','-'+dotWidth/2+'px');
+            }
+        });
+
+        //选择车牌号
+        $('.region').click(function(){
+            var slide = new SlideDialog();
+        });
+        
+    });
+    </script>
 </body>
 </html>

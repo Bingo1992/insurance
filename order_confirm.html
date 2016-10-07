@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>订单提交</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner-2">
+
+		<div class="order-top">
+			<ul class="equably-layout bg-show">
+                <li class="list-box">
+                   <i class="icon-refund"></i> 
+                   	<div class="list-info">
+                   	   <p>办理不成功<br>全额退还</p>
+                   	</div>  
+                </li>
+                <li class="list-box">
+                   <i class="icon-calendar"></i> 
+                   	<div class="list-info">
+                   	   <p>正常服务周期为<br>2至7个工作日</p>
+                   	</div>  
+                </li>
+
+            </ul>
+		</div>
+
+		<div class="bg-show">
+			<div class="title-rule border-bottom">
+				<p class="fl">违章<span class="font-theme">10</span>笔</p>
+				<p class="fr">小计<span class="font-theme">2000.00</span>元</p>
+			</div>
+			<table class="table-2 table">
+				<thead>
+					<tr>
+						<th>违章罚金（元）</th>
+						<th>滞纳金（元）</th>
+						<th>服务费（元）</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="font-theme">100.00</td>
+						<td class="font-theme">0.00</td>
+						<td class="font-theme">1000.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+			
+	</div>
+
+	<!-- 底部固定部分 -->
+	<div class="fixed-bottom">
+		<!-- 结账 -->
+        <div class="actionBar-container list-box border-top">
+			<div class="list-info">
+				<h4>应付金额 <span class="font-theme">2000.00</span>元</h4>
+			</div>
+            <a class="btn" href="order_confirm.html">提交订单</a>
+        </div>
+
+    	 <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+	</div>
+	
+    <script type="text/javascript">
+	$(function(){
+		//全选
+		var check = new AllCheck('.check-list');
+	});
+	</script>
+</body>
+</html>

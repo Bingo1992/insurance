@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>寿险产品详情</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+        <img src="images/life4.jpg">
+        <ul class="lifeInsure_detail">
+            <li>
+                <h4 class="title-orange">产品特色</h4>
+                <div class="insure-state">
+                    <p>1. 保费低至2.42元起；<br>
+                    2. 保障高，最高达290万元；<br>
+                    3. 保障期限选择多，7-365天可选；<br>
+                    4. 承保年龄30天-60周岁。</p>
+                </div>
+            </li>
+           
+            <li>
+               <h4 class="title-red">保障范围</h4>
+               <div class="insure-state">
+                   <p>
+                    重疾保障：保障42种重疾，保额100000元<br>
+                    轻疾保障：保障10种重疾，保额20000元<br>
+                    身故保障：400000元<br>
+                    意外门急诊赔付比例：100%<br>
+                    意外住院赔付比例：100%<br>
+                    每年意外就诊赔付额度：20000元<br>
+                    每日意外住院津贴：50元<br>
+                    每一住院事故赔付天数限额：180天
+                   </p>
+               </div>
+            </li>
+            <li>
+                <h4 class="title-blue">投保说明</h4>
+                <div class="insure-state">
+                    <p>
+                    承保年龄：出生满30天-60周岁<br>
+                    保险期间：终身<br>
+                    缴费方式：5 / 10 / 15 / 20年<br>
+                    等待期：90天<br>
+                    犹豫期：10天<br>
+                    最高保额限制：0-60周岁最高50万
+                    </p>
+                </div>
+            </li>
+        </ul>
+       <div class="two-btn">
+           <p class="btn-insurance1 btn-gray">保险投款</p>
+           <p class="btn-insurance2 btn-gray">投保须知</p>
+       </div>
+        
+        <a class="btn">保存信息</a>
+
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="ui-dialog" id="dialog1">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>保险投款</h2>
+            <div class="dialog-content">1. 保费低至2.42元起；
+            2. 保障高，最高达290万元；
+            3. 保障期限选择多，7-365天可选；
+            4. 承保年龄30天-60周岁。
+           </div>
+        </div>
+    </div>
+
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>投保须知</h2>
+            <div class="dialog-content">1. 保费低至2.42元起；
+            2. 保障高，最高达290万元；
+            3. 保障期限选择多，7-365天可选；
+            4. 承保年龄30天-60周岁。
+           </div>
+        </div>
+    </div>
+   <script type="text/javascript">
+   $(function(){
+        // 保险投款,投保须知
+        $('.btn-insurance1').click(function(){
+            $(this).showUiDialog('#dialog1');
+        });
+        $('.btn-insurance2').click(function(){
+            $(this).showUiDialog('#dialog2');
+        });
+   });
+   </script>
+</body>
+</html>
