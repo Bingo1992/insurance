@@ -269,16 +269,6 @@ $bgMargin: 16px;
 .tip-dialog.show {
     display: -webkit-box;
 }
-.tip-content{
-    color: #fff;
-    background-color: rgba(0,0,0,.8);
-    padding: .5rem 1rem;
-    line-height: 24px;
-    border-radius: .3rem;
-    max-width: 180px;
-    min-width: 100px;
-    text-align: center;
-}
 .dialog-cnt {
     position: relative;
     width: 14rem;
@@ -287,8 +277,8 @@ $bgMargin: 16px;
     border-radius: 6px;
     i.icon-cancel {
         position: absolute;
-        top: -.7rem;
-        right: 0;
+        top: -.5rem;
+        right: -.5rem;
         background-color: rgba(0,0,0,.6);
         color: #fff;
         @include circle(34px);
@@ -334,6 +324,16 @@ $bgMargin: 16px;
 	}
 }
 
+.tip-content{
+    color: #fff;
+    background-color: rgba(0,0,0,.7);
+    padding: 1rem;
+    line-height: 24px;
+    border-radius: .3rem;
+    max-width: 180px;
+    min-width: 100px;
+    text-align: center;
+}
 // ---form validate----
 i.icon-tip{
     display: block;
@@ -431,7 +431,6 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
 	    display: inline-block;
 	 	@include circle(28px);
 	    background-color: #fff;
-	    border:1px solid #ccc;
 	    box-sizing:border-box;
 	    -webkit-transform:translateX(1px);
 	    -webkit-transition: -webkit-transform .4s linear;
@@ -443,7 +442,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
 	    -webkit-transition: background-color .4s cubic-bezier(0.175, .885, .32, 1.1) 0s;
     }
     &:checked:after{
-    	-webkit-transform:translateX(20px);
+    	-webkit-transform:translateX(21px);
     	-webkit-transition: -webkit-transform .4s cubic-bezier(0.175, .885, .32, 1.1) 0s;
     }
   }
@@ -488,8 +487,16 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
 	width: 100%;
 	z-index: 3;
 }
+.fixed-body {
+    @extend .fixed-bottom;
+    height: 100%;
+}
+
+.banner{margin-bottom: 72px;}
+
 .fl {float: left;}
 .fr{float: right;}
+
 [class^="label-"]{
     color:#fff;
     display: inline-block;
@@ -518,13 +525,14 @@ h4.font-theme {font-size: 14px;display: inline-block;}
     @include circle(18px);
     color: #fff;
     background-color: #f74c31;
-    font-size: 12px;
+    font-size: 10px;
 }
 .semCirclePoint {
     width: auto;
     padding: 0 4px;
 }
-.banner{margin-bottom: 72px;}
+
+
 i.icon-right,i.icon-up,i.icon-down,i.icon-left{
     color: #ccc;
     font-size: 20px;

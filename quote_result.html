@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
@@ -41,13 +40,17 @@
         <ul class="border-list">
         	<li class="list-box">
         		<img class="border-img" src="images/logo1.jpg">
-        		<div class="list-info"><h4>平安车险</h4></div>
-        		<span class="font-red">￥ <span>5000.00</span></span>
+        		<div class="list-info"><span class="font-md">平安车险</span></div>
+                <div>
+                    <p class="font-red">报价:￥ <span>5000.00</span></p>
+                    <p class="font-gray">返点:￥ <span>50.00</span></p>
+                </div>
+        		
         		<a class="btn" href="">点击购买</a>
         	</li>
         	<li class="list-box">
         		<img class="border-img" src="images/logo2.jpg">
-        		<div class="list-info"><h4>人保车险</h4></div>
+        		<div class="list-info"><span class="font-md">平安车险</span></div>
         		<span class="font-red">￥ <span>900.00</span></span>
         		<a class="btn" href="">点击购买</a>
         	</li>
@@ -56,13 +59,13 @@
         <ul class="border-list">
         	<li class="list-box">
         		<img class="border-img" src="images/logo1.jpg">
-        		<div class="list-info"><h4>平安车险</h4></div>
+        		<div class="list-info"><span class="font-md">平安车险</span></div>
         		<span class="font-gray">报价失败</span>
         		<a class="btn-failed btn-border" >失败原因</a>
         	</li>
         	<li class="list-box">
         		<img class="border-img" src="images/logo1.jpg">
-        		<div class="list-info"><h4>平安车险</h4></div>
+        		<div class="list-info"><span class="font-md">平安车险</span></div>
         		<span class="font-gray">报价失败</span>
         		<a class="btn-failed btn-border">失败原因</a>
         	</li>
@@ -118,6 +121,7 @@
 
 	<div class="ui-dialog">
         <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
             <h2>失败原因</h2>
             <div class="dialog-content">1. 保费低至2.42元起；
             2. 保障高，最高达290万元；
@@ -130,7 +134,9 @@
 	<script type="text/javascript">
 	$(function(){
 		// 报价失败原因
-		 $('.btn-failed').showUiDiaolog('.ui-dialog');
+		 $('.btn-failed').click(function(){
+            $(this).showUiDialog('.ui-dialog');
+         });
 	});
 	</script>
 </body>

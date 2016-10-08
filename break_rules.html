@@ -116,6 +116,7 @@
 		<a href="addCar.html" class="btn">添加车辆</a>
 	</div>
 
+	<!-- 删除遮罩 -->
 	<div class="ui-dialog">
         <div class="dialog-cnt">
             <div class="dialog-content">
@@ -133,21 +134,21 @@
     	$('.break-rules').find('.icon-cancel').unbind('click').click(function(){
     		
     		var $li = $(this).closest('li');
-    		if(confirm('确定删除吗？')){
-    			$li.remove();
-    			if($('.break-rules li').length == 0){
-    				$('.nothing').removeClass('hide');
-    				//车辆为0时显示
-    			}
-    		}else{
-    			return;
-    		}
-    		// $(this).showUiDialog('.ui-dialog');
-    		
-    		// $('.confirm').click(function(){
+    		// if(confirm('确定删除吗？')){
     		// 	$li.remove();
-    		// 	$('.ui-dialog').removeClass('show');
-    		// });
+    		// 	if($('.break-rules li').length == 0){
+    		// 		$('.nothing').removeClass('hide');
+    		// 		//车辆为0时显示
+    		// 	}
+    		// }else{
+    		// 	return;
+    		// }
+    		$(this).showUiDialog('.ui-dialog');
+    		
+    		$('.confirm').click(function(){
+    			$li.remove();
+    			$('.ui-dialog').removeClass('show');
+    		});
     		
     	});
 

@@ -27,7 +27,7 @@
 .title-bar {
     @include height(20px);
     padding: 10px $gauge;   
-    font-size: $md-font;
+    // font-size: $md-font;
     h4{
     	float: left;
     	border-left: 3px solid $color-theme;
@@ -36,6 +36,7 @@
     .more {
     	float: right;
     	color: #999;
+    	font-size: $md-font;
     }
 }
 .new-insure {
@@ -62,7 +63,7 @@
 	li {
 		position: relative;
 		a{
-			padding: 14px;
+			padding: 12px;
 	 		display: inline;
 		}
 		&.active a{
@@ -73,39 +74,67 @@
 }
 .nav-tabs-2 li a{padding: 14px 0;}
 
-// 表单
+// ----表单----
 .form-list {
 	li {
 		@extend .list-box;
+		font-size: $md-font;
 	}
 	label {
 		width: 4rem;
 		display: inline-block;
 	}
-	// input {
-	// 	@if input[readonly=readonly]{
-	// 		display: block;
-	// 	}@else {
-	// 		@extend .list-info;
-	// 	}
-	// }
-	// input[type="text"],input[type="tel"]{
-	// 	@extend .list-info;
-	// }
+	input {
+		@extend .list-info;
+	}
+	input[type=date] {
+		height: 24px;
+	}
 }
+//地区简写
 .region {
 	@include btnBorder(30px,#ccc);
 	color: #333;
 	margin-right: 10px;
-	// h4 {
-	//     position: absolute;
-	//     width: 100%;
-	//     left: 0;
-	//     text-align: center;
-	// }
-	span {letter-spacing: .2rem;}
-	i{line-height: 30px !important;}
+	padding: 0 4px;
+	span {letter-spacing: .1rem;}
+	i{
+		line-height: 30px !important;
+		font-size: 20px;
+		float: right;
+	}
 }
+.select-box {
+	display: inline-block;
+    position: relative;
+    line-height: 24px;
+	
+    select {
+    	padding: 0 30px;
+	    position: relative;
+	    z-index: 2;
+	}
+    .icon-right {
+    	position: absolute;
+	    right: 0;
+	    top: 0;
+    }
+}
+.tips {
+	padding: 0 $gauge;
+	overflow: hidden;
+}
+
+.btn-history{
+	@include semicircle(30px);
+	color:#666;
+	border:1px solid #ccc;
+	display: block;
+	margin: 20px auto;
+	width: 100px;
+	font-size: $md-font;
+}
+// --遮罩--
 .dialog-list {
 	@extend .fixed-bottom;
 	background-color: #fff;
@@ -115,27 +144,32 @@
 	box-sizing: border-box;
 	-webkit-transform: translateX(150%) translateZ(0);
     -webkit-transition: all .4s linear 0s;
-	.dialog-start-list,.dialog-end-list {
-		width: 50%;
-		margin-top: 44px;
-		float: left;
-		text-align: center;
-		overflow: auto;
-		height: 100%;
-		li{
-			position: relative;
-			&:after {
-				@extend .border-bottom;
-			}
+}
+.dialog-start-list,.dialog-end-list {
+	width: 50%;
+	margin-top: 44px;
+	float: left;
+	text-align: center;
+	overflow: auto;
+	height: 100%;
+	li{
+		position: relative;
+		padding: 0 1rem;
+		box-sizing: border-box;
+		&:after {
+			@extend .border-bottom;
 		}
 	}
-	.dialog-start-list{
-		background-color: #eee;
-		li.active {
-			background-color: #fff;
-		}
+}
+.dialog-start-list{
+	background-color: #eee;
+	li.active {
+		background-color: #fff;
 	}
-
+}
+.whole-list {
+	width: 100%;
+	text-align: left;
 }
 .return-back {
 	position: fixed;
@@ -163,39 +197,16 @@
 	    width: 100%;
 	    height: 100%;
 	    opacity: 0;
+	    display: block;
 	}
-	i{font-size:26px;}   
+	i{
+		font-size:26px;
+		margin-right: 0 !important;
+		color: #999;
+	}   
 
 }
-.select-box {
-	display: inline-block;
-    position: relative;
-    line-height: 24px;
-    select {
-    	padding: 0 30px;
-	    position: relative;
-	    z-index: 2;
-	}
-    .icon-right {
-    	position: absolute;
-	    right: 0;
-	    top: 0;
-    }
-}
-.tips {
-	padding: 0 $gauge;
-	overflow: hidden;
-}
 
-.btn-history{
-	@include semicircle(30px);
-	color:#666;
-	border:1px solid #ccc;
-	display: block;
-	margin: 20px auto;
-	width: 100px;
-	font-size: $md-font;
-}
 
 // ----------添加车辆----------
 // 添加驾驶证
@@ -206,7 +217,7 @@
 	width: 13.1rem;
 	height: 9.2rem;
 	text-align: center;
-	margin: 46px auto;
+	margin: 20px auto;
 	padding: 2rem 0;
 	box-sizing: border-box;
 	i {
@@ -234,6 +245,7 @@
 		z-index: 2;
 	}
 }
+.span-right {margin-right: 6px;}
 // 协议
 .protocol {
 	margin: 10px $gauge;
@@ -248,12 +260,12 @@
 	    padding: $gauge;
 	    position: relative;
 	    background-color: #fff;
-	    border-radius: .6rem;
-	    overflow: hidden;
+	    border-radius: .4rem;
 	    box-sizing:border-box;
 	    &:after {
 	    	@extend %mini-border;
 			border: 1px solid $border-color;
+			border-radius: .6rem;
 	    }
     } 
 }
@@ -351,7 +363,7 @@
 	padding: 0 16px;
 }
 .border-img {
-	@include circle(50px);
+	@include circle(40px);
 	border: 1px solid $border-color;
 	margin-right: 10px;
 }
@@ -363,12 +375,12 @@
 .actionBar-container {
     background-color: #fff;
     box-sizing:border-box;
-    padding: 0 0 0 $gauge;
+    padding: 0 $gauge;
     @include height(62px);
     .all-check {
         display: -webkit-box;
     }
-    .btn {margin: 0 $gauge;}
+    .btn {margin: 0;}
     .btn-1 {width: 120px;}
 }
 
@@ -400,15 +412,18 @@
 	@include semicircle(24px);
 	color: #f78a31;
 	background-color: #fff;
-	padding: 0 6px 0 4px;
+	padding: 0 8px 0 2px;
 	margin-left: 10px;
 	.vip-logo {
 		@include circle(16px);
 		background-color: #ffcc00;
-		border: 3px solid #fdeb04;
+		border: 2px solid #fdeb04;
 		color: #fff;
 		font-size: $sm-font;
 		text-shadow: 1px 1px 1px #f78a31;
+		display: block;
+		float: left;
+		margin: 2px;
 	}
 }
 .btn-edit {
@@ -438,6 +453,7 @@
 }
 
 // -----未报价公司----
+.font-md {font-size: $md-font;}
 .title-company {
 	padding: 10px $gauge;
 	line-height: 30px;
@@ -455,7 +471,7 @@
 
 }
 .c-text{
-	color: #ccc;
+	color: #999;
 	padding: 10px;
 	font-size: $md-font;
 	text-align: justify;
@@ -491,11 +507,13 @@
     td {
     	position: relative;
     	padding: 0 $gauge;
-    	
     	&:after {
     		@extend .border-bottom:after;
     	}
     }
+   tr {
+   	td:last-child{text-align: right;}
+   }
 }
 
 .table-2 {
@@ -642,6 +660,7 @@
 .order-pay {
 	color: #999;
 	font-size: $md-font;
+	overflow: hidden;
 	span {
 		padding-left: 10px;
 		@include height(50px);
@@ -723,7 +742,7 @@ i.icon-wchat {
 	}
 }
 .warn-list {
-	background-color: #fff;
+	// background-color: #fff;
 	font-size: $md-font;
 	padding-bottom: $bgMargin;
 	li { 
@@ -740,19 +759,23 @@ i.icon-wchat {
 .bubble-box {
 	position: relative;
     background-color: #e5e5ea;
-    border-radius: .4rem;
+    border-radius: .6rem;
     padding: 10px;
     float: left;
     width: 13rem;
 	.bubble {
 		position: absolute;
-		top: -.2rem;
+		top: 0;
     	left: -.4rem;
 		background: url(../images/bubble.png) no-repeat;
 		width: 1.5rem;
-    	height: 1.3rem;
+    	height: 1.125rem;
 		display: block;
 		background-size: 100% 100%;
+	}
+	.font-gray {
+		position: relative;
+		z-index: 3;
 	}
 }
 

@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
+    <script type="text/javascript" src="js/validate.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
@@ -51,7 +52,7 @@
             </li>
 
             <li>
-                <a href="insurance.html">
+                <a href="life_insure.html">
                     <i class="icon-life-insure orange"></i>
                     <p>寿险比价</p>
                 </a>
@@ -74,9 +75,10 @@
                         <span class="slideValue">苏A</span>
                         <i class="icon-down"></i>
                     </div>
-                    <input class="list-info" type="tel" placeholder="输入车牌号码">
+                    <input type="tel" placeholder="输入车牌号码">
+                    <span class="span-right">未上牌</span>
                     <div class="slide-btn">
-                        <input type="checkbox" checked="">
+                        <input type="checkbox">
                     </div>
                 </li>
                 <li>
@@ -84,17 +86,19 @@
                     <div class="select-box">
                         <select>
                             <option>请选择投保公司</option>
+                            <option>太平洋保险</option>
+                            <option>平安保险</option>
                         </select>
                         <i class="icon-right"></i>
                     </div>
                 </li>
                 <li>
                     <label>车主姓名</label>
-                    <input class="list-info" type="text" placeholder="请输入车主姓名">
+                    <input class="name" type="text" placeholder="请输入车主姓名">
                 </li>
                 <li>
                     <label>身份证号</label>
-                    <input  class="list-info" type="text" placeholder="请输入真实身份证号码">
+                    <input class="idCard" type="text" placeholder="请输入真实身份证号码">
                     <div class="upload-file">
                         <i class="icon-camera"></i>
                         <input class="file" type="file">
@@ -283,6 +287,7 @@
             <li>Z</li>
         </ul>
     </div>
+
      <script type="text/javascript">
     $(function(){
       //banner图片只有一张时，隐藏圆点
@@ -307,6 +312,18 @@
         //选择车牌号
         $('.region').click(function(){
             var slide = new SlideDialog();
+        });
+
+        //表单验证
+        $('.btn').click(function(){
+            var idCard = $('.idCard').val();
+            if(idCard ==''){
+                $(this).isEmpty('身份证号不能为空');
+            }else if(!checkIdCard(idCard)){
+                $(this).isWrong('身份证号有误');
+            }else {
+                $(this).isRight('信息已提交');
+            }
         });
         
     });

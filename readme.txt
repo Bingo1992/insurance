@@ -5,8 +5,9 @@
 提醒：msg.html
 我的：personnel.html
 
+添加客户：add_client.html
 
-保险业务：insurance.html
+
 添加车辆： addCar.html
 最近添加车辆：history_car.html
 车辆信息： car_info.html
@@ -31,7 +32,7 @@
 我的团队：my_team.html
 我的名片：my_card.html
 推荐奖励：recommend_prize.html
-认证升级：approve_update.html
+认证升级：certify_update.html
 
 违章查办：break_rules.html
 查询结果：breakRules_result.html

@@ -29,7 +29,7 @@
             <div class="list-info">
                 <h4>订单筛选</h4>
             </div>
-            <span class="font-gray">全部</span>
+            <span class="slideValue font-gray">全部</span>
             <i class="icon-right"></i>
         </div>
 
@@ -129,7 +129,7 @@
                                         <span class="label-theme">寿险</span>
                                     </div>
                                     <div class="fr">
-                                        <span class="font-theme">待支付</span>
+                                        <span class="font-theme">已完成</span>
                                     </div>
                                 </div>
                                 <div class="order-content border-top">
@@ -141,10 +141,6 @@
                                 <div class="order-pay border-top">
                                     <div class="fl">
                                         保险代理 <span>李四</span>
-                                    </div>
-                                    <div class="fr">
-                                        <div class="btn-border">取消订单</div>
-                                        <div class="btn">支付</div>
                                     </div>
                                 </div>
                             </li> 
@@ -234,9 +230,29 @@
         </ul>
     </div>
 
-    
+    <!-- 订单筛选遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>订单筛选</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>全部</li>
+            <li>待支付</li>
+            <li>已完成</li>
+            <li>已过期</li>
+            <li>处理中</li>
+            <li>处理失败</li>
+            <li>处理完成</li>
+        </ul>
+    </div>
     <script type="text/javascript">
-
+    $(function(){
+        // 订单筛选遮罩
+        $('.order-sort').click(function(){
+            var slide = new SlideDialog();
+        });
+    })
     </script>
 </body>
 
