@@ -31,13 +31,13 @@
         },
         //表单验证
         isWrong: function(text){
-            this.Tiphtml("icon-tip icon-cancel",text);
+           return this.Tiphtml("icon-tip icon-cancel",text);
         },
         isEmpty: function(text){
-            this.Tiphtml("icon-tip icon-gantan",text);
+           return this.Tiphtml("icon-tip icon-gantan",text);
         },
         isRight: function(text){
-            this.Tiphtml("icon-tip icon-hook",text);
+            return this.Tiphtml("icon-tip icon-hook",text);
         },
         //弹窗
         showTipDialog: function(){
@@ -54,12 +54,11 @@
                 $(option).addClass('show');
                 $('.icon-cancel').add('.cancel').click(function() {
                     $(this).parents(option).removeClass('show');
-
                 });
             });
         },
         //tabs
-        switchTabs: function(){
+        switchTabs: function(option1,option2){
             return this.each(function() {
                 var index = $(option1).index($(this));
                 $(this).addClass('active').siblings().removeClass('active');
@@ -69,24 +68,33 @@
     });
 
     //选择车牌号,省市
-    function SlideDialog(){
+    function SlideDialog(option){
         var self = this;
-        var $dialogList = $('.dialog-list');
+        // var $dialogList = $('.dialog-list');
+        // var $slideElm = $('.slideValue');
+        // self.dialogList = $(dialogList);
+        // self.slideElm = $slideElm;
         var $startLi = $('.dialog-start-list li');
         var $endLi = $('.dialog-end-list li');
         var $returnBack = $('.return-back');
-
-        var $slideElm = $('.slideValue');
+       
         var slideValue = '';
-        $dialogList.find('ul').css('height',document.documentElement.clientHeight -44 + 'px');
-        self.dialogList = $dialogList;
+        var opt = {
+            dialogList : $('.dialog-list'),
+            slideElm : $('.slideValue')
+        };
+        opt = $.extend(opt, option||{});
+        
+        self.opt = opt;
+        self.dialogList = self.opt.dialogList;
+        self.slideElm = self.opt.slideElm;
         self.startLi = $startLi;
         self.endLi = $endLi;
-
-        self.returnBack = $returnBack;
-        self.slideElm = $slideElm;
+        self.returnBack = $returnBack;     
         self.slideValue = slideValue;
+
         self.init();
+        self.dialogList.find('ul').css('height',document.documentElement.clientHeight -44 + 'px');
     };
     SlideDialog.prototype.init = function(){
         var self = this;
@@ -165,9 +173,38 @@
     }
      window['AllCheck'] = AllCheck;
 
-
-
 })(jQuery,window,document);
 
+$(function(){
+    //日期
+    $('.date').bind('input propertychange', function (){
+        var dateValue = $(this).find('input').val();
+        if(dateValue ==''){
+           $(this).removeClass('getDate');
+           $(this).find('span').html('请输入时间');
+        }else {
+            $(this).find('span').html(dateValue);
+            $(this).addClass('getDate');
+        }
+    });   
 
-    
+    //是否显示checkbox下面的内容
+    $('.slide-btn-check').click(function(){
+       var $list = $(this).closest('ul');
+       var $thisli = $(this).closest('li');
+       var index = $('.border-list li').index($thisli);
+       var $li = $list.find('li');
+       var check = $(this).find(':checkbox').prop('checked');
+       if(!check){
+            //隐藏内容
+            for(var i = index+1;i < $li.length; i++){
+               $li.eq(i).addClass('hide');
+           }
+       }else {
+            //显示内容
+           for(var j = index+1;j < $li.length; j++){
+               $li.eq(j).removeClass('hide');
+           }
+        }
+    }); 
+});

@@ -123,14 +123,16 @@ $bgMargin: 16px;
 	width:100%;
     .border-list{margin-top:0;}
 }
-.btn {
+.btn,.btn-cancel {
     @include btnRadius;
     color: #fff;
     background-color: $color-theme;
     margin: $bgMargin $gauge;
     padding: 0 16px;
 }
-
+.btn-cancel {
+    background-color: #ddd;
+}
 .btn-border {
     @include btnBorder(38px,#999);
     margin: $bgMargin $gauge;
@@ -202,9 +204,7 @@ $bgMargin: 16px;
 		color: $color-gray;
 		margin-bottom: 10px;
 	}
-    .icon-wchat_1 {
-        font-size: 55px;
-    }
+    img {margin: 0 auto;}
 	h2{
 		font-size: 16px;
 		font-weight: bold;
@@ -277,12 +277,13 @@ $bgMargin: 16px;
     border-radius: 6px;
     i.icon-cancel {
         position: absolute;
-        top: -.5rem;
-        right: -.5rem;
-        background-color: rgba(0,0,0,.6);
-        color: #fff;
-        @include circle(34px);
+        top: 8px;
+        right: 8px;
+        color: #999;
+        border: 1px solid #999;
+        @include circle(26px);
         z-index: 11;
+        font-size: 18px;
     }
     h2 {
         @include height;
@@ -414,6 +415,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
   input{
   	width: 50px;
     @include height(30px);
+    margin: 0;
     &:before{
     	content: "";
 	    position:  absolute;
@@ -458,7 +460,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
     box-sizing:border-box;
     li {
     	float: left;
-	    width: 33.333%;
+	    width: 50%;
 	    box-sizing:border-box;
         .yellow{background-color: #ffab33; }
         .orange{background-color: #ff7c48; }
@@ -478,6 +480,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
 	    margin-bottom: .2rem;
 	    font-size: 1.3rem;
     }
+    span {padding-left: 4px;}
 }
 
 .fixed-bottom {

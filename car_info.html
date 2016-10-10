@@ -28,9 +28,9 @@
                 <label>品牌型号</label>
                 <input type="text" placeholder="只需输入英文和数字">
             </li>
-            <li>
+            <li class="select-carType">
                 <label>车型</label>
-                <input class="slideValue"  type="text" placeholder="选择车型" readonly>
+                <span class="slideValue list-info"><input type="text" placeholder="选择车型" readonly></span>
                 <i class="icon-right"></i>
             </li>
             <li>
@@ -39,7 +39,11 @@
             </li>
             <li>
                 <label>购车日期</label>
-                <input type="date" value="2016-09-01">
+                <div class="date list-info">
+                    <input type="date">
+                    <span>请输入时间</span>
+                </div>
+                
             </li>
         </ul>
         <label class="protocol" for="protocol">
@@ -49,7 +53,7 @@
             </div>
             <span class="font-gray">本人已阅读并同意<a class="font-blue" href="#">《违章查询办理申明》</a></span>
         </label>
-        <a class="btn">提交信息</a>
+        <a class="btn" href="select_plan.html">提交信息</a>
     </div>
     <!-- -banner- -->
 
@@ -89,71 +93,35 @@
             </li>
         </ul>
     </div>
-     <!-- 选择车牌号遮罩 -->
+   
+
+    <!-- 选择车型 -->
     <div class="dialog-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
-            <h4>选择车牌号</h4>
+            <h4>选择车型</h4>
         </a>
-        <ul class="dialog-start-list">
-            <li class="active">苏</li>
-            <li>鲁</li>
-            <li>浙</li>
-            <li>川</li>
-            <li>皖</li>
-            <li>豫</li>
-            <li>粤</li>
-            <li>鄂</li>
-            <li>湘</li>
-            <li>吉</li>
-            <li>沪</li>
-            <li>渝</li>
-            <li>云</li>
-            <li>晋</li>
-            <li>蒙</li>
-            <li>贵</li>
-            <li>京</li>
-            <li>陕</li>
-            <li>冀</li>
-            <li>辽</li>
-            <li>津</li>
-            <li>桂</li>
-            <li>闽</li>
-            <li>黑</li>
-            <li>新</li>
-            <li>琼</li>
-            <li>甘</li>
-            <li>青</li>
-            <li>宁</li>
-            <li>藏</li>
-        </ul>
-        <ul class="dialog-end-list">
-            <li>A</li>
-            <li>B</li>
-            <li>C</li>
-            <li>D</li>
-            <li>E</li>
-            <li>F</li>
-            <li>G</li>
-            <li>H</li>
-            <li>I</li>
-            <li>J</li>
-            <li>K</li>
-            <li>L</li>
-            <li>M</li>
-            <li>N</li>
-            <li>O</li>
-            <li>P</li>
-            <li>Q</li>
-            <li>R</li>
-            <li>S</li>
-            <li>T</li>
-            <li>U</li>
-            <li>V</li>
-            <li>W</li>
-            <li>X</li>
-            <li>Y</li>
-            <li>Z</li>
+   <!--      <ul class="sort-tabs equably-layout border-bottom">
+            <li>
+                <span>年款</span>
+                <i class="icon-down"></i>
+                
+            </li>
+            <li>
+                <span>排量</span>
+                <i class="icon-down"></i>
+            </li>
+            <li>
+                <span>变速箱</span>
+                <i class="icon-down"></i>
+            </li>
+        </ul> -->
+        <ul class="dialog-end-list whole-list">
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
         </ul>
     </div>
    <script type="text/javascript">
@@ -162,7 +130,7 @@
             $(this).switchTabs('.nav-tabs li');
         });
         //选择车牌号
-        $('.region').click(function(){
+        $('.select-carType').click(function(){
             var slide = new SlideDialog();
         });
    });

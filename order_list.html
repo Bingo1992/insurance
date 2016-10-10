@@ -246,13 +246,36 @@
             <li>处理完成</li>
         </ul>
     </div>
+    <!-- //取消订单 -->
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="p-center">确定删除该订单吗？</p>
+            </div>
+            
+            <div class="two-btn">
+                <a class="cancel">取消</a>
+                <a class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
     $(function(){
         // 订单筛选遮罩
         $('.order-sort').click(function(){
             var slide = new SlideDialog();
         });
-    })
+
+        // 取消订单
+        $('.btn-border').click(function(){
+            var $li = $(this).closest('li');
+            $(this).showUiDialog('.ui-dialog');
+            $('.confirm').unbind("click").click(function(){
+                $li.remove();
+                $('.ui-dialog').removeClass('show');
+            });
+        });
+    });
     </script>
 </body>
 

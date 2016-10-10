@@ -6,20 +6,24 @@
     <meta name="format-detection" content="telephone=no" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<title>添加车辆</title>
+	<title>添加客户车辆信息</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
-	<div class="banner">
+	<div class="banner-2">
         <div class="camera-box">
             <i class="icon-camera"></i>
             <p>识别驾驶证信息</p>
             <input type="file">
         </div>
         <ul class="form-list border-list">
+            <li>
+                <label>车主姓名</label>
+                <input type="text" placeholder="请输入客户姓名">
+            </li>
             <li>
                 <label>车牌号码</label>
                 <div class="region">
@@ -38,19 +42,47 @@
             </li>
             <li>
                 <label>车架号码</label>
-                <input type="text" placeholder="输入车辆识别代码">
+                <input type="text" placeholder="请输入车辆识别代码">
             </li>
             <li>
-                <label>手机号码</label>
-                <input type="tel" placeholder="输入手机号码">
+                <label>发动机号</label>
+                <input type="text" placeholder="请输入发动机号">
+            </li>
+            <li>
+                <label>注册日期</label>
+                <div class="date list-info">
+                   <input type="date"> 
+                   <span>请输入日期</span>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">是否过户车辆</span>
+                <span class="span-right">否</span>
+                <div class="slide-btn-check slide-btn">
+                    <input type="checkbox">
+                </div>
+            </li>
+            <li class="hide">
+                <label>过户日期</label>
+                <div class="date list-info">
+                   <input type="date"> 
+                   <span>请输入日期</span>
+                </div>
             </li>
         </ul>
-        <a class="btn">提交信息</a>
+
     </div>
     <!-- -banner- -->
 
     <!-- 底部固定内容 -->
     <div class="fixed-bottom"> 
+        <div class="actionBar-container border-top list-box">
+            <div class="two-btn">
+                <a href="#" class="btn-cancel list-info">跳过这一步</a>
+                <a href="#" class="btn list-info">确定</a>
+            </div>
+           
+        </div>
         <!-- 底部导航 -->
         <ul class="nav-bar equably-layout">
             <li>
@@ -152,13 +184,23 @@
             <li>Z</li>
         </ul>
     </div>
-
    <script type="text/javascript">
    $(function(){
-        //选择车牌号
+        //选择车型
         $('.region').click(function(){
             var slide = new SlideDialog();
         });
+        //是否过户
+        // $('.btn-pastDue').click(function(){
+        //     var check = $(this).find(':checkbox').prop("checked");
+        //     if(check){
+        //         $(this).siblings('.span-right').html('是');
+        //         $('.pastDue').removeClass('hide');
+        //     }else {
+        //         $(this).siblings('.span-right').html('否');
+        //         $('.pastDue').addClass('hide');
+        //     }
+        // });
    });
    </script>
 </body>

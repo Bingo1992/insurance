@@ -107,15 +107,51 @@
 					<div class="list-info">
 						<p>上次查询 <span>2016-09-14</span></p>
 					</div>
-					<a href="#" class="btn">查询</a>
+					<a href="breakRules_result.html" class="btn">查询</a>
 				</div>
 			</li>
 		</ul>
 	</div>
-	<div class="fixed-bottom btn-addCar border-top">
-		<a href="addCar.html" class="btn">添加车辆</a>
-	</div>
 
+	<!-- 底部固定部分 -->
+	<div class="fixed-bottom"> 
+        <div class="actionBar-container list-box border-top">
+           <a href="addCar.html" class="btn list-info">添加车辆</a>
+        </div>
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li class="active">
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
 	<!-- 删除遮罩 -->
 	<div class="ui-dialog">
         <div class="dialog-cnt">
@@ -131,21 +167,12 @@
     </div>
     <script type="text/javascript">
     $(function(){ 
-    	$('.break-rules').find('.icon-cancel').unbind('click').click(function(){
-    		
+    	//删除车辆
+    	$('.break-rules').find('.icon-cancel').click(function(){
     		var $li = $(this).closest('li');
-    		// if(confirm('确定删除吗？')){
-    		// 	$li.remove();
-    		// 	if($('.break-rules li').length == 0){
-    		// 		$('.nothing').removeClass('hide');
-    		// 		//车辆为0时显示
-    		// 	}
-    		// }else{
-    		// 	return;
-    		// }
     		$(this).showUiDialog('.ui-dialog');
     		
-    		$('.confirm').click(function(){
+    		$('.confirm').unbind("click").click(function(){
     			$li.remove();
     			$('.ui-dialog').removeClass('show');
     		});

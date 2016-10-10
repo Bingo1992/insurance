@@ -14,23 +14,82 @@
 </head>
 <body>
 	<div class="banner">
-        <ul class="form-list border-list">
+        <ul class="plan-list border-list">
             <li>
                 <span class="list-info">投保城市</span>
-                <div class="select-region">
-                    <input type="text" placeholder="选择城市" readonly>
-                    <i class="icon-right"></i>  
-                </div> 
+                <input type="text" placeholder="选择城市" readonly>
+                <i class="icon-right"></i>  
             </li>
             <li>
                 <span class="list-info">投保区县</span>
-                <div class="select-region">
-                    <input type="text" placeholder="选择区县" readonly>
-                    <i class="icon-right"></i>  
-                </div> 
+                <input type="text" placeholder="选择区县" readonly>
+                <i class="icon-right"></i>  
             </li>
         </ul>
 
+        <ul class="plan-list border-list">
+            <li>
+                <h5 class="list-info">交强险</h5>
+                <div class="slide-btn-check slide-btn">
+                    <input type="checkbox" checked>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">保险起期</span>
+                <div class="date">
+                   <input type="date"> 
+                   <span>选择日期</span>
+                </div>
+                <i class="icon-right"></i>
+            </li>
+        </ul>
+
+        <ul class="plan-list border-list">
+            <li>
+                <h5 class="list-info">商业险</h5>
+                <div class="slide-btn-check slide-btn">
+                    <input type="checkbox" checked>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">保险起期</span>
+                <div class="date">
+                   <input type="date"> 
+                   <span>选择日期</span>
+                </div>
+                <i class="icon-right"></i>
+            </li>
+            <li>
+                <span class="list-info">车险损失险</span>
+                <div class="checkbox-pay">
+                    <input type="checkbox">
+                    <p>不计免赔</p>
+                    <i></i>
+                </div>
+                <div class="select-box">
+                    <select>
+                        <option>投保</option>
+                        <option>不投保</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">第三方责任险险</span>
+                <div class="checkbox-pay">
+                    <input type="checkbox">
+                    <p>不计免赔</p>
+                    <i></i>
+                </div>
+                <div class="select-box">
+                    <select>
+                        <option>投保</option>
+                        <option>不投保</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+        </ul>
         <a class="btn">保存信息</a>
     </div>
     <!-- -banner- -->
@@ -72,7 +131,7 @@
         </ul>
     </div>
      <!-- 选择城市遮罩 -->
-    <div class="dialog-list">
+  <!--   <div class="dialog-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择城市</h4>
@@ -116,10 +175,10 @@
             <li>江门市</li>
             <li>肇庆市</li>
         </ul>
-    </div>
+    </div> -->
 
     <!-- 选择区县遮罩 -->
-    <div class="dialog-list">
+   <!--  <div class="dialog-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择区县</h4>
@@ -130,12 +189,28 @@
             <li>越秀区</li>
             <li>番禺区</li>
         </ul>
-    </div>
+    </div> -->
    <script type="text/javascript">
    $(function(){
-        $('.nav-tabs li').click(function(){
-            $(this).switchTabs('.nav-tabs li');
-        }); 
+    $('.slide-btn').click(function(){
+       var $list = $(this).closest('ul');
+       var $thisli = $(this).closest('li');
+       var index = $('.border-list li').index($(this));
+       var $li = $list.find('li');
+       var check = $(this).find(':checkbox').prop('checked');
+       if(!check){
+            //隐藏内容
+            for(var i = 1;i < $li.length; i++){
+               $li.eq(i).addClass('hide');
+           }
+       }else {
+            //显示内容
+           for(var i = index+1;i < $li.length; i++){
+               $li.eq(i).removeClass('hide');
+           }
+        }
+    });
+     
    });
    </script>
 </body>

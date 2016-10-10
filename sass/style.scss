@@ -7,7 +7,7 @@
 // 
 // 导航栏
 .nav-bar {
-	background-color: #eee;
+	background-color: rgba(240,240,240,.92);
 	position: relative;
 	&:after{
 		@extend .border-top:after;
@@ -25,7 +25,7 @@
 }
 
 .title-bar {
-    @include height(20px);
+    @include height(24px);
     padding: 10px $gauge;   
     // font-size: $md-font;
     h4{
@@ -38,6 +38,40 @@
     	color: #999;
     	font-size: $md-font;
     }
+}
+.recommend-list {
+	line-height: 20px;
+	h4 {
+		padding: .5rem 0 0 .5rem;
+		font-size: 12px;
+	}
+	p {padding-left: .5rem;}
+	[class^="rc-"] {
+		box-sizing: border-box;
+	}
+}
+.rc-1 {
+	width: 38%;
+	position: relative;
+	&:after {
+		@extend .border-right;
+	}
+}
+.rc-2 {
+	width: 62%;
+	.r2-img {
+		width: 4rem;
+	}
+}
+.rc-3 {
+	width: 50%;
+	position: relative;
+	&:after {
+		@extend .border-top;
+	}
+	&:nth-child(3):after{
+		@extend .border-left;
+	}
 }
 .new-insure {
 	font-size: $md-font;
@@ -75,27 +109,10 @@
 .nav-tabs-2 li a{padding: 14px 0;}
 
 // ----表单----
-.form-list {
-	li {
-		@extend .list-box;
-		font-size: $md-font;
-	}
-	label {
-		width: 4rem;
-		display: inline-block;
-	}
-	input {
-		@extend .list-info;
-	}
-	input[type=date] {
-		height: 24px;
-	}
-}
 //地区简写
 .region {
-	@include btnBorder(30px,#ccc);
+	@include btnBorder(28px,#ccc);
 	color: #333;
-	margin-right: 10px;
 	padding: 0 4px;
 	span {letter-spacing: .1rem;}
 	i{
@@ -106,20 +123,145 @@
 }
 .select-box {
 	display: inline-block;
+	padding-right: 18px;
     position: relative;
     line-height: 24px;
-	
+	width: 5rem;
+	text-align: right;
     select {
-    	padding: 0 30px;
 	    position: relative;
 	    z-index: 2;
 	}
     .icon-right {
     	position: absolute;
+    	height: 24px;
 	    right: 0;
-	    top: 0;
+	    top: 2px;
     }
 }
+//上传文件
+.upload-file {
+	position: relative;
+    overflow: hidden;
+    height: 24px;
+	input[type="file"] {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    opacity: 0;
+	    display: block;
+	}
+	i{
+		font-size:26px;
+		margin-right: 0 !important;
+		color: #999;
+	}   
+}
+.date {
+	position: relative;
+	color: #999;
+	&.getDate {color: #333;}
+	input {
+		@include height(24px);
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+}
+//不计免赔
+.checkbox-pay {
+	position: relative;
+	@include btnRadius(30px);
+	margin-left: 10px;
+	overflow: hidden;
+	color: #888;
+	width: 80px;
+	font-size: $md-font;
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		border: 1px solid #ccc;
+		border-radius: 6px;
+	}
+	i {
+		display: block;
+		background: url(../images/check.png) no-repeat;
+		background-size: 100% 100%;
+		width: 20px;
+		height: 20px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		opacity: 0;
+	}
+	input:checked {
+		border-color: $color-theme;
+	}
+	input:checked + p {color: $color-theme;}
+	input:checked + p + i {	
+		opacity: 1 !important;
+	}
+}
+.form-list {
+	li {
+		@extend .list-box;
+		font-size: $md-font;
+		padding: 10px;
+	}
+	label {
+		width: 4rem;
+		display: inline-block;
+	}
+	input[type="text"],
+	input[type="tel"] {
+		@extend .list-info;
+	}
+	.region {
+		margin: -3px 10px -3px 0;
+	}
+	.slide-btn {
+		margin: -3px 0;
+	}
+	.select-box,.select-box select{
+		@include height(24px);
+	}
+}
+
+.plan-list {
+	overflow: hidden;
+	li {
+		@extend .list-box;
+		font-size: $md-font;
+		padding: 10px;
+	}
+	input[type="text"],
+	input[type="tel"],.date {
+		text-align: right;
+		@include height(24px);
+		width: 7rem;
+	}
+
+	h5.list-info {
+		border-left: 3px solid #f63;
+   	 	padding-left: 6px;
+	}
+	.slide-btn {
+		margin: -3px 0;
+	}
+	.select-box,.select-box select{
+		@include height(24px);
+	}
+}
+
+
 .tips {
 	padding: 0 $gauge;
 	overflow: hidden;
@@ -140,7 +282,6 @@
 	background-color: #fff;
 	z-index: 4;
 	top: 0;
-	line-height: 40px;
 	box-sizing: border-box;
 	-webkit-transform: translateX(150%) translateZ(0);
     -webkit-transition: all .4s linear 0s;
@@ -155,6 +296,7 @@
 	li{
 		position: relative;
 		padding: 0 1rem;
+		line-height: 40px;
 		box-sizing: border-box;
 		&:after {
 			@extend .border-bottom;
@@ -170,6 +312,10 @@
 .whole-list {
 	width: 100%;
 	text-align: left;
+	li {
+		padding: .5rem 1rem;
+		line-height: 20px;
+	}
 }
 .return-back {
 	position: fixed;
@@ -187,25 +333,7 @@
 		top: 0;
 	}
 }
-.upload-file {
-	position: relative;
-    overflow: hidden;
-	input[type="file"] {
-		position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-	    opacity: 0;
-	    display: block;
-	}
-	i{
-		font-size:26px;
-		margin-right: 0 !important;
-		color: #999;
-	}   
 
-}
 
 
 // ----------添加车辆----------
@@ -245,6 +373,10 @@
 		z-index: 2;
 	}
 }
+.idCardImg {
+	background: url(../images/idCard.jpg) no-repeat;
+	background-size: 100% 100%;
+}
 .span-right {margin-right: 6px;}
 // 协议
 .protocol {
@@ -257,7 +389,7 @@
     margin-bottom: $gauge; 
     li{
     	margin: $gauge $gauge 0 $gauge;
-	    padding: $gauge;
+	    // padding: $gauge;
 	    position: relative;
 	    background-color: #fff;
 	    border-radius: .4rem;
@@ -279,6 +411,7 @@
     color: #999;
     line-height: 20px;
 }
+.life-insure li{padding:$gauge; }
 
 /*--选项卡触摸样式--*/
 .swiper-container {
@@ -379,9 +512,15 @@
     @include height(62px);
     .all-check {
         display: -webkit-box;
+        -webkit-box-orient: horizontal;
+    	-webkit-box-pack: initial;
     }
     .btn {margin: 0;}
     .btn-1 {width: 120px;}
+    .two-btn {
+    	padding-bottom: 0;
+    	a{width: 6rem;margin: 0 .5rem;}
+    }
 }
 
 // -----个人中心---、
@@ -492,9 +631,10 @@
 	font-size: $md-font;
 }
 .title-gray {
-	padding-left: $gauge;
-	padding-top: $bgMargin;
-	color:#999;
+	padding-left: 0.5rem;
+    padding-top: 8px;
+    color: #999;
+    margin-bottom: -8px;
 }
 // -------账户明细-----
 .table {
@@ -527,6 +667,9 @@
     		@extend .border-bottom:after;
     	}
 	}
+	tr {
+	   	td:last-child{text-align: center;}
+	   }
 }
 // -------违章查办------
 .break-rules {
@@ -536,11 +679,11 @@
 		padding: 10px $gauge;
 		box-sizing: border-box;
 		margin: $bgMargin $gauge;
-		overflow: hidden;
-		border-radius: 10px;
+		border-radius: .4rem;
 		&:after {
 			@extend %mini-border;
 			border: 1px solid $border-color;
+			border-radius: .6rem;
 		}
 		.btn {
 			margin: 0;
@@ -698,6 +841,7 @@
 		color: #999;
 		font-size: $md-font;
 		margin-bottom: 10px;
+		text-align: justify;
 	}
 	img {
 		margin-bottom: 10px;
@@ -779,6 +923,51 @@ i.icon-wchat {
 	}
 }
 
+// --------我的客户----------
+.sort-tabs {
+	background-color: #FFF;
+	@include height(24px);
+	padding: 12px 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 15;
+	li {
+		position: relative;
+		color: #666;
+		&:nth-child(1):after {
+			@extend .border-right;
+		}
+	}
+	i.icon-up {color: $color-theme;}
+}
+.sort-box {
+	position: absolute;
+	top: 48px;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	display: none;
+	ul {
+		background-color: #fff;
+		position: relative;
+		z-index: 15;
+		line-height: 40px;
+		width: 100%;
+		text-align: center;
+		li.active {
+			color: $color-theme;
+		}
+	}
+}
+.icon-phone {color: #ff7c48;}
+
+// ---客户详情--
+h3.list-info {font-size: $lg-font;}
+.modify-form input,
+.modify-form textarea, 
+.modify-form .getDate
+{color: #666 !important;}
 
 
 // -----红包----
@@ -804,7 +993,7 @@ i.icon-wchat {
 }
 // ---最后---
 .show {display:block;}
-.hide {display: none;}
+.hide {display: none !important;}
 .more-wp-open {
     -webkit-transform: translateX(0) translateZ(0) !important;
     -webkit-transition: all .4s;

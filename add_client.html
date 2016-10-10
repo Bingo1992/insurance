@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<title>添加车辆</title>
+	<title>添加客户</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -14,43 +14,33 @@
 </head>
 <body>
 	<div class="banner">
-        <div class="camera-box">
+        <div class="camera-box idCardImg">
             <i class="icon-camera"></i>
-            <p>识别驾驶证信息</p>
+            <p>识别身份证信息</p>
             <input type="file">
         </div>
         <ul class="form-list border-list">
             <li>
-                <label>车牌号码</label>
-                <div class="region">
-                    <span class="slideValue">苏A</span>
-                    <i class="icon-down"></i>
-                </div>
-                <input type="text" placeholder="输入车牌号码">
-                <span class="span-right">未上牌</span>
-                <div class="slide-btn">
-                    <input type="checkbox">
-                </div>
+                <label>客户姓名</label>
+                <input type="text" placeholder="请输入客户姓名">
             </li>
             <li>
-                <label>品牌型号</label>
-                <input type="text" placeholder="只需输入英文和数字">
+                <label>客户电话</label>
+                <input type="text" placeholder="请输入客户电话号码">
             </li>
             <li>
-                <label>车架号码</label>
-                <input type="text" placeholder="输入车辆识别代码">
-            </li>
-            <li>
-                <label>手机号码</label>
-                <input type="tel" placeholder="输入手机号码">
+                <label>身份证号</label>
+                <input type="tel" placeholder="请输入真实身份证号码">
             </li>
         </ul>
-        <a class="btn">提交信息</a>
     </div>
     <!-- -banner- -->
 
     <!-- 底部固定内容 -->
     <div class="fixed-bottom"> 
+        <div class="actionBar-container list-box border-top">
+           <a href="add_client_2.html" class="btn list-info">下一步</a>
+        </div>
         <!-- 底部导航 -->
         <ul class="nav-bar equably-layout">
             <li>
@@ -152,9 +142,11 @@
             <li>Z</li>
         </ul>
     </div>
-
    <script type="text/javascript">
    $(function(){
+        $('.nav-tabs li').click(function(){
+            $(this).switchTabs('.nav-tabs li');
+        });
         //选择车牌号
         $('.region').click(function(){
             var slide = new SlideDialog();

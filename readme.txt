@@ -5,7 +5,10 @@
 提醒：msg.html
 我的：personnel.html
 
+客户详情：client_detail.html
+客户资料：client_info.html
 添加客户：add_client.html
+
 
 
 添加车辆： addCar.html

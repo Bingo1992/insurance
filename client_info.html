@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<title>升级认证</title>
+	<title>客户资料</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -14,28 +14,52 @@
 </head>
 <body>
 	<div class="banner">
-        <form>
+        <form class="modify-form">
+            <p class="title-gray">个人资料</p>
             <ul class="form-list border-list">
                 <li>
-                    <label>真实姓名</label>
-                    <input type="text" placeholder="请输入真实姓名">
+                    <label>用户姓名</label>
+                    <input type="text" value="邰小宝">
+                </li>
+                <li>
+                    <label>性别</label>
+                    <input type="text" value="男">
                 </li>
                 <li>
                     <label>身份证号</label>
-                    <input type="text" placeholder="请输入身份证号">
+                    <input type="text" value="440106198410211006">
                 </li>
                 <li>
-                    <span class="list-info">上传从业资格证</span>
-                    <span class="file-src font-gray"></span>
-                    <div class="upload-file">
-                        <i class="icon-camera"></i>
-                        <input class="file" type="file">
+                    <label>出生日期</label>
+                    <div class="date getDate list-info">
+                       <input type="date" value="1984-10-20"> 
+                       <span>1984-10-20</span>
                     </div>
                 </li>
             </ul>
+            <p class="title-gray">联系方式</p>
+            <ul class="form-list border-list">
+                <li>
+                    <label>联系电话</label>
+                    <input type="text" value="13800138000">
+                </li>
+                <li>
+                    <label>QQ</label>
+                    <input type="text" value="1165846656">
+                </li>
+                <li>
+                    <label>微信</label>
+                    <input type="text" value="13800138000">
+                </li>
+                <li>
+                    <label>联系地址</label>
+                    <input type="text" value="广州市天河区中山大道38号10楼1003广州市天河区中山大道38号10楼1003">
+                   <!--  <textarea class="list-info" rows="2">广州市天河区中山大道38号10楼1003
+                    </textarea> -->
+                </li>
+            </ul>
             
-            <a class="btn">立刻认证</a>
-            <a class="btn-history" href="#">认证客户权益</a>
+            <a class="btn">保存信息</a>
         </form>
            
     </div>
@@ -78,32 +102,7 @@
         </ul>
     </div>
 
-    <div class="ui-dialog">
-        <div class="dialog-cnt">
-            <i class="icon-cancel"></i>
-            <h2>认证用户权益</h2>
-            <div class="dialog-content">
-                <p class="font-gray">1、原价回购业务：凡会员钻石带满一年后可终身享有原价回购；<br>
-                2、高额投资回报：会员可获得每年高于银行固定利率的5%作为投
-                     资收益；<br>
-                3、产品寄售业务：可帮会员代售本会所钻石产品，享受更高投资
-                     成果；<br>
-                4、分期付款零利率：零手续费、零利率，满足您多方面的投资需求<br>
-                5、DIY个性化定制：拥有强大资深的设计研发团队，特聘日本珠宝
-                     设计大师朴载林，亲自手工制作为您量身订制，打造国际顶级奢
-                     华款式。设计师为您个性化定制服务的同时，更加重视原创设计，
-                     保证每一件珠宝首饰都是不可复制的艺术品；<br>
-                6、奢侈品定购：低于市场价格2/3的价格，圆您奢侈品的梦想；<br>
-                7、会员积分换钻石：特设尊贵会员星级制度及会员推荐累计积分形
-                     式，让您获得更多的会员利益与惊喜；<br>
-                8、会员大礼包：会员可享受店内提供的所有精美礼品，以及会所合
-                     作商户提供的礼品等；<br>
-                9、珠宝评估：会员珍藏珠宝，可免费评估鉴赏并收购；<br>
-                10、换购业务：钻石可以小换大，会员享有三月内彩宝可免费换戴；<br>
-                11、售后保养：可终身免费清洗、保养、维护、个性刻字、改手寸。</p>
-           </div>
-        </div>
-    </div>
+  
     <script type="text/javascript">
     $(function(){
         $('.file').change(function(){

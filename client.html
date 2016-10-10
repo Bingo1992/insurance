@@ -6,38 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
-    <title>收入明细</title>
+    <title>我的客户</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/fonts.css">
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
 </head>
 
 <body>
-    <div class="banner">
-         <ul class="nav-tabs equably-layout border-bottom">
-            <li hidefocus="true" class="active"><a>全部</a></li>
-            <li hidefocus="true"><a>支出</a></li>
-            <li hidefocus="true"><a>收入</a></li>
+    <div class="banner-2">
+         <ul class="sort-tabs equably-layout border-bottom">
+            <li>
+                <span>排序</span>
+                <i class="icon-down"></i>
+                
+            </li>
+            <li>
+                <span>筛选</span>
+                <i class="icon-down"></i>
+            </li>
         </ul>
 
-        <div class="bg-show">
+        <div class="bg-show" style="margin-top: 64px;">
             <table class="table border-top">
                 <tr>
-                    <td>2016-09-13 12:00:01</td>
-                    <td>余额充值</td>
-                    <td class="font-green">+<span>5000</span></td>
+                    <td class="font-black">邰小宝</td>
+                    <td>
+                        <a href="tel:13678226440">
+                            <i class="icon-phone"></i>
+                            <span>13678226440</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="font-gray" href="client_detail.html">客户详情</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>2016-09-13 12:00:01</td>
-                    <td>车险购买</td>
-                    <td class="font-theme">-<span>5000</span></td>
+                    <td class="font-black">邰小宝</td>
+                    <td>
+                        <a href="tel:13678226440">
+                            <i class="icon-phone"></i>
+                            <span>13678226440</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="font-gray" href="client_detail.html">客户详情</a>
+                    </td>
                 </tr>
                 <tr>
-                    <td>2016-09-13 12:00:01</td>
-                    <td>推广奖励</td>
-                    <td class="font-green">+<span>5000</span></td>
+                    <td class="font-black">邰小宝</td>
+                    <td>
+                        <a href="tel:13678226440">
+                            <i class="icon-phone"></i>
+                            <span>13678226440</span>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="font-gray" href="client_detail.html">客户详情</a>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -83,7 +109,51 @@
             </li>
         </ul>
     </div>
-    
+
+    <!-- //排序，筛选 -->
+    <div class="sort-box border-list">
+        <ul>
+            <li class="active">车险到期时间（由近到远）</li>
+            <li>车险报价时间（由近到远）</li>
+        </ul>
+        <div class="ui-dialog show"></div>
+    </div>
+    <div class="sort-box border-list">
+        <ul>
+            <li class="active">未投保车辆</li>
+            <li>已投保车辆</li>
+        </ul>
+        <div class="ui-dialog show"></div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        //点击排序。筛选
+        $('.sort-tabs li').click(function(){
+            var $_this = $(this);
+            var $_i = $(this).find('i');
+            //
+            if($_i.hasClass('icon-down')){
+                $_this.switchTabs('.sort-tabs li','.sort-box')
+                      .find('i').attr('class','icon-up');
+                $_this.siblings('li').find('i').attr('class','icon-down');
+                event.stopPropagation();
+            }    
+        });
+
+        // 点击排序，筛选的内容
+        $('.sort-box li').click(function(){
+            $(this).switchTabs('.sort-box');
+        });
+
+        //点击其他地方隐藏遮罩
+        $(document).click(function() {
+            $('.sort-tabs i').attr('class','icon-down');
+            $('.sort-box').removeClass('show');
+        });
+          
+    });
+    </script>
 </body>
 
 </html>

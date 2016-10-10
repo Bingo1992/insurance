@@ -11,19 +11,41 @@
     <link rel="stylesheet" href="css/fonts.css">
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
 </head>
 
 <body>
     <div class="banner">
-         <ul class="nav-tabs equably-layout border-bottom">
+        
+        <ul class="life-insure content-list">
+            <li>
+                <img src="images/life1.jpg">
+                <h2 class="nowrap">平安保险为你撑起保护伞</h2>
+                <div class="m-info">
+                    <p>
+                       优惠到家优惠低至8.8折，即送现金红包
+                    </p>
+                </div>
+                <a class="font-theme" href="lifeInsure_detail.html">点击了解</a>
+            </li>
+            <li>
+                <img src="images/life2.jpg">
+                <h2 class="nowrap">下单即送保险专项大礼包</h2>
+                <div class="m-info">
+                    <p>
+                       投保现金反馈，最多反利高达1000元
+                    </p>
+                </div>
+                <a class="font-theme" href="lifeInsure_detail.html">点击了解</a>
+            </li>
+        </ul>
+        <!--  <ul class="nav-tabs equably-layout border-bottom">
             <li hidefocus="true" class="active"><a>车险</a></li>
             <li hidefocus="true"><a>寿险</a></li>
-        </ul>
-        <div class="swiper-container content-list">
-            <div class="swiper-wrapper">
+        </ul> -->
+       <!--  <div class="swiper-container content-list">
+            <div class="swiper-wrapper life-insure">
                 
-                <!-- 每一列 -->
+              
                 <div class="swiper-slide">
                     <ul class="content-slide">
                         <li>
@@ -48,7 +70,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- 每一列 -->
+             
                 <div class="swiper-slide">
                     <ul class="content-slide">
                         <li>
@@ -86,7 +108,7 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
        
 
@@ -126,37 +148,6 @@
             </li>
         </ul>
     </div>
-    <script type="text/javascript">
-    // $(function(){
-    //     var height=0;
-    //     window.onload = function(){
-    //         height = $('.content-slide')[0].clientHeight;
-    //         $('.swiper-container').css('height',height+60+'px');
-    //     }
-       
-    //     var tabsSwiper = new Swiper('.swiper-container', {
-    //         speed: 500,
-    //         onSlideChangeStart: function() {
-    //             $(".nav-tabs .active").removeClass('active');
-    //             $(".nav-tabs li").eq(tabsSwiper.activeIndex).addClass('active');
-    //             height = $('.content-slide')[tabsSwiper.activeIndex].clientHeight;
-    //             $('.swiper-container').css('height',height+60+'px');
-    //         }
-    //     });
-
-    //     $(".nav-tabs li").on('touchstart mousedown', function(e) {
-    //         e.preventDefault()
-    //         $(".nav-tabs .active").removeClass('active');
-    //         $(this).addClass('active');
-    //         tabsSwiper.swipeTo($(this).index());
-    //     });
-
-    //     $(".nav-tabs li").click(function(e) {
-    //         e.preventDefault();
-    //     });
-
-    // })
-    </script>
 </body>
 
 </html>
