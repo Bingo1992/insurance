@@ -67,23 +67,25 @@
         }
     });
 
-    //选择车牌号,省市
+    //选择车牌号,省市遮罩
     function SlideDialog(option){
         var self = this;
         // var $dialogList = $('.dialog-list');
         // var $slideElm = $('.slideValue');
         // self.dialogList = $(dialogList);
         // self.slideElm = $slideElm;
-        var $startLi = $('.dialog-start-list li');
-        var $endLi = $('.dialog-end-list li');
-        var $returnBack = $('.return-back');
-       
-        var slideValue = '';
         var opt = {
             dialogList : $('.dialog-list'),
             slideElm : $('.slideValue')
         };
         opt = $.extend(opt, option||{});
+
+        var $startLi = opt.dialogList.find('.dialog-start-list li');
+        var $endLi = opt.dialogList.find('.dialog-end-list li');
+        var $returnBack = opt.dialogList.find('.return-back');
+       
+        var slideValue = '';
+        
         
         self.opt = opt;
         self.dialogList = self.opt.dialogList;
@@ -114,7 +116,7 @@
             self.dialogList.removeClass('more-wp-open');
             $('body').removeClass('fixed-body');
             self.slideValue += $(this).html();
-            // self.slideElm.val(self.slideValue);
+            self.slideElm.val(self.slideValue);
             self.slideElm.html(self.slideValue);
         });
         // 返回按钮

@@ -123,14 +123,13 @@
 }
 .select-box {
 	display: inline-block;
-	padding-right: 18px;
+	padding: 0 20px;
     position: relative;
     line-height: 24px;
-	width: 5rem;
-	text-align: right;
     select {
 	    position: relative;
 	    z-index: 2;
+	    direction: rtl;
 	}
     .icon-right {
     	position: absolute;
@@ -277,7 +276,7 @@
 	font-size: $md-font;
 }
 // --遮罩--
-.dialog-list {
+.dialog-list,.city-list ,.zone-list{
 	@extend .fixed-bottom;
 	background-color: #fff;
 	z-index: 4;

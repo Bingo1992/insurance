@@ -566,7 +566,7 @@ i.icon-tip.icon-hook {
   padding-left: 4px;
 }
 
-.fixed-bottom, .fixed-body, .dialog-list {
+.fixed-bottom, .fixed-body, .dialog-list, .city-list, .zone-list {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -797,15 +797,14 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .select-box {
   display: inline-block;
-  padding-right: 18px;
+  padding: 0 20px;
   position: relative;
   line-height: 24px;
-  width: 5rem;
-  text-align: right;
 }
 .select-box select {
   position: relative;
   z-index: 2;
+  direction: rtl;
 }
 .select-box .icon-right {
   position: absolute;
@@ -958,7 +957,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   font-size: 12px;
 }
 
-.dialog-list {
+.dialog-list, .city-list, .zone-list {
   background-color: #fff;
   z-index: 4;
   top: 0;

@@ -15,14 +15,14 @@
 <body>
 	<div class="banner">
         <ul class="plan-list border-list">
-            <li>
+            <li class="btn-city">
                 <span class="list-info">投保城市</span>
-                <input type="text" placeholder="选择城市" readonly>
+                <input class="cityValue" type="text" placeholder="选择城市" readonly>
                 <i class="icon-right"></i>  
             </li>
-            <li>
+            <li class="btn-zone">
                 <span class="list-info">投保区县</span>
-                <input type="text" placeholder="选择区县" readonly>
+                <input class="zoneValue" type="text" placeholder="选择区县" readonly>
                 <i class="icon-right"></i>  
             </li>
         </ul>
@@ -62,12 +62,12 @@
             <li>
                 <span class="list-info">车险损失险</span>
                 <div class="checkbox-pay">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <p>不计免赔</p>
                     <i></i>
                 </div>
                 <div class="select-box">
-                    <select>
+                    <select dir="rtl">
                         <option>投保</option>
                         <option>不投保</option>
                     </select> 
@@ -77,14 +77,127 @@
             <li>
                 <span class="list-info">第三方责任险险</span>
                 <div class="checkbox-pay">
-                    <input type="checkbox">
+                    <input type="checkbox" checked>
                     <p>不计免赔</p>
                     <i></i>
                 </div>
                 <div class="select-box">
-                    <select>
-                        <option>投保</option>
+                    <select dir="rtl">
                         <option>不投保</option>
+                        <option>5万</option>
+                        <option>10万</option>
+                        <option>15万</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">司机座位险</span>
+                <div class="checkbox-pay">
+                    <input type="checkbox" checked>
+                    <p>不计免赔</p>
+                    <i></i>
+                </div>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>1万</option>
+                        <option>2万</option>
+                        <option>3万</option>
+                        <option>4万</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">乘客座位险</span>
+                <div class="checkbox-pay">
+                    <input type="checkbox" checked>
+                    <p>不计免赔</p>
+                    <i></i>
+                </div>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>1万</option>
+                        <option>2万</option>
+                        <option>3万</option>
+                        <option>4万</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li>
+                <span class="list-info">盗抢险</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>投保</option>  
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li class="other-insure">
+                <span class="list-info">玻璃碎屏险</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>国产</option>  
+                        <option>进口</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li class="other-insure">
+                <span class="list-info">划痕险(含不计免赔)</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>2000</option>  
+                        <option>5000</option>
+                        <option>1万</option>
+                        <option>2万</option>
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+				<li class="other-insure">
+                <span class="list-info">涉水险(含不计免赔)</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>投保</option>  
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li class="other-insure">
+                <span class="list-info">自燃险(含不计免赔)</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>不投保</option>  
+                        
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li class="other-insure">
+                <span class="list-info">指定维修厂特约险</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>投保</option>  
+                    </select> 
+                    <i class="icon-right"></i>
+                </div>
+            </li>
+            <li class="other-insure">
+                <span class="list-info">无法找到第三方责任险</span>
+                <div class="select-box">
+                    <select dir="rtl">
+                        <option>不投保</option>
+                        <option>投保</option>  
                     </select> 
                     <i class="icon-right"></i>
                 </div>
@@ -131,7 +244,7 @@
         </ul>
     </div>
      <!-- 选择城市遮罩 -->
-  <!--   <div class="dialog-list">
+    <div class="city-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择城市</h4>
@@ -142,30 +255,6 @@
             <li>浙江省</li>
             <li>四川省</li>
             <li>安徽省</li>
-            <li>豫</li>
-            <li>鄂</li>
-            <li>湘</li>
-            <li>吉</li>
-            <li>沪</li>
-            <li>渝</li>
-            <li>云</li>
-            <li>晋</li>
-            <li>蒙</li>
-            <li>贵</li>
-            <li>京</li>
-            <li>陕</li>
-            <li>冀</li>
-            <li>辽</li>
-            <li>津</li>
-            <li>桂</li>
-            <li>闽</li>
-            <li>黑</li>
-            <li>新</li>
-            <li>琼</li>
-            <li>甘</li>
-            <li>青</li>
-            <li>宁</li>
-            <li>藏</li>
         </ul>
         <ul class="dialog-end-list">
             <li>广州市</li>
@@ -175,41 +264,37 @@
             <li>江门市</li>
             <li>肇庆市</li>
         </ul>
-    </div> -->
+    </div>
 
     <!-- 选择区县遮罩 -->
-   <!--  <div class="dialog-list">
+    <div class="zone-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择区县</h4>
         </a>
-        <ul class="dialog-end-list">
+        <ul class="dialog-end-list whole-list">
             <li>天河区</li>
             <li>海珠区</li>
             <li>越秀区</li>
             <li>番禺区</li>
         </ul>
-    </div> -->
+    </div>
    <script type="text/javascript">
    $(function(){
-    $('.slide-btn').click(function(){
-       var $list = $(this).closest('ul');
-       var $thisli = $(this).closest('li');
-       var index = $('.border-list li').index($(this));
-       var $li = $list.find('li');
-       var check = $(this).find(':checkbox').prop('checked');
-       if(!check){
-            //隐藏内容
-            for(var i = 1;i < $li.length; i++){
-               $li.eq(i).addClass('hide');
-           }
-       }else {
-            //显示内容
-           for(var i = index+1;i < $li.length; i++){
-               $li.eq(i).removeClass('hide');
-           }
-        }
-    });
+   		//选择城市
+        $('.btn-city').click(function(){
+            var slide = new SlideDialog({
+            	dialogList : $('.city-list'),
+            	slideElm : $('.cityValue')
+            });
+        });
+        //选择区县
+        $('.btn-zone').click(function(){
+            var slide = new SlideDialog({
+            	dialogList : $('.zone-list'),
+            	slideElm : $('.zoneValue')
+            });
+        });
      
    });
    </script>
