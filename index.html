@@ -91,7 +91,7 @@
             <div class="tips">
                 <p class="font-gray fr">目前只支持9座以下非营运私家车辆</p>
             </div>
-            <a class="btn" href="#">保存信息</a>
+            <a class="btn">保存信息</a>
             <a class="btn-history" href="history_car.html">最近查看历史</a>
         </form>
            
@@ -354,11 +354,10 @@
         $('.btn').click(function(){
             var idCard = $('.idCard').val();
             if(idCard ==''){
-                $(this).isEmpty('身份证号不能为空');
+                $(this).isWrong('身份证号不能为空');
             }else if(!checkIdCard(idCard)){
                 $(this).isWrong('身份证号有误');
             }else {
-                $(this).isRight('信息已提交');
                 window.location.href = "car_info.html";
             }
         });

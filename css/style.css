@@ -192,7 +192,8 @@ img {
 }
 
 .list-info, .form-list input[type="text"],
-.form-list input[type="tel"] {
+.form-list input[type="tel"],
+.form-list input[type="password"] {
   -webkit-box-flex: 1;
   box-flex: 1;
   display: box;
@@ -202,13 +203,9 @@ img {
   margin-right: 10px;
   line-height: 24px;
 }
-.list-info .list-box, .form-list input[type="text"] .list-box,
-.form-list input[type="tel"] .list-box, .list-info .form-list li, .form-list .list-info li, .form-list input[type="text"] li,
-.form-list input[type="tel"] li, .list-info .plan-list li, .plan-list .list-info li {
-  padding: 0;
-}
 .list-info p, .form-list input[type="text"] p,
-.form-list input[type="tel"] p {
+.form-list input[type="tel"] p,
+.form-list input[type="password"] p {
   font-size: 12px;
   color: #999;
 }
@@ -385,12 +382,13 @@ img {
 .tip-content {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
+  padding: 10px;
   line-height: 24px;
   border-radius: .3rem;
-  max-width: 180px;
+  max-width: 240px;
   min-width: 100px;
   text-align: center;
+  font-size: 12px;
 }
 
 i.icon-tip {
@@ -527,10 +525,14 @@ i.icon-tip.icon-hook {
   padding: 1rem;
   font-size: 12px;
   box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  -webkit-box-orient: horizontal;
 }
 .sudoku li {
-  float: left;
-  width: 50%;
+  -webkit-box-flex: 1;
+  width: 100%;
   box-sizing: border-box;
 }
 .sudoku li .yellow {
@@ -796,21 +798,24 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 }
 
 .select-box {
-  display: inline-block;
-  padding: 0 20px;
+  padding: 0 18px;
   position: relative;
-  line-height: 24px;
 }
 .select-box select {
   position: relative;
   z-index: 2;
-  direction: rtl;
 }
 .select-box .icon-right {
   position: absolute;
   height: 24px;
   right: 0;
   top: 2px;
+}
+
+.select-box.list-info, .form-list input.select-box[type="text"],
+.form-list input.select-box[type="tel"],
+.form-list input.select-box[type="password"] {
+  padding: 0;
 }
 
 .upload-file {
@@ -852,16 +857,16 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .checkbox-pay {
   position: relative;
-  height: 30px;
-  line-height: 30px;
+  height: 26px;
+  line-height: 26px;
   border-radius: 4px;
   text-align: center;
   display: block;
   margin-left: 10px;
   overflow: hidden;
   color: #888;
-  width: 80px;
-  font-size: 12px;
+  width: 70px;
+  font-size: 10px;
 }
 .checkbox-pay input {
   position: absolute;
@@ -894,10 +899,24 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   opacity: 1 !important;
 }
 
-.form-list li {
+.form-list li, .plan-list li {
   font-size: 12px;
-  padding: 10px;
+  padding: 12px 10px;
 }
+.form-list .slide-btn, .plan-list .slide-btn {
+  margin: -3px 0;
+}
+.form-list .select-box, .form-list .select-box select, .plan-list .select-box, .plan-list .select-box select {
+  height: 24px;
+  line-height: 24px;
+}
+.form-list h5.list-info, .plan-list h5.list-info {
+  border-left: 3px solid #f63;
+  padding-left: 6px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+
 .form-list label {
   width: 4rem;
   display: inline-block;
@@ -905,20 +924,9 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 .form-list .region {
   margin: -3px 10px -3px 0;
 }
-.form-list .slide-btn {
-  margin: -3px 0;
-}
-.form-list .select-box, .form-list .select-box select {
-  height: 24px;
-  line-height: 24px;
-}
 
 .plan-list {
   overflow: hidden;
-}
-.plan-list li {
-  font-size: 12px;
-  padding: 10px;
 }
 .plan-list input[type="text"],
 .plan-list input[type="tel"], .plan-list .date {
@@ -927,16 +935,11 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   line-height: 24px;
   width: 7rem;
 }
-.plan-list h5.list-info {
-  border-left: 3px solid #f63;
-  padding-left: 6px;
+.plan-list .checkbox select {
+  min-width: 4rem;
 }
-.plan-list .slide-btn {
-  margin: -3px 0;
-}
-.plan-list .select-box, .plan-list .select-box select {
-  height: 24px;
-  line-height: 24px;
+.plan-list .checkbox-pay {
+  margin: -1px 0;
 }
 
 .tips {
@@ -1084,11 +1087,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   border-radius: .6rem;
 }
 
-.swiper-container h2 {
+.m-info {
   margin-top: .3rem;
 }
-
-.m-info {
+.m-info p {
   font-size: 12px;
   color: #999;
   line-height: 20px;
@@ -1096,6 +1098,12 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .life-insure li {
   padding: 0.5rem;
+}
+.life-insure li a.font-theme {
+  position: absolute;
+  bottom: .5rem;
+  right: .5rem;
+  font-size: 14px;
 }
 
 /*--选项卡触摸样式--*/
@@ -1110,12 +1118,6 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   backface-visibility: hidden;
   /* Fix of Webkit flickering */
   z-index: 1;
-}
-.swiper-container a.font-theme {
-  position: absolute;
-  bottom: .5rem;
-  right: .5rem;
-  font-size: 14px;
 }
 
 .swiper-wrapper {
@@ -1410,6 +1412,19 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   text-align: center;
 }
 
+.line-info {
+  line-height: 30px;
+  padding: 10px 0;
+  margin: 0 0.5rem;
+  color: #999;
+  font-size: 12px;
+}
+.line-info p > span:nth-child(1) {
+  width: 60px;
+  display: block;
+  float: left;
+}
+
 .break-rules li {
   position: relative;
   background-color: #fff;
@@ -1528,14 +1543,12 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 .order-list {
   padding-top: 44px;
 }
-.order-list li {
-  padding: 0 0.5rem;
-}
 
 .title-order {
   height: 50px;
   line-height: 50px;
   font-size: 12px;
+  padding: 0 0.5rem;
 }
 
 .order-sort {
@@ -1547,23 +1560,14 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   z-index: 3;
 }
 
-.order-content {
-  line-height: 32px;
-  color: #999;
-  font-size: 12px;
-  padding: 10px 0;
-}
-.order-content p > span {
-  padding-left: 10px;
-}
-
 .order-pay {
   color: #999;
   font-size: 12px;
   overflow: hidden;
+  padding: 0 0.5rem;
 }
 .order-pay span {
-  padding-left: 10px;
+  padding-left: 8px;
   height: 50px;
   line-height: 50px;
 }
@@ -1732,10 +1736,11 @@ h3.list-info {
   font-size: 16px;
 }
 
-.modify-form input,
-.modify-form textarea,
-.modify-form .getDate {
+.modify-form input, .modify-form textarea, .modify-form .getDate {
   color: #666 !important;
+}
+.modify-form .per-img img {
+  margin: 20px auto;
 }
 
 .big-red {

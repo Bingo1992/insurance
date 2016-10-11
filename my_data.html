@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>我的资料</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+        <form class="modify-form">
+            <div class="per-img">
+                <img src="images/user.png">
+            </div>
+            <ul class="form-list border-list">
+                <li>
+                    <label>用户姓名</label>
+                    <input type="text" value="邰小宝">
+                </li>
+                <li>
+                    <label>手机号码</label>
+                    <input type="text" value="13800138000">
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input type="text" value="440106198410211006">
+                </li>
+                <li>
+                    <label>所属营业部</label>
+                    <input type="text" value="广州天河营业部">
+                </li>
+                <li>
+                    <label>联系地址</label>
+                    <input type="text" value="广州市天河区中山大道38号10楼1003广州市天河区中山大道38号10楼1003">
+                </li>
+            </ul>
+
+            <ul class="border-list">
+                <li>
+                    <a class="list-box" href="modify_password.html">
+                        <span class="list-info">修改密码</span>
+                        <i class="icon-right"></i>
+                    </a>
+                </li>
+            </ul>
+            
+            <a class="btn">保存信息</a>
+        </form>
+           
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+  
+    <script type="text/javascript">
+    $(function(){
+        $('.file').change(function(){
+            var src = $(this).val();//获取文件路径
+            var arr=src.split('\\');//注split可以用字符或字符串分割 
+            var name=arr[arr.length-1];//取得的文件名称 
+            $(this).closest('.upload-file').siblings('.file-src').html(name);
+        });
+        //认证客户权益
+        $('.btn-history').click(function(){
+            $(this).showUiDialog('.ui-dialog');
+        });
+    });
+    </script>
+  
+</body>
+</html>

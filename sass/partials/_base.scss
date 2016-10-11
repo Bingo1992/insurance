@@ -167,9 +167,9 @@ $bgMargin: 16px;
     -webkit-box-pack:center;
     margin-right: 10px;
     line-height: 24px;
-    .list-box {
-    	padding:  0;
-    }
+    // .list-box {
+    // 	padding:  0;
+    // }
     p{
         font-size: $md-font;
         color: #999;
@@ -328,12 +328,13 @@ $bgMargin: 16px;
 .tip-content{
     color: #fff;
     background-color: rgba(0,0,0,.7);
-    padding: 1rem;
+    padding: 10px;
     line-height: 24px;
     border-radius: .3rem;
-    max-width: 180px;
+    max-width: 240px;
     min-width: 100px;
     text-align: center;
+    font-size: $md-font;
 }
 // ---form validate----
 i.icon-tip{
@@ -458,17 +459,23 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
     padding: $gauge*2;
     font-size: $md-font;
     box-sizing:border-box;
+    display:-webkit-box;
+    -webkit-box-align:center;
+    -webkit-box-pack:center;
+    -webkit-box-orient: horizontal;
     li {
-    	float: left;
-	    width: 50%;
-	    box-sizing:border-box;
+    	// float: left;
+	    // width: 50%;
+	    -webkit-box-flex:1;
+        width: 100%;
+        box-sizing:border-box;
         .yellow{background-color: #ffab33; }
         .orange{background-color: #ff7c48; }
 	    .green{background-color: #7dd077;}
         .red{background-color: #fd5e5e;}
     }
     a{
-    	 display:-webkit-box;
+    	display:-webkit-box;
         -webkit-box-align:center;
         -webkit-box-pack:center;
 	    -webkit-box-orient: vertical;

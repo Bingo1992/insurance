@@ -59,7 +59,7 @@
                 </div>
                 <i class="icon-right"></i>
             </li>
-            <li>
+            <li class="car-insure first-insure">
                 <span class="list-info">车险损失险</span>
                 <div class="checkbox-pay">
                     <input type="checkbox" checked>
@@ -74,7 +74,7 @@
                     <i class="icon-right"></i>
                 </div>
             </li>
-            <li>
+            <li class="car-insure">
                 <span class="list-info">第三方责任险险</span>
                 <div class="checkbox-pay">
                     <input type="checkbox" checked>
@@ -84,14 +84,14 @@
                 <div class="select-box">
                     <select dir="rtl">
                         <option>不投保</option>
-                        <option>5万</option>
+                        <option selected>5万</option>
                         <option>10万</option>
                         <option>15万</option>
                     </select> 
                     <i class="icon-right"></i>
                 </div>
             </li>
-            <li>
+            <li class="car-insure">
                 <span class="list-info">司机座位险</span>
                 <div class="checkbox-pay">
                     <input type="checkbox" checked>
@@ -101,7 +101,7 @@
                 <div class="select-box">
                     <select dir="rtl">
                         <option>不投保</option>
-                        <option>1万</option>
+                        <option selected>1万</option>
                         <option>2万</option>
                         <option>3万</option>
                         <option>4万</option>
@@ -109,7 +109,7 @@
                     <i class="icon-right"></i>
                 </div>
             </li>
-            <li>
+            <li class="car-insure">
                 <span class="list-info">乘客座位险</span>
                 <div class="checkbox-pay">
                     <input type="checkbox" checked>
@@ -119,7 +119,7 @@
                 <div class="select-box">
                     <select dir="rtl">
                         <option>不投保</option>
-                        <option>1万</option>
+                        <option selected>1万</option>
                         <option>2万</option>
                         <option>3万</option>
                         <option>4万</option>
@@ -203,7 +203,7 @@
                 </div>
             </li>
         </ul>
-        <a class="btn">保存信息</a>
+        <a class="btn" href="select_company.html">保存信息</a>
     </div>
     <!-- -banner- -->
 
@@ -290,10 +290,37 @@
         });
         //选择区县
         $('.btn-zone').click(function(){
-            var slide = new SlideDialog({
-            	dialogList : $('.zone-list'),
-            	slideElm : $('.zoneValue')
-            });
+            var cityValue = $('.cityValue').val();
+            if (cityValue=="") {
+                $(this).isWrong('请先选择城市');
+            }else {
+                var slide = new SlideDialog({
+                    dialogList : $('.zone-list'),
+                    slideElm : $('.zoneValue')
+                });
+            }
+        });
+
+        //是否投保
+        $('.car-insure').find('select').change(function(){
+            var selValue = $(this).find('option:selected').val();
+            var $parent = $(this).closest('li');
+            var $checkbox = $parent.find('.checkbox-pay');
+            
+            if(selValue=="不投保"){
+                //隐藏不计免赔
+                $checkbox.addClass('hide')
+                         .find(':checkbox').prop('checked','checked');
+                // 如果是车险损失险，则隐藏后面几项
+                if($parent.hasClass('first-insure')){
+                    $('.other-insure').addClass('hide');
+                }   
+            }else {
+                $checkbox.removeClass('hide');
+                if($parent.hasClass('first-insure')){
+                    $('.other-insure').removeClass('hide');
+                } 
+            }     
         });
      
    });

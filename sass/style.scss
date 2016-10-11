@@ -122,14 +122,12 @@
 	}
 }
 .select-box {
-	display: inline-block;
-	padding: 0 20px;
+	padding: 0 18px;
     position: relative;
-    line-height: 24px;
     select {
 	    position: relative;
 	    z-index: 2;
-	    direction: rtl;
+	    // direction: rtl;
 	}
     .icon-right {
     	position: absolute;
@@ -138,6 +136,8 @@
 	    top: 2px;
     }
 }
+.select-box.list-info {padding: 0;}
+
 //上传文件
 .upload-file {
 	position: relative;
@@ -174,12 +174,12 @@
 //不计免赔
 .checkbox-pay {
 	position: relative;
-	@include btnRadius(30px);
+	@include btnRadius(26px);
 	margin-left: 10px;
 	overflow: hidden;
 	color: #888;
-	width: 80px;
-	font-size: $md-font;
+	width: 70px;
+	font-size: $sm-font;
 	input {
 		position: absolute;
 		top: 0;
@@ -209,22 +209,11 @@
 		opacity: 1 !important;
 	}
 }
-.form-list {
+.form-list,.plan-list {
 	li {
 		@extend .list-box;
 		font-size: $md-font;
-		padding: 10px;
-	}
-	label {
-		width: 4rem;
-		display: inline-block;
-	}
-	input[type="text"],
-	input[type="tel"] {
-		@extend .list-info;
-	}
-	.region {
-		margin: -3px 10px -3px 0;
+		padding: 12px 10px;
 	}
 	.slide-btn {
 		margin: -3px 0;
@@ -232,31 +221,40 @@
 	.select-box,.select-box select{
 		@include height(24px);
 	}
+	h5.list-info {
+		border-left: 3px solid #f63;
+   	 	padding-left: 6px;
+   	 	line-height: 20px;
+   	 	margin: 2px 0;
+   	 }
 }
-
+//左边填写信息
+.form-list {	
+	label {
+		width: 4rem;
+		display: inline-block;
+	}
+	input[type="text"],
+	input[type="tel"],
+	input[type="password"] {
+		@extend .list-info;
+	}
+	.region {
+		margin: -3px 10px -3px 0;
+	}	
+}
+//右边选择信息
 .plan-list {
 	overflow: hidden;
-	li {
-		@extend .list-box;
-		font-size: $md-font;
-		padding: 10px;
-	}
 	input[type="text"],
 	input[type="tel"],.date {
 		text-align: right;
 		@include height(24px);
 		width: 7rem;
 	}
-
-	h5.list-info {
-		border-left: 3px solid #f63;
-   	 	padding-left: 6px;
-	}
-	.slide-btn {
-		margin: -3px 0;
-	}
-	.select-box,.select-box select{
-		@include height(24px);
+	.checkbox select {min-width: 4rem;}
+	.checkbox-pay {
+		margin: -1px 0;
 	}
 }
 
@@ -401,16 +399,24 @@
     } 
 }
 
-.swiper-container h2{
-    margin-top: .3rem;
-}
-
 .m-info {
-    font-size: $md-font;
-    color: #999;
-    line-height: 20px;
+	margin-top: .3rem;
+	p {
+		font-size: $md-font;
+	    color: #999;
+	    line-height: 20px;
+	}
+    
 }
-.life-insure li{padding:$gauge; }
+.life-insure li{
+	padding:$gauge;
+	a.font-theme{
+    	position: absolute;
+	    bottom: .5rem;
+	    right: .5rem;
+	    font-size: 14px;
+    }
+}
 
 /*--选项卡触摸样式--*/
 .swiper-container {
@@ -424,12 +430,7 @@
     backface-visibility:hidden;
     /* Fix of Webkit flickering */
     z-index:1;
-    a.font-theme{
-    	position: absolute;
-	    bottom: .5rem;
-	    right: .5rem;
-	    font-size: 14px;
-    }
+    
 }
 .swiper-wrapper {
     position:relative;
@@ -670,6 +671,21 @@
 	   	td:last-child{text-align: center;}
 	   }
 }
+
+
+// -----收入明细----
+.line-info {
+	line-height: 30px;
+	padding: 10px 0;
+	margin: 0  $gauge;
+	color: #999;
+	font-size: $md-font;
+	p>span:nth-child(1){
+		width: 60px;
+		display: block;
+		float: left;
+	}
+}
 // -------违章查办------
 .break-rules {
 	li {
@@ -774,13 +790,11 @@
 // -----订单列表----、
 .order-list {
 	padding-top: 44px;
-	li{
-		padding: 0 $gauge;
-	}
 }
 .title-order{
 	@include height(50px);
 	font-size: $md-font;
+	padding: 0 $gauge;
 
 }
 .order-sort {
@@ -791,20 +805,21 @@
 	width: 100%;
 	z-index:3;
 }
-.order-content {
-	line-height: 32px;
-	color: #999;
-	font-size: $md-font;
-	padding: 10px 0;
-	p>span{padding-left: 10px;}
-}
+// .order-content {
+// 	line-height: 32px;
+// 	color: #999;
+// 	font-size: $md-font;
+// 	padding: 10px 0;
+// 	p>span{padding-left: 10px;}
+// }
 
 .order-pay {
 	color: #999;
 	font-size: $md-font;
 	overflow: hidden;
+	padding: 0 $gauge;
 	span {
-		padding-left: 10px;
+		padding-left: 8px;
 		@include height(50px);
 	}
 	.btn-border,.btn {
@@ -963,10 +978,15 @@ i.icon-wchat {
 
 // ---客户详情--
 h3.list-info {font-size: $lg-font;}
-.modify-form input,
-.modify-form textarea, 
-.modify-form .getDate
-{color: #666 !important;}
+
+.modify-form {
+	input,textarea,.getDate{
+		color: #666 !important;
+	}
+	.per-img img {
+		margin: 20px auto;
+	}
+}
 
 
 // -----红包----

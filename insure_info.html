@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>填写保单信息</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+        
+        <ul class="form-list border-list">
+            <li>
+                <h5 class="list-info">被保人信息</h5>
+            </li>
+            <li>
+                <label>客户姓名</label>
+                <input type="text" placeholder="请输入姓名">
+            </li>
+            <li>
+                <label>证件类型</label>
+                <div class="select-box list-info">
+                    <select class="list-info">
+                        <option>身份证</option>
+                        <option>驾驶证</option>
+                    </select>
+                </div>
+                <i class="icon-right"></i>
+            </li>
+            <li>
+                <label>证件号码</label>
+                <input type="text" placeholder="请输入证件号码">
+            </li>
+            <li class="select-province">
+                <label>省份</label>
+                <span class="provinceValue list-info"><input type="text" placeholder="请选择所在省份" readonly></span>
+                <i class="icon-right"></i>
+            </li>
+            <li class="select-city">
+                <label>城市</label>
+                <span class="cityValue list-info"><input type="text" placeholder="请选择所在城市" readonly></span>
+                <i class="icon-right"></i>
+            </li>
+        </ul>
+
+        <ul class="form-list border-list">
+            <li>
+                <h5 class="list-info">受益人</h5>
+                <span class="font-gray">法定</span>
+            </li>
+        </ul>
+
+        <ul class="form-list border-list">
+            <li>
+                <h5 class="list-info">投保信息</h5>
+            </li>
+            <li>
+                <span class="list-info">保险起期</span>
+                <span class="font-gray">2016-09-14</span>
+            </li>
+            <li>
+                <span class="list-info">合计</span>
+                <span class="font-theme">
+                ￥<span>500.00</span></span>
+            </li>
+        </ul>
+
+        <label class="protocol" for="protocol">
+            <div class="checkbox">
+                <input class="list-info"  type="checkbox" id="protocol">
+                <i class="icon-hook"></i>
+            </div>
+            <span class="font-gray">本人已阅读并同意<a class="font-blue" href="#">《投保申明》</a></span>
+        </label>
+        <a class="btn" href="select_plan.html">提交信息</a>
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+   
+
+     <!-- 选择城市遮罩 -->
+    <div class="province-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择省份</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>广东省</li>
+            <li>福建省</li>
+            <li>浙江省</li>
+            <li>四川省</li>
+            <li>安徽省</li>
+        </ul>
+    </div>
+
+    <!-- 选择区县遮罩 -->
+    <div class="city-list dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择城市</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>广州市</li>
+            <li>深圳市</li>
+            <li>珠海市</li>
+            <li>江门市</li>
+        </ul>
+    </div>
+   <script type="text/javascript">
+   $(function(){
+        $('.nav-tabs li').click(function(){
+            $(this).switchTabs('.nav-tabs li');
+        });
+        //选择省份
+        $('.select-province').click(function(){
+            var slide1 = new SlideDialog({
+                dialogList : $('.province-list'),
+                slideElm : $('.provinceValue')
+            });
+            
+        });
+        //选择城市
+        $('.select-city').click(function(){
+            var slide2 = new SlideDialog({
+                dialogList : $('.city-list'),
+                slideElm : $('.cityValue')
+            });
+        });
+
+   });
+   </script>
+</body>
+</html>

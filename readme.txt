@@ -9,25 +9,29 @@
 客户资料：client_info.html
 添加客户：add_client.html
 
-
-
 添加车辆： addCar.html
 最近添加车辆：history_car.html
 车辆信息： car_info.html
 
-寿险产品: life_insure.html
-寿险产品详情： lifeInsure_detail.html
-
+选择车险投保方案： select_plan.html
 选择保险公司: select_company.html
 报价结果：quote_result.html
-选择投保方案： select_plan.html
 未报价公司：not_quote.html
+
+寿险产品: life_insure.html
+寿险产品详情： lifeInsure_detail.html
+寿险投保方案：lifeInsure_plan.html
+填写保单信息：insure_info.html
+
 
 我的收入：my_income.html
 账户余额：my_balance.html
 账户明细：balance_detail.html
 
 我的红包： red_package.html
+
+我的资料：my_data.html
+修改密码：modify_password.html
 
 全部订单：order_list.html
 

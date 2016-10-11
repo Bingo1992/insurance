@@ -18,10 +18,9 @@
 ;(function($,win,doc,undefined){
     $.fn.extend({
         // 生成弹窗html
-        Tiphtml: function(className,text){
+        Tiphtml: function(text){
             var html = '<div class="tip-dialog show">\
             <div class="tip-content">\
-                <i class="'+className+'"></i>\
                 <p>'+text+'</p>\
             </div></div>';
             $('body').append(html);
@@ -31,14 +30,9 @@
         },
         //表单验证
         isWrong: function(text){
-           return this.Tiphtml("icon-tip icon-cancel",text);
+           return this.Tiphtml(text);
         },
-        isEmpty: function(text){
-           return this.Tiphtml("icon-tip icon-gantan",text);
-        },
-        isRight: function(text){
-            return this.Tiphtml("icon-tip icon-hook",text);
-        },
+       
         //弹窗
         showTipDialog: function(){
             return this.each(function() {
@@ -82,11 +76,9 @@
 
         var $startLi = opt.dialogList.find('.dialog-start-list li');
         var $endLi = opt.dialogList.find('.dialog-end-list li');
-        var $returnBack = opt.dialogList.find('.return-back');
-       
+        var $returnBack = opt.dialogList.find('.return-back');    
         var slideValue = '';
-        
-        
+   
         self.opt = opt;
         self.dialogList = self.opt.dialogList;
         self.slideElm = self.opt.slideElm;
@@ -116,8 +108,11 @@
             self.dialogList.removeClass('more-wp-open');
             $('body').removeClass('fixed-body');
             self.slideValue += $(this).html();
-            self.slideElm.val(self.slideValue);
-            self.slideElm.html(self.slideValue);
+            self.slideElm.html(self.slideValue);//span
+            if(self.slideElm.html()==""){
+               self.slideElm.val(self.slideValue); //input
+            }
+            
         });
         // 返回按钮
         self.returnBack.click(function(){
@@ -190,22 +185,31 @@ $(function(){
         }
     });   
 
-    //是否显示checkbox下面的内容
+    //是否显示checkbox下面的内容（添加客户车辆信息，选择投保方案）
     $('.slide-btn-check').click(function(){
        var $list = $(this).closest('ul');
+       var indexUl = $('.border-list').index($list);
+
        var $thisli = $(this).closest('li');
-       var index = $('.border-list li').index($thisli);
+       var index = $('.border-list').eq(indexUl).find('li').index($thisli);
+
        var $li = $list.find('li');
        var check = $(this).find(':checkbox').prop('checked');
        if(!check){
             //隐藏内容
+            $(this).siblings('.span-right').html('否');
             for(var i = index+1;i < $li.length; i++){
-               $li.eq(i).addClass('hide');
+               $li.eq(i).addClass('hide');   
            }
        }else {
             //显示内容
            for(var j = index+1;j < $li.length; j++){
+               $(this).siblings('.span-right').html('是');
                $li.eq(j).removeClass('hide');
+               // 若存在车险损失险不投保，则后面的保险不显示
+               if($('.first-insure').find('option:selected').val()=='不投保'){
+                    $('.other-insure').addClass('hide');
+               }
            }
         }
     }); 
