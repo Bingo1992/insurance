@@ -349,6 +349,10 @@ input.btn {
   text-align: center;
   position: relative;
 }
+.dialog-cnt .code-img {
+  width: 60%;
+  margin: 0 auto;
+}
 
 .dialog-content {
   padding: 16px 0.5rem;

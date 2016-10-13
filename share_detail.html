@@ -19,7 +19,8 @@
 			<div class="new-insure clearfix">
 				<div class="font-gray fl">
 				更新时间：
-					<span>2016-09-10</span>
+					<span class="span-right">2016-09-10</span>
+                    <a href="#" class="font-blue">超链接</a>
 				</div>
 			   	<div class="font-gray fr">1122<span>阅读</span></div>
 			</div>
@@ -69,6 +70,7 @@
                             <span class="label-yellow">身份认证</span>
                             <span class="label-green">资格认证</span>
                         </h4>
+                        <p>职位：<span>前端工程师</span></p>
                         <p>从业年限：<span>2</span>年
                         </p>
                         <p>擅长领域：<span>html,css,js,jquery</span>
@@ -85,39 +87,21 @@
             </li>
         </ul>
 
-        <ul class="form-list border-list">
-          <!--   <li>
-                <label>公司</label>
-                <input class="font-gray" type="text" value="中国移动广东分公司" readonly>
-            </li>
-            <li>
-                <label>地址</label>
-                <input class="font-gray" type="text" value="广东省广州市天河区黄埔大道国防大厦11楼" readonly>
-            </li>
-            <li>
-                <label>擅长领域</label>
-                <input class="font-gray" type="text" value="编程" readonly>
-            </li>
-            <li>
-                <label>从业年限</label>
-                <input class="font-gray" type="text" value="2年" readonly>
-            </li>
-            <li>
-                <label>资格认证</label>
-                <input class="font-gray" type="text" value="已认证" readonly>
-            </li>
-            <li>
-                <label>身份认证</label>
-                <input class="font-gray" type="text" value="已认证" readonly>
-            </li> -->
-            <li>
-                <label>拨打电话</label>
-                <a href="tel:13845796311" class="list-info">
+        <ul class="equably-layout bg-show">
+            <li class="border-right">
+                <a href="tel:13845796311">
+                    <i class="icon-phone"></i>
+                    <label>拨打电话</label>
                     <p>13845796311</p>
                 </a>
-                <i class="icon-right"></i>
             </li>
-            
+            <li class="btn-wchat">
+                <a>
+                    <i class="icon-wchat"></i>
+                    <label>微信号</label>
+                    <p>kelly.tai@163.com</p>
+                </a>
+            </li>
         </ul>
 	</div>
 
@@ -164,7 +148,7 @@
         </ul>
 	</div>
     <!-- //遮罩 -->
-    <div class="ui-dialog">
+    <div class="ui-dialog" id="dialog1">
         <div class="dialog-cnt">
             <i class="icon-cancel"></i>
             <h2>分享方式</h2>
@@ -198,10 +182,24 @@
            </div>
         </div>
     </div>
+
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>微信二维码</h2>
+            <div class="dialog-content">
+                <img class="code-img" src="images/code_02.png">
+                <p class="p-center font-gray">长按识别二维码添加好友</p>
+           </div>
+        </div>
+    </div>
     <script type="text/javascript">
     $(function(){
         $('.btn').click(function(){
-            $(this).showUiDialog('.ui-dialog');
+            $(this).showUiDialog('#dialog1');
+        });
+        $('.btn-wchat').click(function(){
+            $(this).showUiDialog('#dialog2');
         })
     })
     </script>
