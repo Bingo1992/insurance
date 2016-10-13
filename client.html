@@ -130,27 +130,28 @@
     $(function(){
         //点击排序。筛选
         $('.sort-tabs li').click(function(){
-            var $_this = $(this);
-            var $_i = $(this).find('i');
-            //
-            if($_i.hasClass('icon-down')){
-                $_this.switchTabs('.sort-tabs li','.sort-box')
-                      .find('i').attr('class','icon-up');
-                $_this.siblings('li').find('i').attr('class','icon-down');
-                event.stopPropagation();
-            }    
+            $(this).switchSortTabs('.sort-tabs li','.sort-box');
+            // var $_this = $(this);
+            // var $_i = $(this).find('i');
+            // //
+            // if($_i.hasClass('icon-down')){
+            //     $_this.switchTabs('.sort-tabs li','.sort-box')
+            //           .find('i').attr('class','icon-up');
+            //     $_this.siblings('li').find('i').attr('class','icon-down');
+            //     event.stopPropagation();
+            // }    
         });
 
-        // 点击排序，筛选的内容
-        $('.sort-box li').click(function(){
-            $(this).switchTabs('.sort-box');
-        });
+        // // 点击排序，筛选的内容
+        // $('.sort-box li').click(function(){
+        //     $(this).switchTabs('.sort-box');
+        // });
 
-        //点击其他地方隐藏遮罩
-        $(document).click(function() {
-            $('.sort-tabs i').attr('class','icon-down');
-            $('.sort-box').removeClass('show');
-        });
+        // //点击其他地方隐藏遮罩
+        // $(document).click(function() {
+        //     $('.sort-tabs i').attr('class','icon-down');
+        //     $('.sort-box').removeClass('show');
+        // });
           
     });
     </script>

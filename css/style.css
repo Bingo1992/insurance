@@ -88,6 +88,9 @@ img {
 .border-bottom,
 .dialog-start-list li:after,
 .dialog-end-list li:after,
+.border-right,
+.rc-1:after,
+.sort-tabs li:nth-child(1):after,
 .border-list,
 .border-list li,
 .bg-show {
@@ -151,6 +154,11 @@ img {
   background-color: #f63;
   margin: 16px 0.5rem;
   padding: 0 16px;
+}
+
+input.btn {
+  width: 17.75rem;
+  box-sizing: border-box;
 }
 
 .btn-cancel {
@@ -315,7 +323,7 @@ img {
 
 .dialog-cnt {
   position: relative;
-  width: 14rem;
+  width: 16rem;
   max-width: 375px;
   background-color: rgba(253, 253, 253, 0.95);
   border-radius: 6px;
@@ -901,7 +909,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .form-list li, .plan-list li {
   font-size: 12px;
-  padding: 12px 10px;
+  padding: 10px;
 }
 .form-list .slide-btn, .plan-list .slide-btn {
   margin: -3px 0;
@@ -1379,6 +1387,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   padding-top: 8px;
   color: #999;
   margin-bottom: -8px;
+  font-size: 12px;
 }
 
 .table {
@@ -1412,6 +1421,54 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   text-align: center;
 }
 
+.grid-bg {
+  background: -webkit-linear-gradient(top, #ff8756, #fe5534);
+  padding: 16px 0;
+  color: #fff;
+}
+.grid-bg li.border-right:after, .grid-bg li.rc-1:after, .grid-bg .sort-tabs li:nth-child(1):after, .sort-tabs .grid-bg li:nth-child(1):after {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.my-income {
+  text-align: center;
+  padding-bottom: 16px;
+}
+.my-income h2 {
+  font-size: 24px;
+}
+.my-income a {
+  height: 24px;
+  line-height: 24px;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 24px;
+  font-size: 12px;
+  margin: 6px auto;
+  display: inline-block;
+}
+
+p.income-title {
+  opacity: .5;
+  font-size: 12px;
+  color: #fff;
+}
+
+.recordContent {
+  padding: 10px 0 20px 0;
+}
+
+.recordCvs {
+  width: 16rem;
+  max-width: 414px;
+  display: block;
+  margin: 0 auto;
+}
+
 .line-info {
   line-height: 30px;
   padding: 10px 0;
@@ -1423,6 +1480,11 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   width: 60px;
   display: block;
   float: left;
+}
+
+.my-team h2 {
+  padding-bottom: 30px;
+  text-align: center;
 }
 
 .break-rules li {
@@ -1584,6 +1646,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   line-height: 30px;
 }
 
+.share-list .swiper-slide {
+  margin-top: 0;
+}
+
 .share-img {
   width: 100px;
   height: 70px;
@@ -1622,6 +1688,55 @@ i.icon-wchat {
   color: #fff;
   display: inline-block;
   font-size: 18px;
+}
+
+.sprite-share {
+  display: inline-block;
+  background-image: url(../images/share.png);
+  background-size: 100% 400%;
+  background-position: 0 0;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+.sprite-share.wchat {
+  background-position: 0 66.666%;
+}
+.sprite-share.weibo {
+  background-position: 0 100%;
+}
+.sprite-share.qq {
+  background-position: 0 33.33%;
+}
+
+.resume-list {
+  margin-top: 20px;
+}
+.resume-list .list-box, .resume-list .form-list li, .form-list .resume-list li, .resume-list .plan-list li, .plan-list .resume-list li {
+  padding: 30px 10px 0 10px;
+}
+.resume-list .state {
+  padding: 4px 10px 10px 10px;
+  font-size: 12px;
+  color: #999;
+  text-align: justify;
+}
+
+.resume-img {
+  margin-right: 10px;
+  width: 90px;
+}
+
+.company-name {
+  position: absolute;
+  left: 110px;
+  background-color: #f63;
+  color: #fff;
+  line-height: 26px;
+  top: -4px;
+  border-radius: 4px;
+  padding: 0 10px;
+  z-index: 3;
 }
 
 .msg-list {

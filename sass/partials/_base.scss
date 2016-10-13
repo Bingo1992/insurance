@@ -67,6 +67,7 @@ $bgMargin: 16px;
 
 .border-top,
 .border-bottom,
+.border-right,
 .border-list,
 .border-list li,
 .bg-show{
@@ -129,6 +130,10 @@ $bgMargin: 16px;
     background-color: $color-theme;
     margin: $bgMargin $gauge;
     padding: 0 16px;
+}
+input.btn {
+    width: 17.75rem;
+    box-sizing: border-box;
 }
 .btn-cancel {
     background-color: #ddd;
@@ -271,7 +276,7 @@ $bgMargin: 16px;
 }
 .dialog-cnt {
     position: relative;
-    width: 14rem;
+    width: 16rem;
     max-width: 375px;
     background-color: rgba(253,253,253,.95);
     border-radius: 6px;

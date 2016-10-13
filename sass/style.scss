@@ -213,7 +213,7 @@
 	li {
 		@extend .list-box;
 		font-size: $md-font;
-		padding: 12px 10px;
+		padding: 10px;
 	}
 	.slide-btn {
 		margin: -3px 0;
@@ -635,6 +635,7 @@
     padding-top: 8px;
     color: #999;
     margin-bottom: -8px;
+    font-size: $md-font;
 }
 // -------账户明细-----
 .table {
@@ -672,7 +673,41 @@
 	   }
 }
 
-
+// ----我的收入----
+.grid-bg {
+	background: -webkit-linear-gradient(top, #ff8756, #fe5534);
+	padding: $bgMargin 0;
+	color: #fff;
+	li.border-right:after {
+		border-color: rgba(255,255,255,.5);
+	}
+}
+.my-income {
+	text-align: center;
+	padding-bottom: $bgMargin;
+	h2 {font-size: 24px;}
+	a{
+		@include btnBorder(24px,#fff);
+		border-radius: 24px;
+		font-size: 12px;
+		margin: 6px auto;
+		display: inline-block;
+	}
+}
+p.income-title {
+	opacity: .5;
+	font-size: 12px;
+	color: #fff;
+}
+.recordContent {
+	padding: 10px 0 20px 0;
+}
+.recordCvs {
+	width: 16rem;
+	max-width: 414px;
+	display: block;
+	margin: 0 auto;
+}
 // -----收入明细----
 .line-info {
 	line-height: 30px;
@@ -685,6 +720,12 @@
 		display: block;
 		float: left;
 	}
+}
+
+// -----我的团队----
+.my-team h2{
+	padding-bottom: 30px;
+	text-align: center;
 }
 // -------违章查办------
 .break-rules {
@@ -835,6 +876,12 @@
 }
 
 // -------分享页---
+.share-list {
+	.swiper-slide{
+		margin-top: 0;
+	}
+}
+	
 .share-img {
 	width: 100px;
 	height: 70px;
@@ -868,6 +915,69 @@ i.icon-wchat {
 	color: #fff;
 	display: inline-block;
 	font-size: 18px;
+}
+
+.sprite-share {
+	display: inline-block;
+	background-image: url(../images/share.png);
+	background-size: 100% 400%;
+	background-position: 0 0;
+	text-align: center;
+	width: 50px;
+	height: 50px;
+	&.wchat {background-position: 0 66.666%;}
+	&.weibo {background-position: 0 100%;}
+	&.qq {background-position: 0 33.33%;}
+}
+
+// .resume-list {
+// 	margin-top: 40px;
+// 	li {
+// 		padding: .7rem;
+// 	}
+// 	.per-img {
+// 		position: absolute;
+// 	    top: -35px;
+// 	    left: 50%;
+// 	    margin-left: -35px;
+// 	    z-index: 5;
+// 	}
+// }
+// .resume-info {
+// 	margin-top: 30px;
+// 	font-size: $md-font;
+// 	color: #999;
+// 	.span-right {
+// 		width: 120px;
+//     	display: inline-block;
+// 	}
+// }
+.resume-list {
+	margin-top: 20px;
+	.list-box {
+		padding: 30px 10px 0 10px;
+	}
+	.state {
+		padding: 4px 10px 10px 10px;
+		font-size: $md-font;
+		color: #999;
+		text-align: justify;
+	}
+}
+.resume-img {
+	margin-right: 10px;
+	width: 90px;
+}
+.company-name {
+	position: absolute;
+	left: 110px;
+	background-color: $color-theme;
+	color: #fff;
+	line-height: 26px;
+	top: -4px;
+	border-radius: 4px;
+	padding: 0 10px;
+	z-index: 3;
 }
 
 // -----通知中心----、

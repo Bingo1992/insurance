@@ -46,8 +46,10 @@
         showUiDialog: function(option){
             return this.each(function() {
                 $(option).addClass('show');
+                $('body').addClass('fixed-body');
                 $('.icon-cancel').add('.cancel').click(function() {
                     $(this).parents(option).removeClass('show');
+                    $('body').removeClass('fixed-body');
                 });
             });
         },
@@ -57,6 +59,29 @@
                 var index = $(option1).index($(this));
                 $(this).addClass('active').siblings().removeClass('active');
                 $(option2).eq(index).addClass('show').siblings(option2).removeClass('show');   
+            });
+        },
+        //排序筛选
+        switchSortTabs:function(option1,option2){
+            return this.each(function(){
+                var $_this = $(this);
+                var $_i = $(this).find('i');
+                if($_i.hasClass('icon-down')){
+                    $_this.switchTabs(option1,option2)
+                          .find('i').attr('class','icon-up');
+                    $_this.siblings('li').find('i').attr('class','icon-down');
+                    event.stopPropagation();
+                } 
+                // 点击排序，筛选的内容
+                $(option2).find('li').unbind('click').click(function(){
+                    $(this).switchTabs(option2);
+                });
+
+                //点击其他地方隐藏遮罩
+                $(document).click(function() {
+                    $(option1).find('i').attr('class','icon-down');
+                    $(option2).removeClass('show');
+                });   
             });
         }
     });
@@ -95,7 +120,7 @@
         self.dialogList.addClass('more-wp-open');
         $('body').addClass('fixed-body');
         //点击左边
-        self.startLi.click(function(){
+        self.startLi.delegate($(this),'click',function(){
             $(this).switchTabs(self.startLi);
         });
         // 点击右边
@@ -107,12 +132,13 @@
             });
             self.dialogList.removeClass('more-wp-open');
             $('body').removeClass('fixed-body');
-            self.slideValue += $(this).html();
+            if($(this).html()!=self.slideValue) {
+                 self.slideValue += $(this).html();
+            }
             self.slideElm.html(self.slideValue);//span
             if(self.slideElm.html()==""){
                self.slideElm.val(self.slideValue); //input
             }
-            
         });
         // 返回按钮
         self.returnBack.click(function(){
@@ -213,4 +239,5 @@ $(function(){
            }
         }
     }); 
+    
 });

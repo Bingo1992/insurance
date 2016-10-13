@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <!-- 省份城市json库 -->
+    <script type="text/javascript" src="json/PlaceJson.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
@@ -249,20 +251,20 @@
             <i class="icon-left"></i>
             <h4>选择城市</h4>
         </a>
-        <ul class="dialog-start-list">
-            <li class="active">广东省</li>
+        <ul id="selProvince" class="dialog-start-list">
+<!--             <li class="active">广东省</li>
             <li>福建省</li>
             <li>浙江省</li>
             <li>四川省</li>
-            <li>安徽省</li>
+            <li>安徽省</li> -->
         </ul>
-        <ul class="dialog-end-list">
-            <li>广州市</li>
+        <ul id="selCity" class="dialog-end-list">
+          <!--   <li>广州市</li>
             <li>深圳市</li>
             <li>茂名市</li>
             <li>湛江市</li>
             <li>江门市</li>
-            <li>肇庆市</li>
+            <li>肇庆市</li> -->
         </ul>
     </div>
 
@@ -272,17 +274,55 @@
             <i class="icon-left"></i>
             <h4>选择区县</h4>
         </a>
-        <ul class="dialog-end-list whole-list">
-            <li>天河区</li>
+        <ul id="selDistrict" class="dialog-end-list whole-list">
+            <!-- <li>天河区</li>
             <li>海珠区</li>
             <li>越秀区</li>
-            <li>番禺区</li>
+            <li>番禺区</li> -->
         </ul>
     </div>
    <script type="text/javascript">
    $(function(){
-   		//选择城市
-        $('.btn-city').click(function(){
+
+        // ------添加省市区内容------
+        $.each(province, function (k, p) { 
+            var li = "<li data-id='" + p.ProID + "'>" + p.ProName + "</li>";
+            $("#selProvince").append(li);
+            $("#selProvince li").eq(0).addClass('active');
+        });
+
+        $.each(city, function (k, p) { 
+            if (p.ProID == 1) {
+                var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                $("#selCity").append(li);
+            }
+        });
+         
+        $("#selProvince li").delegate($(this),'click',function () {
+            var selValue = $(this).attr('data-id'); 
+            $("#selCity li").remove();
+            $.each(city, function (k, p) { 
+                if (p.ProID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";
+                    $("#selCity").append(li);
+                }
+            });
+        });
+         
+        $("#selCity").delegate('li','click',function () {
+            var selValue = $(this).attr('data-id');
+            $("#selDistrict li").remove();
+             $.each(district, function (k, p) {
+                if (p.CityID == selValue) {
+                    var li = "<li data-id='" + p.CityID + "'>" + p.DisName + "</li>";
+                    $("#selDistrict").append(li);
+                }
+            });  
+        }); 
+        // ------添加省市区内容结束------
+   		
+        //选择城市
+        $('.btn-city').delegate($(this),'click',function(){
             var slide = new SlideDialog({
             	dialogList : $('.city-list'),
             	slideElm : $('.cityValue')
