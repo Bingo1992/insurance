@@ -93,11 +93,12 @@ img {
 .sort-tabs li:nth-child(1):after,
 .border-list,
 .border-list li,
-.bg-show {
+.bg-show,
+.ui-border {
   position: relative;
 }
 
-.border-top:after, .bg-show:before, .border-list:before, .nav-bar:after, .rc-3:after, .border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after, .border-right:after, .rc-1:after, .sort-tabs li:nth-child(1):after, .border-left:after, .rc-3:nth-child(3):after, .content-list li:after, .lifeInsure_detail:after, .insure-state:after, .break-rules li:after, .msg-list li:after {
+.border-top:after, .bg-show:before, .border-list:before, .nav-bar:after, .rc-3:after, .border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after, .table-team th:after, .border-right:after, .rc-1:after, .sort-tabs li:nth-child(1):after, .border-left:after, .rc-3:nth-child(3):after, .ui-border:after, .content-list li:after, .lifeInsure_detail:after, .insure-state:after, .break-rules li:after, .msg-list li:after {
   position: absolute;
   display: block;
   content: "";
@@ -117,7 +118,7 @@ img {
   border-top: 1px solid #e1e1e1;
 }
 
-.border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after {
+.border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after, .table-team th:after {
   border-bottom: 1px solid #e1e1e1;
 }
 
@@ -127,6 +128,11 @@ img {
 
 .border-left:after, .rc-3:nth-child(3):after {
   border-left: 1px solid #e1e1e1;
+}
+
+.ui-border:after {
+  border: 1px solid #e1e1e1;
+  border-radius: 6px;
 }
 
 .border-list {
@@ -229,7 +235,7 @@ input.btn {
 }
 .equably-layout a {
   display: block;
-  padding: 10px 0;
+  margin: 10px 0;
   position: relative;
 }
 .equably-layout i {
@@ -349,10 +355,6 @@ input.btn {
   text-align: center;
   position: relative;
 }
-.dialog-cnt .code-img {
-  width: 60%;
-  margin: 0 auto;
-}
 
 .dialog-content {
   padding: 16px 0.5rem;
@@ -363,6 +365,11 @@ input.btn {
 
 .p-center {
   text-align: center;
+}
+
+.code-img {
+  width: 60%;
+  margin: 0 auto;
 }
 
 .two-btn {
@@ -580,7 +587,31 @@ i.icon-tip.icon-hook {
   padding-left: 4px;
 }
 
-.fixed-bottom, .fixed-body, .dialog-list, .city-list, .zone-list {
+.scroll_load {
+  text-align: center;
+  color: #999;
+  line-height: 30px;
+}
+.scroll_load .icon-loading {
+  display: none;
+}
+
+.scroll_load.loading .icon-loading {
+  display: inline-block;
+  font-size: 26px;
+  margin-right: 4px;
+  -webkit-animation: scroll_loading 1s steps(12) infinite;
+}
+
+@-webkit-keyframes scroll_loading {
+  from {
+    -webkit-transform: rotate(0deg) translateZ(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateZ(0);
+  }
+}
+.fixed-bottom, .fixed-body, .dialog-list {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -945,7 +976,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   text-align: right;
   height: 24px;
   line-height: 24px;
-  width: 7rem;
+  width: 9rem;
 }
 .plan-list .checkbox select {
   min-width: 4rem;
@@ -972,7 +1003,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   font-size: 12px;
 }
 
-.dialog-list, .city-list, .zone-list {
+.dialog-list {
   background-color: #fff;
   z-index: 4;
   top: 0;
@@ -994,6 +1025,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   padding: 0 1rem;
   line-height: 40px;
   box-sizing: border-box;
+}
+
+.city-list ul, .zone-list ul {
+  text-align: left;
 }
 
 .dialog-start-list {
@@ -1411,17 +1446,17 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   text-align: right;
 }
 
-.table-2 {
+.table-2, .table-team {
   height: 44px;
   line-height: 44px;
   text-align: center;
   margin-top: 0;
 }
-.table-2 th {
+.table-2 th, .table-team th {
   font-weight: normal;
   position: relative;
 }
-.table-2 tr td:last-child {
+.table-2 tr td:last-child, .table-team tr td:last-child {
   text-align: center;
 }
 
@@ -1441,7 +1476,13 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 .my-income h2 {
   font-size: 24px;
 }
-.my-income a {
+
+.sales-btn {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.btn-white {
   height: 24px;
   line-height: 24px;
   border-radius: 4px;
@@ -1452,7 +1493,8 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   padding: 0 10px;
   border-radius: 24px;
   font-size: 12px;
-  margin: 6px auto;
+  margin: 6px;
+  padding: 0 20px;
   display: inline-block;
 }
 
@@ -1481,7 +1523,7 @@ p.income-title {
   font-size: 12px;
 }
 .line-info p > span:nth-child(1) {
-  width: 60px;
+  margin-right: 10px;
   display: block;
   float: left;
 }
@@ -1489,6 +1531,42 @@ p.income-title {
 .my-team h2 {
   padding-bottom: 30px;
   text-align: center;
+}
+
+.team-tabs {
+  padding-top: 16px;
+}
+.team-tabs ul {
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  border: 1px solid #f63;
+  color: #f63;
+  padding: 0 10px;
+  padding: 0;
+  display: inherit;
+}
+.team-tabs li {
+  padding: 0 20px;
+}
+.team-tabs li.active {
+  color: #fff;
+  background-color: #f63;
+}
+
+.table-team {
+  display: none;
+}
+
+.table-team.show {
+  display: table;
+}
+
+i.icon-map {
+  font-size: 20px;
+  color: #ccc;
 }
 
 .break-rules li {
@@ -1646,8 +1724,50 @@ p.income-title {
 }
 .order-pay .btn {
   width: 50px;
-  height: 30px;
-  line-height: 30px;
+  height: 28px;
+  line-height: 28px;
+}
+
+.btn-borderTheme {
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  border: 1px solid #f63;
+  color: #f63;
+  padding: 0 10px;
+}
+
+.pdt {
+  padding-top: 10px;
+}
+
+.pdb {
+  padding-bottom: 10px;
+}
+
+.quote-info .btn-borderTheme {
+  position: absolute;
+  right: 10px;
+  bottom: 14px;
+}
+
+.content-list .equably-layout {
+  margin-top: 6px;
+}
+.content-list .equably-layout li:after {
+  border: none;
+}
+
+.table-order {
+  margin-top: 10px;
+}
+.table-order tr td {
+  padding: 2px 10px;
+}
+.table-order tr td:last-child {
+  text-align: right;
 }
 
 .share-list .swiper-slide {
@@ -1741,6 +1861,14 @@ i.icon-wchat {
   border-radius: 4px;
   padding: 0 10px;
   z-index: 3;
+}
+
+.invite-list img, .invite-list .border-top, .invite-list .rc-3:after {
+  padding: 20px 0;
+}
+
+.invite-type li:after {
+  border: none;
 }
 
 .msg-list {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="format-detection" content="telephone=no" />
-    <title>我的团队</title>
+    <title>我的营业部</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/fonts.css">
     <script src="js/jquery.min.js"></script>
@@ -14,10 +14,10 @@
 </head>
 
 <body>
-    <div class="banner-2">
+    <div class="banner">
         <div class="grid-bg">
             <div class="my-team">
-                <h2>广州平安天河团队</h2>
+                <h2>广州平安天河区营业部</h2>
             </div>
             <ul class="equably-layout">
                 <li class="border-right">
@@ -33,12 +33,15 @@
                    <p class="income-title">参保人数（人）</p> 
                 </li>
             </ul>
+            <div class="sales-btn">
+                <a class="btn-white" href="my_team.html">团队</a>
+                <a class="btn-white">订单</a>
+            </div>
         </div>  
-        <div class="team-tabs two-btn bg-show">
-            <ul>
-                <li class="active"><p>我的团队</p></li>
-                <li><p>所在团队</p></li>
-            </ul>
+        <div class="list-box bg-show">
+          <i class="icon-map"></i>
+          <div class="list-info">
+            <p>广州市天河区黄埔大道西88号国防大厦18楼</p></div>
         </div>  
         <table class="table-team table border-top show">
             <thead class="font-black">
@@ -71,43 +74,7 @@
                 </tr>
             </tbody>
         </table>
-        <table class="table-team table  border-top">
-            <thead class="font-black">
-                <tr>
-                    <th>姓名</th>
-                    <th>保费（元）</th>
-                    <th>排名</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>邰小宝2</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>邰小宝2</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>3</td>
-                </tr>
-
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
-        </table>
+        
          <!-- 加载 -->
         <div class="scroll_load">
             <i class="icon-loading"></i><span class="pullUpLabel">点击加载更多</span>
@@ -117,9 +84,7 @@
     
     <!-- 底部固定内容 -->
     <div class="fixed-bottom"> 
-      <div class="actionBar-container list-box border-top">
-           <a href="invite_friend.html" class="btn list-info">邀请好友加入</a>
-        </div>
+    
         <!-- 底部导航 -->
         <ul class="nav-bar equably-layout">
             <li>
@@ -161,23 +126,6 @@
         $('.team-tabs li').click(function(){
             $(this).switchTabs('.team-tabs li','.table');
         });
-
-        // 下拉加载刷新
-        // window.onscroll = function(){
-        //     var scroll = new ScrollLoading({
-        //         step:3
-        //     },function(){
-        //         for(var i=0; i<3; i++){
-        //                 count++;
-        //                 $('.table.show').append('<tr>\
-        //             <td>邰小宝</td>\
-        //             <td class="font-theme">52535.00</td>\
-        //             <td>4</td>\
-        //         </tr>')
-        //             }
-        //     })
-        
-        // }
     });
     </script>
 </body>

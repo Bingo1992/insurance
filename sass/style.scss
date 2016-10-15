@@ -250,7 +250,7 @@
 	input[type="tel"],.date {
 		text-align: right;
 		@include height(24px);
-		width: 7rem;
+		width: 9rem;
 	}
 	.checkbox select {min-width: 4rem;}
 	.checkbox-pay {
@@ -274,7 +274,7 @@
 	font-size: $md-font;
 }
 // --遮罩--
-.dialog-list,.city-list ,.zone-list{
+.dialog-list{
 	@extend .fixed-bottom;
 	background-color: #fff;
 	z-index: 4;
@@ -299,6 +299,9 @@
 			@extend .border-bottom;
 		}
 	}
+}
+.city-list ul,.zone-list ul{
+	text-align: left;
 }
 .dialog-start-list{
 	background-color: #eee;
@@ -657,7 +660,7 @@
    }
 }
 
-.table-2 {
+.table-2,.table-team {
 	 @include height;
 	 text-align: center;
 	 margin-top: 0;
@@ -686,13 +689,18 @@
 	text-align: center;
 	padding-bottom: $bgMargin;
 	h2 {font-size: 24px;}
-	a{
-		@include btnBorder(24px,#fff);
-		border-radius: 24px;
-		font-size: 12px;
-		margin: 6px auto;
-		display: inline-block;
-	}
+}
+.sales-btn {
+	text-align: center;
+	padding-top: $bgMargin;
+}
+.btn-white {
+	@include btnBorder(24px,#fff);
+	border-radius: 24px;
+	font-size: 12px;
+	margin: 6px;
+	padding: 0 20px;
+	display: inline-block;
 }
 p.income-title {
 	opacity: .5;
@@ -716,7 +724,7 @@ p.income-title {
 	color: #999;
 	font-size: $md-font;
 	p>span:nth-child(1){
-		width: 60px;
+		margin-right: 10px;
 		display: block;
 		float: left;
 	}
@@ -727,6 +735,26 @@ p.income-title {
 	padding-bottom: 30px;
 	text-align: center;
 }
+.team-tabs {
+	padding-top: $bgMargin;
+	
+	ul {
+		@include btnBorder(28px,$color-theme);
+		padding:0;
+		display: inherit;
+	}
+	
+	li {
+		padding: 0 20px;
+		&.active {
+			color: #fff;
+			background-color: $color-theme;
+		}
+	}	
+}
+.table-team {display:none;}
+.table-team.show {display:table;}
+i.icon-map {font-size: 20px;color:#ccc;}
 // -------违章查办------
 .break-rules {
 	li {
@@ -871,10 +899,41 @@ p.income-title {
 	}
 	.btn{
 		width: 50px;
-		@include height(30px);
+		@include height(28px);
 	}
 }
 
+// -----订单详情---
+.btn-borderTheme {
+	@include btnBorder(28px);
+}
+.pdt{padding-top: 10px;}
+.pdb{padding-bottom: 10px;}
+.quote-info {
+	.btn-borderTheme {
+		position: absolute;
+		right: 10px;
+		bottom: 14px;
+	}
+}
+.content-list .equably-layout{
+	margin-top: 6px;	
+	li:after {
+		border: none;
+	}
+}
+.table-order {
+	margin-top: 10px;
+	tr {
+		td{
+			padding: 2px 10px;
+			&:last-child {
+				text-align: right;
+			}
+		}
+		
+	}
+}
 // -------分享页---
 .share-list {
 	.swiper-slide{
@@ -978,6 +1037,18 @@ i.icon-wchat {
 	border-radius: 4px;
 	padding: 0 10px;
 	z-index: 3;
+}
+
+// ----邀请好友----
+.invite-list {
+	img,.border-top {
+		padding: 20px 0;
+	}
+}
+.invite-type {
+	li:after {
+		border: none;
+	}	
 }
 
 // -----通知中心----、

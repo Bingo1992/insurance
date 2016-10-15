@@ -22,7 +22,7 @@
 寿险产品详情： lifeInsure_detail.html
 寿险投保方案：lifeInsure_plan.html
 填写保单信息：insure_info.html
-
+订单详情：order_detail.html
 
 我的收入：my_income.html
 账户余额：my_balance.html
@@ -37,6 +37,8 @@
 
 营业部：sales_department.html
 我的团队：my_team.html
+邀请好友：invite_friend.html
+
 我的名片：my_card.html
 推荐奖励：recommend_prize.html
 认证升级：certify_update.html

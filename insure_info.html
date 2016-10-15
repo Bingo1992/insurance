@@ -82,8 +82,8 @@
                 </div>
                 <span class="font-gray">本人已阅读并同意<a class="font-blue" href="#">《投保申明》</a></span>
             </label>
-            <input class="btn" type="submit" value="提交信息">
-            <!-- <a  class="btn">提交信息</a> -->
+            <!-- <input class="btn" type="submit" value="提交信息"> -->
+            <a  class="btn">提交信息</a>
          </form>
     </div>
     <!-- -banner- -->
@@ -156,7 +156,7 @@
         $("#selProvince").delegate('li','click',function () {
             var selValue = $(this).attr('data-id'); 
             $("#selCity li").remove();
-             
+            $('.cityValue').html('').append('<input type="text" placeholder="请选择所在城市" readonly>');//重置城市的值
             $.each(city, function (k, p) { 
                 if (p.ProID == selValue) {
                     var li = "<li data-id='" + p.CityID + "'>" + p.CityName + "</li>";

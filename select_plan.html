@@ -246,7 +246,7 @@
         </ul>
     </div>
      <!-- 选择城市遮罩 -->
-    <div class="city-list">
+    <div class="city-list dialog-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择城市</h4>
@@ -269,7 +269,7 @@
     </div>
 
     <!-- 选择区县遮罩 -->
-    <div class="zone-list">
+    <div class="zone-list dialog-list">
         <a class="return-back border-bottom">
             <i class="icon-left"></i>
             <h4>选择区县</h4>
@@ -284,7 +284,9 @@
    <script type="text/javascript">
    $(function(){
 
+
         // ------添加省市区内容------
+        var value = null;
         $.each(province, function (k, p) { 
             var li = "<li data-id='" + p.ProID + "'>" + p.ProName + "</li>";
             $("#selProvince").append(li);
@@ -298,7 +300,7 @@
             }
         });
          
-        $("#selProvince li").delegate($(this),'click',function () {
+        $("#selProvince").delegate('li','click',function () {
             var selValue = $(this).attr('data-id'); 
             $("#selCity li").remove();
             $.each(city, function (k, p) { 
@@ -311,6 +313,16 @@
          
         $("#selCity").delegate('li','click',function () {
             var selValue = $(this).attr('data-id');
+            $('.dialog-start-list li').each(function(){
+                if($(this).hasClass('active')){
+                    value = $(this).html() + ' - ';
+                }//获取左边的值
+            });
+            value += $(this).html();
+            $('.cityValue').val(value);
+            $('.zoneValue').val('');
+            $('.dialog-list').removeClass('more-wp-open');
+            $('body').removeClass('fixed-body');
             $("#selDistrict li").remove();
              $.each(district, function (k, p) {
                 if (p.CityID == selValue) {
@@ -329,7 +341,7 @@
             });
         });
         //选择区县
-        $('.btn-zone').click(function(){
+        $('.btn-zone').delegate($(this),'click',function(){
             var cityValue = $('.cityValue').val();
             if (cityValue=="") {
                 $(this).isWrong('请先选择城市');

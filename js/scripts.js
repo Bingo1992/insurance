@@ -124,7 +124,7 @@
             $(this).switchTabs(self.startLi);
         });
         // 点击右边
-        self.endLi.click(function(){
+        self.endLi.delegate($(this),'click',function(){
             self.startLi.each(function(){
                 if($(this).hasClass('active')){
                     self.slideValue += $(this).html();
@@ -196,6 +196,75 @@
     }
      window['AllCheck'] = AllCheck;
 
+     // 下拉加载刷新
+    function ScrollLoading(option,callback){
+        var self = this;
+        var pullElm = $('.scroll_load');
+        var pullUpLabel = $('.pullUpLabel');
+        var count = 0;
+        var opt = {
+            amount : 30,//总共需要添加的个数
+            step: 3//每次添加个数
+        };
+        opt = $.extend(opt, option||{});
+        this.opt = opt;
+        this.count = this.opt.count;
+        this.step = this.opt.step;
+        this.amount = this.opt.amount;
+        this.pullElm = pullElm;
+        this.pullUpLabel = pullUpLabel;
+       // alert(this.getScrollTop() + this.getClientHeight())
+       // alert(this.getScrollHeight())
+        if (this.getScrollTop() + this.getClientHeight() +2 == this.getScrollHeight()){
+            if(count < this.amount) {
+                this.pullElm.addClass('loading');
+                this.pullUpLabel.html('加载中...');
+                setTimeout(function(){
+                    for(var i=0; i<3; i++){
+                        count++;
+                        $('.table').append('<tr>\
+                    <td>邰小宝</td>\
+                    <td class="font-theme">52535.00</td>\
+                    <td>4</td>\
+                </tr>')
+                    }
+                },400);
+            }else {
+                this.pullElm.removeClass('loading');
+                this.pullUpLabel.html('已经没有更多了');
+            }
+        }else {
+            setTimeout(function(){
+                self.pullElm.removeClass('loading');
+                self.pullUpLabel.html('下拉加载更多'); 
+            },1400)
+          
+        }
+    }
+    ScrollLoading.prototype = {
+        getScrollTop:function(){
+            var scrollTop = 0;
+            if (document.documentElement && document.documentElement.scrollTop) {
+                scrollTop = document.documentElement.scrollTop;
+            } else if (document.body) {
+                scrollTop = document.body.scrollTop;
+            }
+            return scrollTop;
+        },
+        getClientHeight:function(){
+            var clientHeight = 0;
+            if (document.body.clientHeight && document.documentElement.clientHeight) {
+                clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+            } else {
+                clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+            }
+            return clientHeight;
+        },
+        getScrollHeight:function(){
+            return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        }
+    }
+    window['ScrollLoading'] = ScrollLoading;
 })(jQuery,window,document);
 
 $(function(){
@@ -241,3 +310,31 @@ $(function(){
     }); 
     
 });
+
+
+//获取滚动条当前的位置 
+function getScrollTop() {
+    var scrollTop = 0;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        scrollTop = document.documentElement.scrollTop;
+    } else if (document.body) {
+        scrollTop = document.body.scrollTop;
+    }
+    return scrollTop;
+}
+
+//获取当前可是范围的高度 
+function getClientHeight() {
+    var clientHeight = 0;
+    if (document.body.clientHeight && document.documentElement.clientHeight) {
+        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
+    } else {
+        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
+    }
+    return clientHeight;
+}
+
+//获取文档完整的高度 
+function getScrollHeight() {
+    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+}

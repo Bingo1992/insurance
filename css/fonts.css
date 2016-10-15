@@ -25,9 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-envelope-open:before {
-  content: "\e900";
-}
 .icon-up:before {
   content: "\e601";
 }
@@ -48,6 +45,9 @@
 }
 .icon-gantan:before {
   content: "\e62d";
+}
+.icon-envelope-open:before {
+  content: "\e900";
 }
 .icon-life-insure:before {
   content: "\e903";
@@ -157,4 +157,12 @@
 .icon-envelope:before {
   content: "\e926";
 }
+.icon-loading:before {
+  content: "\e97a";
+}
+.icon-loading2:before {
+  content: "\e97c";
+}
+
+
 
