@@ -22,9 +22,9 @@ $bgMargin: 16px;
 	text-align:center;
 } 
 @mixin circle($bs:24px){
+    width: $bs;
 	@include height($bs);
 	border-radius: $bs;
-	width: $bs;
 	text-align:center;
 }
 @mixin btnRadius($bs:40px){
@@ -34,7 +34,7 @@ $bgMargin: 16px;
     display: block;
     
 }
-@mixin btnBorder($bs,$borderColor:$color-theme){
+@mixin btnBorder($bs:40px,$borderColor:$color-theme){
     @include btnRadius($bs);
     border: 1px solid $borderColor;
     color: $borderColor;
@@ -191,6 +191,7 @@ input.btn {
 .equably-layout {
 	display:-webkit-box;
 	-webkit-box-orient:horizontal;
+    -webkit-box-align: center;
 	li{
 		-webkit-box-flex:1;
 		width: 100%;	
@@ -198,12 +199,10 @@ input.btn {
 	}
 	a{
 		display: block;
-        margin: 10px 0;
+        padding: 10px 0;
         position: relative;
 	}
-	i {
-		font-size: 24px;
-	}
+    label {font-size: $md-font;}
 }
 
 // ------nothing style-----
@@ -321,18 +320,21 @@ input.btn {
     -webkit-box-align: center;
     box-sizing:border-box;
     a{
-    	display: inline-block;
-	    width: 5rem;
+    	// display: inline-block;
+	    width: 30%;
         max-width: 120px;
 	    margin: 0 $gauge;
-	    color: #fff;
-		@include btnRadius(40px);
+        // box-sizing: border-box;
+	    // color: #fff;
+		// @include btnRadius(40px);
     }
     .confirm {
-    	 background-color: $color-theme;  
+    	 background-color: $color-theme; 
+         box-sizing: border-box; 
     }
     .cancel {
 	    background-color: #ccc;
+        box-sizing: border-box;
 	}
 }
 
@@ -348,18 +350,18 @@ input.btn {
     font-size: $md-font;
 }
 // ---form validate----
-i.icon-tip{
-    display: block;
-    color: #fff;
-    width: 3rem;
-    height: 3rem;
-    line-height: 3rem;
-    border-radius: 3rem;
-    background-color: #d53c34;
-    font-size: 2rem;
-    margin: 0 auto .5rem;
-}
-i.icon-tip.icon-hook{background-color: #3ec032;}
+// i.icon-tip{
+//     display: block;
+//     color: #fff;
+//     width: 3rem;
+//     height: 3rem;
+//     line-height: 3rem;
+//     border-radius: 3rem;
+//     background-color: #d53c34;
+//     font-size: 2rem;
+//     margin: 0 auto .5rem;
+// }
+// i.icon-tip.icon-hook{background-color: #3ec032;}
 
 /*--banner轮播*/
 .slide {
@@ -409,7 +411,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
             @include circle(6px);
 		    margin: 0 .1rem;
 		    background: #000;
-		    opacity: .8;
+		    opacity: .6;
 	    }
 	    .cur {
 	    	background-color: #fff;
@@ -484,6 +486,8 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
         .orange{background-color: #ff7c48; }
 	    .green{background-color: #7dd077;}
         .red{background-color: #fd5e5e;}
+        .purple{background-color: #d7acf3;}
+        .blue {background-color: #8abdf8;}
     }
     a{
     	display:-webkit-box;
@@ -496,7 +500,7 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
 	    @include circle(2.5rem);   
 	    display: inline-block;
 	    margin-bottom: .2rem;
-	    font-size: 1.3rem;
+	    font-size: 1.4rem;
     }
     span {padding-left: 4px;}
 }
@@ -506,17 +510,14 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
     text-align: center;
     color: #999;
     line-height: 30px;
-    .icon-loading {
-        display: none;
-    }
+    font-size: $md-font;
 }
-.scroll_load.loading {
-    .icon-loading{
-        display: inline-block;
-        font-size: 26px;
-        margin-right: 4px;
-        -webkit-animation: scroll_loading 1s steps(12) infinite;
-    }
+
+i.icon-loading{
+    display: inline-block;
+    font-size: 35px;
+    margin: 6px;
+    -webkit-animation: scroll_loading 1.4s steps(12) infinite;
 }
 @-webkit-keyframes scroll_loading {
     from {
@@ -550,11 +551,12 @@ i.icon-tip.icon-hook{background-color: #3ec032;}
     padding: 0 4px;
     border-radius:4px;
     font-size: $md-font;
+    vertical-align: middle;
 }
 .label-green {background-color:#7fd077;}
 .label-yellow{background-color:#f4bd6c;}
 .label-theme{background-color:$color-theme;}
-
+.bg-yellow{background-color: #ffa200;}
 [class^="font-"] {font-size: $md-font;}
 .font-theme {color: $color-theme !important;}
 h4.font-theme {font-size: 14px;display: inline-block;}
@@ -569,6 +571,7 @@ h4.font-theme {font-size: 14px;display: inline-block;}
     top: -4px;
     right: 0;
     @include circle(18px);
+    display: block;
     color: #fff;
     background-color: #f74c31;
     font-size: 10px;

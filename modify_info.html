@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>修改信息</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<div class="banner">
+        <form class="modify-form">
+            <p class="title-gray">填写车辆信息</p>
+            <ul class="form-list border-list">
+                <li>
+                    <label>车架号码</label>
+                    <input type="text" value="WPIAA295XHLB02233">
+                </li>
+                <li>
+                    <label>发动机号</label>
+                    <input type="text" value="CYPO11655">
+                </li>
+                <li class="select-carType">
+                    <label>车型</label>
+                    <span class="slideValue list-info">东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</span>
+                    <i class="icon-right"></i>
+                </li>
+                <li>
+                    <label>注册日期</label>
+                    <div class="date getDate list-info">
+                       <input type="date" value="1984-10-20"> 
+                       <span>1984-10-20</span>
+                    </div>
+                </li>
+                <li>
+                    <span class="list-info">是否过户车辆</span>
+                    <span class="span-right">否</span>
+                    <div class="slide-btn-check slide-btn">
+                        <input type="checkbox">
+                    </div>
+                </li>
+                <li class="hide">
+                    <label>过户日期</label>
+                    <div class="date list-info">
+                       <input type="date"> 
+                       <span>请输入日期</span>
+                    </div>
+                </li>
+            </ul>
+            <p class="title-gray">填写车主信息</p>
+            <ul class="form-list border-list">
+                <li>
+                    <label>车主姓名</label>
+                    <input type="text" value="邰小宝">
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input type="text" value="4404804654989748978">
+                </li>
+            </ul>
+            
+            <a class="btn">保存信息</a>
+        </form>
+           
+    </div>
+    <!-- -banner- -->
+
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom"> 
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dialog-list car-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择车型</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+            <li>东风日产DFL7168VAK1轿车CVT XE 舒适版国IV（节能补贴）1.598L 5座2012款 参考价： ￥105000.00</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+   $(function(){
+        //选择车牌号
+        $('.select-carType').click(function(){
+            var slide = new SlideDialog();
+        });
+   });
+   </script>
+</body>
+</html>

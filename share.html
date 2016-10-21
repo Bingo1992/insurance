@@ -10,40 +10,20 @@
     <title>分享页面</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
-    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+    
 </head>
 
 <body>
     <div class="banner">
-        <!--banner轮播-->
-        <div class="slide" id="slide">
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="images/banner.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/banner.jpg" alt="">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/banner.jpg" alt="">
-                    </a>
-                </li>
-            </ul>
-            <div class="dot">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <ul class="nav-tabs equably-layout border-bottom" style="position:relative;">
+        <ul  class="equably-layout border-bottom">
+        	<li>
+        		<a href="#">咨询</a>
+        	</li>
+        	<li>
+        		<a href="#">海报</a>
+        	</li>
+        </ul>
+        <ul class="nav-tabs equably-layout border-bottom">
             <li hidefocus="true" class="active">
                 <a>精选</a>
                 <span class="circlePoint">2</span>
@@ -53,150 +33,548 @@
                 <a>我的</a>
                 <span class="semCirclePoint">10+</span>
             </li>
+            <li hidefocus="true">
+                 <a>最新发布</a>
+            </li>
+            <li hidefocus="true">
+                <a>审核中</a>
+            </li>
         </ul>
 
-        <div class="swiper-container share-list">
+        <div class="swiper-container">
             <div class="swiper-wrapper">
-               
                 <div class="swiper-slide">
-                    <ul class="bg-show border-list content-slide">
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
-                                        </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
+                    <div class="content-slide">
+                        <!--banner轮播-->
+                        <div class="slide" id="share-slide-1">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dot">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                        <ul class="border-list share-list">
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                        <span class="label-theme">置顶</span>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                    
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 加载更多 -->
+                        <div class="scroll_load">
+                            <span class="pullUpLabel">点击加载更多</span>
+                        </div>
+                    </div>
+                       
                 </div>
                
                 <div class="swiper-slide">
-                    <ul class="bg-show border-list content-slide">
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
-                                        </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
+                    <div class="content-slide">
+                        <!--banner轮播-->
+                        <div class="slide" id="share-slide-2">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dot">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                         <ul class="border-list share-list">
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 加载更多 -->
+                        <div class="scroll_load">
+                            <span class="pullUpLabel">点击加载更多</span>
+                        </div>
+                    </div>
+                       
                 </div>
                
                 <div class="swiper-slide">
-                    <ul class="bg-show border-list content-slide">
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
-                                        </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
+                    <div class="content-slide">
+                        <!--banner轮播-->
+                        <div class="slide" id="share-slide-3">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dot">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                         <ul class="border-list share-list">
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="list-box" href="share_detail.html">
-                                <img class="share-img" src="images/s1.jpg">
-                                <div class="list-info">
-                                    <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
-                                    <div class="new-insure clearfix">
-                                        <div class="font-gray fl">
-                                            <span>2016-09-10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
                                         </div>
-                                        <div class="font-gray fr"><span>1122</span>阅读</div>
                                     </div>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 加载更多 -->
+                        <div class="scroll_load">
+                            <span class="pullUpLabel">点击加载更多</span>
+                        </div>
+                    </div>
+                       
+                </div>
+                <div class="swiper-slide">
+                    <div class="content-slide">
+                        <!--banner轮播-->
+                        <div class="slide" id="share-slide-4">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dot">
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                         <ul class="border-list share-list">
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 加载更多 -->
+                        <div class="scroll_load">
+                            <span class="pullUpLabel">点击加载更多</span>
+                        </div>
+                    </div>
+                       
+                </div>
+                <div class="swiper-slide">
+                    <div class="content-slide">
+                        <!--banner轮播-->
+                        <div class="slide" id="share-slide-5">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/banner.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dot">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                         <ul class="border-list share-list">
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2"> 网易前CEO孙德棣癌症猝死！拼命工作没保险到底值不值？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- 加载更多 -->
+                        <div class="scroll_load">
+                            <span class="pullUpLabel">点击加载更多</span>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
@@ -228,6 +606,7 @@
                 <a href="msg.html">
                     <i class="icon-bell"></i>
                     <p>提醒</p>
+                    <span class="circlePoint">2</span>
                 </a>
             </li>
             <li>
@@ -238,46 +617,35 @@
             </li>
         </ul>
     </div>
-    <!-- 文章筛选 -->
-    <div class="dialog-list">
-        <a class="return-back border-bottom">
-            <i class="icon-left"></i>
-            <h4>分类</h4>
-        </a>
-        <ul class="dialog-end-list whole-list">
-            <li>全部</li>
-            <li>筛选1</li>
-            <li>筛选2</li>
-            <li>筛选3</li>
-            <li>筛选4</li>
-            <li>筛选5</li>
-            <li>筛选6</li>
-        </ul>
-    </div>
+
+    <a class="fixedLogo" href="article.html">
+        <p>发布</p>
+    </a>
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
+     <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+   
     <script type="text/javascript">
     $(function() {
         //banner图片只有一张时，隐藏圆点
         window.onload = function() {
-             var   height = $('.content-slide')[0].clientHeight;
+            height = $('.content-slide')[0].clientHeight;
             $('.swiper-container').css('height',height+60+'px');
-            
-            var len = $('#slide li').length;
-            if (len <= 1) {
-                $('.dot').addClass('hide');
-            }
+            $('.slide').each(function(k){
+                 $('#share-slide-'+(k+1)).swipeSlide({
+                    continuousScroll: true,
+                    speed: 3000,
+                    transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+                    callback: function(i) {
+                        $('#share-slide-'+(k+1)).find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                        var dotWidth = $('.dot').width();
+                        $('#share-slide-'+(k+1)).find('.dot').css('margin-left', '-' + dotWidth / 2 + 'px');
+                    }
+                });
+            })
         }
-            //首页banner 图片轮播效果
-        $('#slide').swipeSlide({
-            continuousScroll: true,
-            speed: 3000,
-            transitionType: 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
-            callback: function(i) {
-                $('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
-                var dotWidth = $('.dot').width();
-                $('.dot').css('margin-left', '-' + dotWidth / 2 + 'px');
-            }
-        });
-
+            
         //选择车牌号
         $('.share-sort').click(function() {
             var slide = new SlideDialog();

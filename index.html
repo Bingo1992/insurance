@@ -42,7 +42,35 @@
             </div>
         </div>
         <!--banner end-->
+        <!-- 九宫格 -->
+        <ul class="sudoku bg-show">
+            <li>
+                <a href="#">
+                    <i class="icon-car yellow"></i>
+                    <p>车险比价</p>
+                </a>
+            </li>
 
+            <li>
+                <a href="life_insure.html">
+                    <i class="icon-life-insure orange"></i>
+                    <p>寿险比价</p>
+                </a>
+            </li>
+
+            <li>
+                <a href="break_rules.html">
+                    <i class="icon-breakRules green"></i>
+                    <p>违章查办</p>
+                </a>
+            </li>
+            <li>
+                <a href="my_apply.html">
+                    <i class="icon-apply blue"></i>
+                    <p>我的应用</p>
+                </a>
+            </li>
+        </ul>
         <!-- 车险比价 -->
         <form>
             <div class="border-list">
@@ -95,24 +123,6 @@
             <a class="btn-history" href="history_car.html">最近查看历史</a>
         </form>
            
-
-        <!-- 九宫格 -->
-        <ul class="sudoku bg-show">
-         
-            <li>
-                <a href="life_insure.html">
-                    <i class="icon-life-insure orange"></i>
-                    <span>寿险比价</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="break_rules.html">
-                    <i class="icon-breakRules green"></i>
-                    <span>违章查办</span>
-                </a>
-            </li>
-        </ul>
 
        <div class="bg-show">
             <div class="title-bar border-bottom">
@@ -214,7 +224,10 @@
                 </li>
         	</ul>
         </div>
-
+        <!-- 加载更多 -->
+        <div class="scroll_load">
+            <span class="pullUpLabel">点击加载更多</span>
+        </div>
     </div>
     <!-- -banner- -->
 
@@ -324,6 +337,13 @@
         </ul>
     </div>
 
+    <!-- loading 显示时添加一个class（show）-->
+    <div class="tip-dialog">
+        <div class="tip-content">
+            <i class="icon-loading"></i>
+            <p>加载中...</p>
+        </div>
+    </div>
      <script type="text/javascript">
     $(function(){
       //banner图片只有一张时，隐藏圆点

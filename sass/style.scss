@@ -75,7 +75,7 @@
 }
 .new-insure {
 	font-size: $md-font;
-	margin-top: 8px;
+	margin-top: 6px;
 	line-height: 22px;
 }
 .n-label-cost{
@@ -97,8 +97,11 @@
 	li {
 		position: relative;
 		a{
-			padding: 12px;
+			padding: 14px 6px;
 	 		display: inline;
+	 		position: relative;
+	 		z-index: 4;
+	 		font-size: 12px;
 		}
 		&.active a{
 			color: $color-theme;
@@ -127,6 +130,7 @@
     select {
 	    position: relative;
 	    z-index: 2;
+	    min-width: 5rem;
 	    // direction: rtl;
 	}
     .icon-right {
@@ -251,6 +255,9 @@
 		text-align: right;
 		@include height(24px);
 		width: 9rem;
+		overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
 	}
 	.checkbox select {min-width: 4rem;}
 	.checkbox-pay {
@@ -277,7 +284,7 @@
 .dialog-list{
 	@extend .fixed-bottom;
 	background-color: #fff;
-	z-index: 4;
+	z-index: 5;
 	top: 0;
 	box-sizing: border-box;
 	-webkit-transform: translateX(150%) translateZ(0);
@@ -300,9 +307,6 @@
 		}
 	}
 }
-.city-list ul,.zone-list ul{
-	text-align: left;
-}
 .dialog-start-list{
 	background-color: #eee;
 	li.active {
@@ -311,11 +315,17 @@
 }
 .whole-list {
 	width: 100%;
+	li {text-align: left;}
+}
+.city-list ul,.zone-list ul,.province-list ul{
 	text-align: left;
 	li {
-		padding: .5rem 1rem;
-		line-height: 20px;
+		padding: 0 .5rem;
 	}
+}
+.car-list li {
+	padding: 10px 1rem;
+	line-height: 20px;
 }
 .return-back {
 	position: fixed;
@@ -582,16 +592,23 @@
 	    font-size: $md-font;
 	}
 	.circlePoint {
-		top: 10px;
-    	right: 1.2rem;
+		top: 4px;
+    	right: 10%;
+    	z-index: 5;
 	}   
 	.semCirclePoint {
-		top: 10px;
-    	right: .5rem;
+		top: 4px;
+    	right: 4%;
+    	z-index: 5;
 	}   
 }
-.person-icon i{
-	font-size: 26px;
+.person-order {
+	i{
+		font-size: 26px;
+	}
+	a{
+		margin: 0 .8rem;
+	}
 }
 
 // -----未报价公司----
@@ -634,7 +651,7 @@
 	font-size: $md-font;
 }
 .title-gray {
-	padding-left: 0.5rem;
+	padding-left: 10px;
     padding-top: 8px;
     color: #999;
     margin-bottom: -8px;
@@ -892,14 +909,14 @@ i.icon-map {font-size: 20px;color:#ccc;}
 		@include height(50px);
 	}
 	.btn-border,.btn {
-		display: block;
+		// display: block;
 		float: left;
-		@include height(28px);
 		margin: 10px 0 10px 10px;
+		@include height(30px);
+		box-sizing: border-box;
 	}
 	.btn{
-		width: 50px;
-		@include height(28px);
+		width: 82px;
 	}
 }
 
@@ -910,6 +927,7 @@ i.icon-map {font-size: 20px;color:#ccc;}
 .pdt{padding-top: 10px;}
 .pdb{padding-bottom: 10px;}
 .quote-info {
+	position: relative;
 	.btn-borderTheme {
 		position: absolute;
 		right: 10px;
@@ -918,8 +936,11 @@ i.icon-map {font-size: 20px;color:#ccc;}
 }
 .content-list .equably-layout{
 	margin-top: 6px;	
-	li:after {
-		border: none;
+	li {
+		margin: 0 .5rem 0 0;
+		&:after {
+			border: none;
+		}
 	}
 }
 .table-order {
@@ -934,17 +955,53 @@ i.icon-map {font-size: 20px;color:#ccc;}
 		
 	}
 }
-// -------分享页---
-.share-list {
-	.swiper-slide{
-		margin-top: 0;
+.insure-type {
+	li {		
+		padding: 10px 0;
 	}
 }
-	
+.pay-btn {
+	margin: $bgMargin auto;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    
+    a {
+    	box-sizing:border-box;
+	    width: 6.6rem;
+	    margin: 0 $gauge;
+	    @include height(40px);
+		// @include btnRadius;
+    }
+}
+/* -------分享页---*/
+.share-list {
+	margin-top: 0;
+}
+.shareImg-box {
+	position: relative;
+	.label-theme {
+		position: absolute;
+		top: 4px;
+		left: 4px;
+	}
+}	
 .share-img {
 	width: 100px;
 	height: 70px;
 	margin-right: 10px;
+}
+.fixedLogo {
+	@include circle(40px);
+	background-color: $color-theme;
+	color: #fff;
+	border: 3px solid  #F7DAC8;
+	position: fixed;
+	right: $gauge;
+	bottom: 4rem;
+	z-index: 10;
+	font-size: 10px;
+	display: block;
 }
 
 .rich-box {
@@ -1025,11 +1082,11 @@ i.icon-wchat {
 }
 .resume-img {
 	margin-right: 10px;
-	width: 90px;
+	width: 100px;
 }
 .company-name {
 	position: absolute;
-	left: 110px;
+	left: 120px;
 	background-color: $color-theme;
 	color: #fff;
 	line-height: 26px;
@@ -1038,7 +1095,35 @@ i.icon-wchat {
 	padding: 0 10px;
 	z-index: 3;
 }
+.share-banner {margin: 0 .5rem;}
 
+.comment-input {
+	background-color: #eee;
+	padding: 4px 10px;
+	line-height: 24px;
+	height: 24px;
+	border-radius: 4px;
+}
+.comment-i {
+	color: #68839f;
+	font-size: 16px;
+	position: relative;
+	margin-left: 12px;
+	span {
+		position: absolute;
+		top: -6px;
+		left: 22px;
+		font-size: 10px;
+	}
+}
+.com-text {
+	width: 100%;
+	height: 5rem;
+	border: 1px solid $border-color;
+	border-radius: 4px;
+	padding: 10px;
+	box-sizing: border-box;
+}
 // ----邀请好友----
 .invite-list {
 	img,.border-top {
@@ -1191,6 +1276,49 @@ h3.list-info {font-size: $lg-font;}
 	}
 	p{color: #ccc !important;}
 }
+
+// ----文章----
+.article {
+	width: 100%;
+	height: 24rem;
+    padding: .5rem;
+    box-sizing: border-box;
+    line-height: 20px;
+}
+// ---客户车辆--a-z----
+.customer-name {
+	line-height: 40px;
+	.letter {
+		@extend .font-gray;
+		padding: 0 10px;
+	}
+	li {
+		padding: 0 10px;
+	}
+	.border-list {
+		margin: 0;
+	}
+}
+.turn-to-lettter {
+    position: fixed;
+    top: .5rem;
+    right: .1rem;
+    z-index: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 85%;
+    a{
+    	 display: block;
+	    font-size: 10px;
+	    color: #666;
+	    display: -webkit-box;
+	    -webkit-box-flex: 1;
+	    &.active {
+	    	color: $color-theme;
+	    }
+    }
+}
+
 // ---最后---
 .show {display:block;}
 .hide {display: none !important;}

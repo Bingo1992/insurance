@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>修改车辆</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+    <div class="banner">
+        <form class="modify-form" action="#">
+            <div class="camera-box">
+                <i class="icon-camera"></i>
+                <p>识别驾驶证信息</p>
+                <input type="file">
+            </div>
+            <ul class="form-list border-list">
+                <li>
+                    <label>车牌号码</label>
+                    <div class="region">
+                        <span class="slideValue">苏A</span>
+                        <i class="icon-down"></i>
+                    </div>
+                    <input type="text" value="12345">
+                    <span class="span-right">未上牌</span>
+                    <div class="slide-btn">
+                        <input type="checkbox">
+                    </div>
+                </li>
+                <li>
+                    <label>品牌型号</label>
+                    <input type="text" value="东风日产DFL764392轿车">
+                </li>
+                <li>
+                    <label>车架号码</label>
+                    <input type="text" value="LGBH481024FUIWF">
+                </li>
+                <li>
+                    <label>手机号码</label>
+                    <input type="tel" value="13800138000">
+                </li>
+            </ul>
+            <a class="btn">保存信息</a>
+        </form>
+    </div>
+    <!-- -banner- -->
+    <!-- 底部固定内容 -->
+    <div class="fixed-bottom">
+        <!-- 底部导航 -->
+        <ul class="nav-bar equably-layout">
+            <li>
+                <a href="index.html">
+                    <i class="icon-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="client.html">
+                    <i class="icon-users"></i>
+                    <p>客户</p>
+                </a>
+            </li>
+            <li>
+                <a href="share.html">
+                    <i class="icon-share"></i>
+                    <p>分享</p>
+                </a>
+            </li>
+            <li>
+                <a href="msg.html">
+                    <i class="icon-bell"></i>
+                    <p>提醒</p>
+                </a>
+            </li>
+            <li>
+                <a href="personnel.html">
+                    <i class="icon-user"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 选择车牌号遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择车牌号</h4>
+        </a>
+        <ul class="dialog-start-list">
+            <li class="active">苏</li>
+            <li>鲁</li>
+            <li>浙</li>
+            <li>川</li>
+            <li>皖</li>
+            <li>豫</li>
+            <li>粤</li>
+            <li>鄂</li>
+            <li>湘</li>
+            <li>吉</li>
+            <li>沪</li>
+            <li>渝</li>
+            <li>云</li>
+            <li>晋</li>
+            <li>蒙</li>
+            <li>贵</li>
+            <li>京</li>
+            <li>陕</li>
+            <li>冀</li>
+            <li>辽</li>
+            <li>津</li>
+            <li>桂</li>
+            <li>闽</li>
+            <li>黑</li>
+            <li>新</li>
+            <li>琼</li>
+            <li>甘</li>
+            <li>青</li>
+            <li>宁</li>
+            <li>藏</li>
+        </ul>
+        <ul class="dialog-end-list">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+            <li>E</li>
+            <li>F</li>
+            <li>G</li>
+            <li>H</li>
+            <li>I</li>
+            <li>J</li>
+            <li>K</li>
+            <li>L</li>
+            <li>M</li>
+            <li>N</li>
+            <li>O</li>
+            <li>P</li>
+            <li>Q</li>
+            <li>R</li>
+            <li>S</li>
+            <li>T</li>
+            <li>U</li>
+            <li>V</li>
+            <li>W</li>
+            <li>X</li>
+            <li>Y</li>
+            <li>Z</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+        //选择车牌号
+        $('.region').click(function() {
+            var slide = new SlideDialog();
+        });
+    });
+    </script>
+</body>
+
+</html>

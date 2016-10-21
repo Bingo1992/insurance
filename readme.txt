@@ -22,7 +22,7 @@
 寿险产品详情： lifeInsure_detail.html
 寿险投保方案：lifeInsure_plan.html
 填写保单信息：insure_info.html
-订单详情：order_detail.html
+
 
 我的收入：my_income.html
 账户余额：my_balance.html
@@ -34,6 +34,8 @@
 修改密码：modify_password.html
 
 全部订单：order_list.html
+订单详情：order_detail.html
+修改信息：modify_info.html
 
 营业部：sales_department.html
 我的团队：my_team.html
@@ -47,3 +49,10 @@
 查询结果：breakRules_result.html
 提交订单：order_confirm.html
 违章订单：breakRules_order.html
+
+修改车辆信息：modify_car.html
+客户车辆：customer_car.html
+
+我的应用：my_apply.html
+文章发布：article.html
+

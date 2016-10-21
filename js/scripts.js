@@ -39,17 +39,17 @@
                 $('.tip-dialog').addClass('show');
                 setTimeout(function() {
                     $('.tip-dialog').removeClass('show');
-                }, 1500);
+                }, 1000);
             });
         },
         //遮罩
         showUiDialog: function(option){
             return this.each(function() {
                 $(option).addClass('show');
-                $('body').addClass('fixed-body');
+                // $('body').addClass('fixed-body');
                 $('.icon-cancel').add('.cancel').click(function() {
                     $(this).parents(option).removeClass('show');
-                    $('body').removeClass('fixed-body');
+                    // $('body').removeClass('fixed-body');
                 });
             });
         },
@@ -74,7 +74,7 @@
                 } 
                 // 点击排序，筛选的内容
                 $(option2).find('li').unbind('click').click(function(){
-                    $(this).switchTabs(option2);
+                    $(this).switchTabs(option1,option2);
                 });
 
                 //点击其他地方隐藏遮罩
@@ -128,30 +128,28 @@
             self.startLi.each(function(){
                 if($(this).hasClass('active')){
                     self.slideValue += $(this).html();
-                }//获取左边的值
+                }//获取左边选中的值
             });
-            self.dialogList.removeClass('more-wp-open');
-            $('body').removeClass('fixed-body');
             if($(this).html()!=self.slideValue) {
-                 self.slideValue += $(this).html();
+                self.slideValue += $(this).html();
             }
             self.slideElm.html(self.slideValue);//span
             if(self.slideElm.html()==""){
                self.slideElm.val(self.slideValue); //input
             }
+            self.removeDialog();
         });
         // 返回按钮
         self.returnBack.click(function(){
-            self.dialogList.removeClass('more-wp-open');
-            $('body').removeClass('fixed-body');
+            self.removeDialog();
         });
     };
-    SlideDialog.init = function(){
+    //移除遮罩
+    SlideDialog.prototype.removeDialog = function(){
         var self = this;
-        this.each(function(){
-            new self();
-        })
-    }
+        self.dialogList.removeClass('more-wp-open');
+        $('body').removeClass('fixed-body');
+    };
     window['SlideDialog'] = SlideDialog;
 
     //全选
@@ -196,75 +194,6 @@
     }
      window['AllCheck'] = AllCheck;
 
-     // 下拉加载刷新
-    function ScrollLoading(option,callback){
-        var self = this;
-        var pullElm = $('.scroll_load');
-        var pullUpLabel = $('.pullUpLabel');
-        var count = 0;
-        var opt = {
-            amount : 30,//总共需要添加的个数
-            step: 3//每次添加个数
-        };
-        opt = $.extend(opt, option||{});
-        this.opt = opt;
-        this.count = this.opt.count;
-        this.step = this.opt.step;
-        this.amount = this.opt.amount;
-        this.pullElm = pullElm;
-        this.pullUpLabel = pullUpLabel;
-       // alert(this.getScrollTop() + this.getClientHeight())
-       // alert(this.getScrollHeight())
-        if (this.getScrollTop() + this.getClientHeight() +2 == this.getScrollHeight()){
-            if(count < this.amount) {
-                this.pullElm.addClass('loading');
-                this.pullUpLabel.html('加载中...');
-                setTimeout(function(){
-                    for(var i=0; i<3; i++){
-                        count++;
-                        $('.table').append('<tr>\
-                    <td>邰小宝</td>\
-                    <td class="font-theme">52535.00</td>\
-                    <td>4</td>\
-                </tr>')
-                    }
-                },400);
-            }else {
-                this.pullElm.removeClass('loading');
-                this.pullUpLabel.html('已经没有更多了');
-            }
-        }else {
-            setTimeout(function(){
-                self.pullElm.removeClass('loading');
-                self.pullUpLabel.html('下拉加载更多'); 
-            },1400)
-          
-        }
-    }
-    ScrollLoading.prototype = {
-        getScrollTop:function(){
-            var scrollTop = 0;
-            if (document.documentElement && document.documentElement.scrollTop) {
-                scrollTop = document.documentElement.scrollTop;
-            } else if (document.body) {
-                scrollTop = document.body.scrollTop;
-            }
-            return scrollTop;
-        },
-        getClientHeight:function(){
-            var clientHeight = 0;
-            if (document.body.clientHeight && document.documentElement.clientHeight) {
-                clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
-            } else {
-                clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
-            }
-            return clientHeight;
-        },
-        getScrollHeight:function(){
-            return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        }
-    }
-    window['ScrollLoading'] = ScrollLoading;
 })(jQuery,window,document);
 
 $(function(){
@@ -310,31 +239,3 @@ $(function(){
     }); 
     
 });
-
-
-//获取滚动条当前的位置 
-function getScrollTop() {
-    var scrollTop = 0;
-    if (document.documentElement && document.documentElement.scrollTop) {
-        scrollTop = document.documentElement.scrollTop;
-    } else if (document.body) {
-        scrollTop = document.body.scrollTop;
-    }
-    return scrollTop;
-}
-
-//获取当前可是范围的高度 
-function getClientHeight() {
-    var clientHeight = 0;
-    if (document.body.clientHeight && document.documentElement.clientHeight) {
-        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);
-    } else {
-        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);
-    }
-    return clientHeight;
-}
-
-//获取文档完整的高度 
-function getScrollHeight() {
-    return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-}

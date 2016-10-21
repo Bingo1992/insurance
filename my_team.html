@@ -110,7 +110,7 @@
         </table>
          <!-- 加载 -->
         <div class="scroll_load">
-            <i class="icon-loading"></i><span class="pullUpLabel">点击加载更多</span>
+            <span class="pullUpLabel">点击加载更多</span>
         </div>
     </div>
     
@@ -161,23 +161,6 @@
         $('.team-tabs li').click(function(){
             $(this).switchTabs('.team-tabs li','.table');
         });
-
-        // 下拉加载刷新
-        // window.onscroll = function(){
-        //     var scroll = new ScrollLoading({
-        //         step:3
-        //     },function(){
-        //         for(var i=0; i<3; i++){
-        //                 count++;
-        //                 $('.table.show').append('<tr>\
-        //             <td>邰小宝</td>\
-        //             <td class="font-theme">52535.00</td>\
-        //             <td>4</td>\
-        //         </tr>')
-        //             }
-        //     })
-        
-        // }
     });
     </script>
 </body>

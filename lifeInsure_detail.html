@@ -59,9 +59,11 @@
            <p class="btn-insurance1 btn-gray">保险投款</p>
            <p class="btn-insurance2 btn-gray">投保须知</p>
        </div>
-        
-        <a class="btn" href="lifeInsure_plan.html">马上投保</a>
-
+        <div class="two-btn">
+            <a class="btn" href="lifeInsure_plan.html">马上投保</a>
+            <a id="btn-share" class="btn bg-yellow">分享</a>
+        </div>
+            
     </div>
     <!-- -banner- -->
 
@@ -113,7 +115,6 @@
                 3. 保障期限选择多，7-365天可选；<br>
                 4. 承保年龄30天-60周岁。 
                 </p>
-                
            </div>
         </div>
     </div>
@@ -131,6 +132,41 @@
            </div>
         </div>
     </div>
+
+    <div class="ui-dialog" id="share-dialog">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>分享方式</h2>
+            <div class="dialog-content">
+                <ul class="equably-layout">
+                    <li>
+                        <a href="#">
+                            <span class="qq sprite-share"></span>
+                            <h6 class="font-black">QQ</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="wchat sprite-share"></span>
+                            <h6 class="font-black">微信好友</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="weibo sprite-share"></span>
+                            <h6 class="font-black">微博好友</h6>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="link sprite-share"></span>
+                            <h6 class="font-black">复制链接</h6>
+                        </a>
+                    </li>
+                </ul>
+           </div>
+        </div>
+    </div>
    <script type="text/javascript">
    $(function(){
         // 保险投款,投保须知
@@ -139,6 +175,10 @@
         });
         $('.btn-insurance2').click(function(){
             $(this).showUiDialog('#dialog2');
+        });
+        //分享
+        $('#btn-share').click(function(){
+            $(this).showUiDialog('#share-dialog');
         });
    });
    </script>

@@ -227,6 +227,7 @@ input.btn {
 .equably-layout {
   display: -webkit-box;
   -webkit-box-orient: horizontal;
+  -webkit-box-align: center;
 }
 .equably-layout li {
   -webkit-box-flex: 1;
@@ -235,11 +236,11 @@ input.btn {
 }
 .equably-layout a {
   display: block;
-  margin: 10px 0;
+  padding: 10px 0;
   position: relative;
 }
-.equably-layout i {
-  font-size: 24px;
+.equably-layout label {
+  font-size: 12px;
 }
 
 .nothing {
@@ -270,10 +271,10 @@ input.btn {
   position: relative;
 }
 .checkbox input, .all-check input {
+  width: 24px;
   height: 24px;
   line-height: 24px;
   border-radius: 24px;
-  width: 24px;
   text-align: center;
   background-color: #e1e1e1;
   position: relative;
@@ -286,10 +287,10 @@ input.btn {
   background-color: transparent;
 }
 .checkbox i, .all-check i {
+  width: 24px;
   height: 24px;
   line-height: 24px;
   border-radius: 24px;
-  width: 24px;
   text-align: center;
   position: absolute;
   top: 0;
@@ -340,10 +341,10 @@ input.btn {
   right: 8px;
   color: #999;
   border: 1px solid #999;
+  width: 26px;
   height: 26px;
   line-height: 26px;
   border-radius: 26px;
-  width: 26px;
   text-align: center;
   z-index: 11;
   font-size: 18px;
@@ -380,22 +381,17 @@ input.btn {
   box-sizing: border-box;
 }
 .two-btn a {
-  display: inline-block;
-  width: 5rem;
+  width: 30%;
   max-width: 120px;
   margin: 0 0.5rem;
-  color: #fff;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 4px;
-  text-align: center;
-  display: block;
 }
 .two-btn .confirm {
   background-color: #f63;
+  box-sizing: border-box;
 }
 .two-btn .cancel {
   background-color: #ccc;
+  box-sizing: border-box;
 }
 
 .tip-content {
@@ -408,22 +404,6 @@ input.btn {
   min-width: 100px;
   text-align: center;
   font-size: 12px;
-}
-
-i.icon-tip {
-  display: block;
-  color: #fff;
-  width: 3rem;
-  height: 3rem;
-  line-height: 3rem;
-  border-radius: 3rem;
-  background-color: #d53c34;
-  font-size: 2rem;
-  margin: 0 auto .5rem;
-}
-
-i.icon-tip.icon-hook {
-  background-color: #3ec032;
 }
 
 /*--banner轮播*/
@@ -473,14 +453,14 @@ i.icon-tip.icon-hook {
 }
 .slide .dot span {
   display: inline-block;
+  width: 6px;
   height: 6px;
   line-height: 6px;
   border-radius: 6px;
-  width: 6px;
   text-align: center;
   margin: 0 .1rem;
   background: #000;
-  opacity: .8;
+  opacity: .6;
 }
 .slide .dot .cur {
   background-color: #fff;
@@ -517,10 +497,10 @@ i.icon-tip.icon-hook {
   content: "";
   position: absolute;
   display: inline-block;
+  width: 28px;
   height: 28px;
   line-height: 28px;
   border-radius: 28px;
-  width: 28px;
   text-align: center;
   background-color: #fff;
   box-sizing: border-box;
@@ -566,6 +546,12 @@ i.icon-tip.icon-hook {
 .sudoku li .red {
   background-color: #fd5e5e;
 }
+.sudoku li .purple {
+  background-color: #d7acf3;
+}
+.sudoku li .blue {
+  background-color: #8abdf8;
+}
 .sudoku a {
   display: -webkit-box;
   -webkit-box-align: center;
@@ -574,14 +560,14 @@ i.icon-tip.icon-hook {
 }
 .sudoku i {
   color: #fff;
+  width: 2.5rem;
   height: 2.5rem;
   line-height: 2.5rem;
   border-radius: 2.5rem;
-  width: 2.5rem;
   text-align: center;
   display: inline-block;
   margin-bottom: .2rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 .sudoku span {
   padding-left: 4px;
@@ -591,16 +577,14 @@ i.icon-tip.icon-hook {
   text-align: center;
   color: #999;
   line-height: 30px;
-}
-.scroll_load .icon-loading {
-  display: none;
+  font-size: 12px;
 }
 
-.scroll_load.loading .icon-loading {
+i.icon-loading {
   display: inline-block;
-  font-size: 26px;
-  margin-right: 4px;
-  -webkit-animation: scroll_loading 1s steps(12) infinite;
+  font-size: 35px;
+  margin: 6px;
+  -webkit-animation: scroll_loading 1.4s steps(12) infinite;
 }
 
 @-webkit-keyframes scroll_loading {
@@ -642,6 +626,7 @@ i.icon-tip.icon-hook {
   padding: 0 4px;
   border-radius: 4px;
   font-size: 12px;
+  vertical-align: middle;
 }
 
 .label-green {
@@ -654,6 +639,10 @@ i.icon-tip.icon-hook {
 
 .label-theme {
   background-color: #f63;
+}
+
+.bg-yellow {
+  background-color: #ffa200;
 }
 
 [class^="font-"] {
@@ -673,7 +662,7 @@ h4.font-theme {
   color: #ee5050 !important;
 }
 
-.font-gray {
+.font-gray, .customer-name .letter {
   color: #999 !important;
 }
 
@@ -693,11 +682,12 @@ h4.font-theme {
   position: absolute;
   top: -4px;
   right: 0;
+  width: 18px;
   height: 18px;
   line-height: 18px;
   border-radius: 18px;
-  width: 18px;
   text-align: center;
+  display: block;
   color: #fff;
   background-color: #f74c31;
   font-size: 10px;
@@ -775,7 +765,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .new-insure {
   font-size: 12px;
-  margin-top: 8px;
+  margin-top: 6px;
   line-height: 22px;
 }
 
@@ -807,8 +797,11 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   position: relative;
 }
 .nav-tabs li a {
-  padding: 12px;
+  padding: 14px 6px;
   display: inline;
+  position: relative;
+  z-index: 4;
+  font-size: 12px;
 }
 .nav-tabs li.active a {
   color: #f63;
@@ -847,6 +840,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 .select-box select {
   position: relative;
   z-index: 2;
+  min-width: 5rem;
 }
 .select-box .icon-right {
   position: absolute;
@@ -977,6 +971,9 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   height: 24px;
   line-height: 24px;
   width: 9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .plan-list .checkbox select {
   min-width: 4rem;
@@ -1005,7 +1002,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .dialog-list {
   background-color: #fff;
-  z-index: 4;
+  z-index: 5;
   top: 0;
   box-sizing: border-box;
   -webkit-transform: translateX(150%) translateZ(0);
@@ -1027,10 +1024,6 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   box-sizing: border-box;
 }
 
-.city-list ul, .zone-list ul {
-  text-align: left;
-}
-
 .dialog-start-list {
   background-color: #eee;
 }
@@ -1040,10 +1033,20 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .whole-list {
   width: 100%;
-  text-align: left;
 }
 .whole-list li {
-  padding: .5rem 1rem;
+  text-align: left;
+}
+
+.city-list ul, .zone-list ul, .province-list ul {
+  text-align: left;
+}
+.city-list ul li, .zone-list ul li, .province-list ul li {
+  padding: 0 .5rem;
+}
+
+.car-list li {
+  padding: 10px 1rem;
   line-height: 20px;
 }
 
@@ -1077,10 +1080,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   box-sizing: border-box;
 }
 .camera-box i {
+  width: 3.5rem;
   height: 3.5rem;
   line-height: 3.5rem;
   border-radius: 3.5rem;
-  width: 3.5rem;
   text-align: center;
   color: #fff;
   background-color: #f63;
@@ -1239,10 +1242,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 }
 
 .border-img {
+  width: 40px;
   height: 40px;
   line-height: 40px;
   border-radius: 40px;
-  width: 40px;
   text-align: center;
   border: 1px solid #e1e1e1;
   margin-right: 10px;
@@ -1295,10 +1298,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   position: relative;
 }
 .per-img img {
+  width: 70px;
   height: 70px;
   line-height: 70px;
   border-radius: 70px;
-  width: 70px;
   text-align: center;
   border: 2px solid #fff;
   margin-right: 10px;
@@ -1322,10 +1325,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   margin-left: 10px;
 }
 .vip .vip-logo {
+  width: 16px;
   height: 16px;
   line-height: 16px;
   border-radius: 16px;
-  width: 16px;
   text-align: center;
   background-color: #ffcc00;
   border: 2px solid #fdeb04;
@@ -1359,16 +1362,21 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   font-size: 12px;
 }
 .equably-layout .circlePoint {
-  top: 10px;
-  right: 1.2rem;
+  top: 4px;
+  right: 10%;
+  z-index: 5;
 }
 .equably-layout .semCirclePoint {
-  top: 10px;
-  right: .5rem;
+  top: 4px;
+  right: 4%;
+  z-index: 5;
 }
 
-.person-icon i {
+.person-order i {
   font-size: 26px;
+}
+.person-order a {
+  margin: 0 .8rem;
 }
 
 .font-md {
@@ -1422,7 +1430,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 }
 
 .title-gray {
-  padding-left: 0.5rem;
+  padding-left: 10px;
   padding-top: 8px;
   color: #999;
   margin-bottom: -8px;
@@ -1671,10 +1679,10 @@ i.icon-map {
   text-align: left;
 }
 .order-top li i {
+  width: 40px;
   height: 40px;
   line-height: 40px;
   border-radius: 40px;
-  width: 40px;
   text-align: center;
   background-color: #d7acf3;
   color: #fff;
@@ -1716,16 +1724,14 @@ i.icon-map {
   line-height: 50px;
 }
 .order-pay .btn-border, .order-pay .btn {
-  display: block;
   float: left;
-  height: 28px;
-  line-height: 28px;
   margin: 10px 0 10px 10px;
+  height: 30px;
+  line-height: 30px;
+  box-sizing: border-box;
 }
 .order-pay .btn {
-  width: 50px;
-  height: 28px;
-  line-height: 28px;
+  width: 82px;
 }
 
 .btn-borderTheme {
@@ -1747,6 +1753,9 @@ i.icon-map {
   padding-bottom: 10px;
 }
 
+.quote-info {
+  position: relative;
+}
 .quote-info .btn-borderTheme {
   position: absolute;
   right: 10px;
@@ -1755,6 +1764,9 @@ i.icon-map {
 
 .content-list .equably-layout {
   margin-top: 6px;
+}
+.content-list .equably-layout li {
+  margin: 0 .5rem 0 0;
 }
 .content-list .equably-layout li:after {
   border: none;
@@ -1770,14 +1782,59 @@ i.icon-map {
   text-align: right;
 }
 
-.share-list .swiper-slide {
+.insure-type li {
+  padding: 10px 0;
+}
+
+.pay-btn {
+  margin: 16px auto;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+.pay-btn a {
+  box-sizing: border-box;
+  width: 6.6rem;
+  margin: 0 0.5rem;
+  height: 40px;
+  line-height: 40px;
+}
+
+/* -------分享页---*/
+.share-list {
   margin-top: 0;
+}
+
+.shareImg-box {
+  position: relative;
+}
+.shareImg-box .label-theme {
+  position: absolute;
+  top: 4px;
+  left: 4px;
 }
 
 .share-img {
   width: 100px;
   height: 70px;
   margin-right: 10px;
+}
+
+.fixedLogo {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 40px;
+  text-align: center;
+  background-color: #f63;
+  color: #fff;
+  border: 3px solid  #F7DAC8;
+  position: fixed;
+  right: 0.5rem;
+  bottom: 4rem;
+  z-index: 10;
+  font-size: 10px;
+  display: block;
 }
 
 .rich-box {
@@ -1848,12 +1905,12 @@ i.icon-wchat {
 
 .resume-img {
   margin-right: 10px;
-  width: 90px;
+  width: 100px;
 }
 
 .company-name {
   position: absolute;
-  left: 110px;
+  left: 120px;
   background-color: #f63;
   color: #fff;
   line-height: 26px;
@@ -1861,6 +1918,40 @@ i.icon-wchat {
   border-radius: 4px;
   padding: 0 10px;
   z-index: 3;
+}
+
+.share-banner {
+  margin: 0 .5rem;
+}
+
+.comment-input {
+  background-color: #eee;
+  padding: 4px 10px;
+  line-height: 24px;
+  height: 24px;
+  border-radius: 4px;
+}
+
+.comment-i {
+  color: #68839f;
+  font-size: 16px;
+  position: relative;
+  margin-left: 12px;
+}
+.comment-i span {
+  position: absolute;
+  top: -6px;
+  left: 22px;
+  font-size: 10px;
+}
+
+.com-text {
+  width: 100%;
+  height: 5rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .invite-list img, .invite-list .border-top, .invite-list .rc-3:after {
@@ -1880,7 +1971,7 @@ i.icon-wchat {
 .msg-list .icon-envelope-open {
   color: #ccc;
 }
-.msg-list .font-gray {
+.msg-list .font-gray, .msg-list .customer-name .letter, .customer-name .msg-list .letter {
   padding-top: 10px;
   padding-left: 0.5rem;
   display: inline-block;
@@ -1932,7 +2023,7 @@ i.icon-wchat {
   display: block;
   background-size: 100% 100%;
 }
-.bubble-box .font-gray {
+.bubble-box .font-gray, .bubble-box .customer-name .letter, .customer-name .bubble-box .letter {
   position: relative;
   z-index: 3;
 }
@@ -2013,6 +2104,47 @@ h3.list-info {
 }
 .failure p {
   color: #ccc !important;
+}
+
+.article {
+  width: 100%;
+  height: 24rem;
+  padding: .5rem;
+  box-sizing: border-box;
+  line-height: 20px;
+}
+
+.customer-name {
+  line-height: 40px;
+}
+.customer-name .letter {
+  padding: 0 10px;
+}
+.customer-name li {
+  padding: 0 10px;
+}
+.customer-name .border-list {
+  margin: 0;
+}
+
+.turn-to-lettter {
+  position: fixed;
+  top: .5rem;
+  right: .1rem;
+  z-index: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  height: 85%;
+}
+.turn-to-lettter a {
+  display: block;
+  font-size: 10px;
+  color: #666;
+  display: -webkit-box;
+  -webkit-box-flex: 1;
+}
+.turn-to-lettter a.active {
+  color: #f63;
 }
 
 .show {

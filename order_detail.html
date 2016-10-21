@@ -28,44 +28,51 @@
             <div class="swiper-wrapper">   
                 <!-- 每一列 -->
                 <div class="swiper-slide">
-                    <ul class="content-slide">
-                        <li>
-                            <div class="title-order">
-                                <div class="fl">
-                                    <span class="font-gray">查询单号<span>CXXJ160913173806651493</span></span>
-                                    <span class="label-theme">寿险</span>
+                    <div class="content-slide">
+                        <div class="nothing hide">
+                             <i class="icon-order"></i>
+                             <h2>您暂未有相关订单</h2>
+                             <p class="gray-font">可以去看看有没有想买的</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="title-order">
+                                    <div class="fl">
+                                        <span class="font-gray">查询单号<span>CXXJ160913173806651493</span></span>
+                                        <span class="label-theme">寿险</span>
+                                    </div>
+                                    <div class="fr">
+                                        <span class="font-theme">待支付</span>
+                                    </div>
                                 </div>
-                                <div class="fr">
-                                    <span class="font-theme">待支付</span>
-                                </div>
-                            </div>
-                            <div class="line-info border-top">
-                                <div class="quote-info border-bottom pdb">
-                                    <p>
-                                        <span>客户姓名</span>
-                                        <span class="font-black">张三</span>
-                                    <p>
-                                    <p>
-                                        <span>车牌号码</span>
-                                        <span class="font-black">粤AW7831</span>
-                                    <p>
-                                    <div class="btn-borderTheme">修改信息</div>
-                                </div>
-                                <div class="quote-info pdt">
-                                    <p>
-                                        <span>保险公司</span>
-                                        <span>平安保险</span>
-                                    </p>
-                                    <p>
-                                        <span>保险报价</span>
-                                        <span class="font-theme"><span>8000.00</span>元</span>
-                                    </p>
-                                    <p>
-                                        <span>销售返点</span>
-                                        <span class="font-theme"><span>8000.00</span>元</span>
-                                    </p>
-                                    <div class="btn-borderTheme fr">报价详情</div>
-                                    <ul class="equably-layout ui-border">
+                                <div class="line-info border-top">
+                                    <div class="quote-info border-bottom pdb">
+                                        <p>
+                                            <span>客户姓名</span>
+                                            <span class="font-black">张三</span>
+                                        <p>
+                                        <p>
+                                            <span>车牌号码</span>
+                                            <span class="font-black">粤AW7831</span>
+                                        <p>
+                                        <a class="btn-borderTheme" href="modify_info.html">修改信息</a>
+                                    </div>
+                                    <div class="quote-info pdt">
+                                        <p>
+                                            <span>保险公司</span>
+                                            <span>平安保险</span>
+                                        </p>
+                                        <p>
+                                            <span>保险报价</span>
+                                            <span class="font-theme"><span>8000.00</span>元</span>
+                                        </p>
+                                        <p>
+                                            <span>销售返点</span>
+                                            <span class="font-theme"><span>8000.00</span>元</span>
+                                        </p>
+                                        <div class="btn-borderTheme">报价详情</div>
+                                    </div>
+                                    <ul class="insure-type equably-layout ui-border">
                                         <li>
                                             <a class="border-right">
                                                 <span class="font-rthemeed">950.00</span>
@@ -86,19 +93,24 @@
                                         </li>
                                     </ul>
                                 </div>
-                                    
-                            </div>
-                            <div class="order-pay border-top">
-                                <div class="fl">
-                                    保险代理 <span>李四</span>
-                                </div>
-                                <div class="fr">
-                                    <div class="btn-border">修改方案</div>
-                                    <a class="btn">重新报价</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                                <div class="order-pay border-top">
+                                    <div class="fl">
+                                        保险代理 <span>李四</span>
+                                    </div>
+                                    <div class="fr">
+                                        <a class="btn-border" href="select_plan.html">修改方案</a>
+                                        <a class="btn">重新报价</a>
+                                    </div>
+                                </div>                            
+                            </li>
+                         </ul>   
+                        <div class="pay-btn">
+                            <a class="btn" href="#">立即支付</a>
+                            <a class="btn-border">取消订单</a>
+                        </div>
+                    </div>
+                        
+                        
                 </div>
                 <!-- 每一列 -->
                 <div class="swiper-slide">
@@ -259,28 +271,25 @@
             </div>
             
             <div class="two-btn">
-                <a class="cancel">取消</a>
-                <a class="confirm">确定</a>
+                <a class="cancel btn">取消</a>
+                <a class="confirm btn">确定</a>
             </div>
         </div>
     </div>
+
     <script type="text/javascript">
     $(function(){
-        // 订单筛选遮罩
-        $('.order-sort').click(function(){
-            var slide = new SlideDialog();
-        });
-
-        // 取消订单
-        $('.btn-border').click(function(){
-            var $li = $(this).closest('li');
+        //取消订单
+        $('.pay-btn .btn-border').click(function(){
+            var $list = $(this).parent().siblings('ul');
             $(this).showUiDialog('.ui-dialog');
             $('.confirm').unbind("click").click(function(){
-                $li.remove();
+                $list.remove();
                 $('.ui-dialog').removeClass('show');
+                $('.nothing').removeClass('hide').siblings('.pay-btn').addClass('hide');//显示无内容状态
             });
         });
-    });
+    })
     </script>
 </body>
 

@@ -313,16 +313,7 @@
          
         $("#selCity").delegate('li','click',function () {
             var selValue = $(this).attr('data-id');
-            $('.dialog-start-list li').each(function(){
-                if($(this).hasClass('active')){
-                    value = $(this).html() + ' - ';
-                }//获取左边的值
-            });
-            value += $(this).html();
-            $('.cityValue').val(value);
-            $('.zoneValue').val('');
-            $('.dialog-list').removeClass('more-wp-open');
-            $('body').removeClass('fixed-body');
+            isValue($(this)); 
             $("#selDistrict li").remove();
              $.each(district, function (k, p) {
                 if (p.CityID == selValue) {
@@ -331,16 +322,30 @@
                 }
             });  
         }); 
+
+        // 获取选中的值并隐藏遮罩
+        function isValue(_this){
+             $('.dialog-start-list li').each(function(){
+                if($(this).hasClass('active')){
+                    value = $(this).html() + ' - ';
+                }//获取左边的值
+            });
+            value += _this.html();
+            $('.cityValue').val(value);
+            $('.zoneValue').val('');//重置区县的值
+            $('.dialog-list').removeClass('more-wp-open');
+            $('body').removeClass('fixed-body');
+        }
         // ------添加省市区内容结束------
    		
-        //选择城市
+        //选择城市遮罩
         $('.btn-city').delegate($(this),'click',function(){
             var slide = new SlideDialog({
             	dialogList : $('.city-list'),
             	slideElm : $('.cityValue')
             });
         });
-        //选择区县
+        //选择区县遮罩
         $('.btn-zone').delegate($(this),'click',function(){
             var cityValue = $('.cityValue').val();
             if (cityValue=="") {
