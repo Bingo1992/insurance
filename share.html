@@ -15,31 +15,34 @@
 
 <body>
     <div class="banner">
-        <ul  class="equably-layout border-bottom">
-        	<li>
+        <ul class="share-tabs-1 equably-layout border-bottom">
+        	<li class="active">
         		<a href="#">咨询</a>
         	</li>
         	<li>
         		<a href="#">海报</a>
         	</li>
         </ul>
-        <ul class="nav-tabs equably-layout border-bottom">
-            <li hidefocus="true" class="active">
-                <a>精选</a>
-                <span class="circlePoint">2</span>
-            </li>
-            <li hidefocus="true"><a>美文</a></li>
-            <li hidefocus="true">
-                <a>我的</a>
-                <span class="semCirclePoint">10+</span>
-            </li>
-            <li hidefocus="true">
-                 <a>最新发布</a>
-            </li>
-            <li hidefocus="true">
-                <a>审核中</a>
-            </li>
-        </ul>
+        <div class="share-tabs-2">
+            <ul class="nav-tabs equably-layout border-bottom">
+                <li hidefocus="true" class="active">
+                    <a>精选</a>
+                    <span class="circlePoint">2</span>
+                </li>
+                <li hidefocus="true"><a>美文</a></li>
+                <li hidefocus="true">
+                    <a>我的</a>
+                    <span class="semCirclePoint">10+</span>
+                </li>
+                <li hidefocus="true">
+                     <a>最新发布</a>
+                </li>
+                <li hidefocus="true">
+                    <a>审核中</a>
+                </li>
+            </ul>
+        </div>   
+            
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -650,6 +653,19 @@
         $('.share-sort').click(function() {
             var slide = new SlideDialog();
         });
+
+
+         var winHeight = $(document).scrollTop();
+ 
+          $(window).scroll(function() {
+            var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
+            if (scrollY > winHeight + 44){ //如果没滚动到顶部，删除显示类，否则添加显示类
+              $('.share-tabs-2').addClass('hide');
+
+            } else {
+              $('.share-tabs-2').removeClass('hide');
+            }        
+           });
 
     });
     </script>

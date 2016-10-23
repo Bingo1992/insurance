@@ -975,6 +975,22 @@ i.icon-map {font-size: 20px;color:#ccc;}
     }
 }
 /* -------分享页---*/
+.share-tabs-1 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	z-index: 4;
+	background-color: #fff;
+	li.active a{
+		color: $color-theme;
+	}
+}
+.share-tabs-2{
+	margin-top: 44px;
+    margin-bottom: -29px;
+    height: 49px;
+}
 .share-list {
 	margin-top: 0;
 }
