@@ -28,8 +28,8 @@
                 $('.tip-dialog').remove();
             }, 1500);
         },
-        //表单验证
-        isWrong: function(text){
+        //表单验证提示
+        isTip: function(text){
            return this.Tiphtml(text);
         },
        

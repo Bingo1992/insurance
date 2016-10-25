@@ -10,7 +10,11 @@
     <title>分享页面</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
-    
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
+    <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+   
 </head>
 
 <body>
@@ -20,7 +24,7 @@
         		<a href="#">咨询</a>
         	</li>
         	<li>
-        		<a href="#">海报</a>
+        		<a href="poster.html">海报</a>
         	</li>
         </ul>
         <div class="share-tabs-2">
@@ -109,6 +113,102 @@
                                     
                                     <div class="list-info">
                                         <h4 class="nowrap-2">精辟：喝酒喝的是感觉，保险卖的是什么？</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
+                                        <div class="new-insure">
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                   <span>邰小宝</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>阅读</div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <div class="font-gray fl">
+                                                    <span>2016-09-10</span>
+                                                </div>
+                                                <div class="font-gray fr"><span>1122</span>分享</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="list-box" href="share_detail.html">
+                                    <div class="shareImg-box">
+                                        <img class="share-img" src="images/s1.jpg">
+                                    </div>
+                                    <div class="list-info">
+                                        <h4 class="nowrap-2">学习无忧疾病医疗学平险计划学习无忧疾病</h4>
                                         <div class="new-insure">
                                             <div class="clearfix">
                                                 <div class="font-gray fl">
@@ -624,14 +724,10 @@
     <a class="fixedLogo" href="article.html">
         <p>发布</p>
     </a>
-   <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/swipeSlide.min.js"></script>
-     <script type="text/javascript" src="js/idangerous.swiper.min.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
    
     <script type="text/javascript">
     $(function() {
-        //banner图片只有一张时，隐藏圆点
+      
         window.onload = function() {
             height = $('.content-slide')[0].clientHeight;
             $('.swiper-container').css('height',height+60+'px');
@@ -654,17 +750,15 @@
             var slide = new SlideDialog();
         });
 
-
-         var winHeight = $(document).scrollTop();
- 
+         var winHeight = 0;
           $(window).scroll(function() {
             var scrollY = $(document).scrollTop();// 获取垂直滚动的距离，即滚动了多少
-            if (scrollY > winHeight + 44){ //如果没滚动到顶部，删除显示类，否则添加显示类
-              $('.share-tabs-2').addClass('hide');
-
-            } else {
-              $('.share-tabs-2').removeClass('hide');
-            }        
+            if (scrollY >= winHeight){ //如果没滚动到顶部添加显示类，否则删除显示类，
+              $('.share-tabs-2').slideUp(200);
+            } else{
+              $('.share-tabs-2').slideDown(200);
+            }  
+            winHeight=scrollY;       
            });
 
     });

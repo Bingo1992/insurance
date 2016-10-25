@@ -386,7 +386,6 @@ input.btn {
   margin: 0 0.5rem;
 }
 .two-btn .confirm {
-  background-color: #f63;
   box-sizing: border-box;
 }
 .two-btn .cancel {
@@ -552,6 +551,12 @@ input.btn {
 .sudoku li .blue {
   background-color: #8abdf8;
 }
+.sudoku li .blue-2 {
+  background-color: #26c8f0;
+}
+.sudoku li .pink {
+  background-color: #fe7bb2;
+}
 .sudoku a {
   display: -webkit-box;
   -webkit-box-align: center;
@@ -567,7 +572,7 @@ input.btn {
   text-align: center;
   display: inline-block;
   margin-bottom: .2rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 .sudoku span {
   padding-left: 4px;
@@ -595,7 +600,7 @@ i.icon-loading {
     -webkit-transform: rotate(360deg) translateZ(0);
   }
 }
-.fixed-bottom, .fixed-body, .dialog-list {
+.fixed-bottom, .fixed-body, .pic-dialog, .dialog-list {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -603,7 +608,7 @@ i.icon-loading {
   z-index: 3;
 }
 
-.fixed-body {
+.fixed-body, .pic-dialog {
   height: 100%;
 }
 
@@ -1338,6 +1343,17 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   display: block;
   float: left;
   margin: 2px;
+}
+
+.star {
+  display: inline-block;
+}
+.star span {
+  color: #ccc;
+  font-size: 14px;
+}
+.star .star-full {
+  color: #ffab33;
 }
 
 .btn-edit {
@@ -2163,6 +2179,68 @@ h3.list-info {
 }
 .turn-to-lettter a.active {
   color: #f63;
+}
+
+.poster-list {
+  padding: 1rem .5rem;
+  overflow: hidden;
+}
+.poster-list li {
+  width: 50%;
+  float: left;
+  box-sizing: border-box;
+  padding: 0 .5rem .5rem .5rem;
+}
+.poster-list img {
+  width: 7.875rem;
+  height: 7.875rem;
+  border-radius: 4px;
+}
+
+.upload-img {
+  position: relative;
+}
+.upload-img a {
+  height: 7.875rem;
+  line-height: 7.875rem;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  width: 7.875rem;
+  border: 1px solid #e1e1e1;
+  position: relative;
+  color: #898989;
+}
+.upload-img input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.875rem;
+  height: 7.875rem;
+  opacity: 0;
+  z-index: 3;
+}
+.upload-img img {
+  width: 7.875rem;
+  height: 7.875rem;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.pic-dialog {
+  display: none;
+  background-color: #fff;
+}
+.pic-dialog img {
+  margin-bottom: 16px;
+}
+
+.pic-dialog.show {
+  display: -webkit-box;
+  -webkit-box-pack: center;
 }
 
 .show {

@@ -329,7 +329,7 @@ input.btn {
 		// @include btnRadius(40px);
     }
     .confirm {
-    	 background-color: $color-theme; 
+    	 // background-color: $color-theme; 
          box-sizing: border-box; 
     }
     .cancel {
@@ -488,6 +488,8 @@ input.btn {
         .red{background-color: #fd5e5e;}
         .purple{background-color: #d7acf3;}
         .blue {background-color: #8abdf8;}
+        .blue-2{background-color: #26c8f0;}
+        .pink{background-color: #fe7bb2;}
     }
     a{
     	display:-webkit-box;
@@ -500,7 +502,7 @@ input.btn {
 	    @include circle(2.5rem);   
 	    display: inline-block;
 	    margin-bottom: .2rem;
-	    font-size: 1.4rem;
+	    font-size: 1.6rem;
     }
     span {padding-left: 4px;}
 }

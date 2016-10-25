@@ -177,7 +177,7 @@
         //选择城市
         $('.select-city').click(function(){
             if($('.provinceValue').find('input').length!=0){
-                $(this).isWrong("请先选择省份");
+                $(this).isTip("请先选择省份");
             }else {
                 var slide2 = new SlideDialog({
                     dialogList : $('.city-list'),
@@ -191,9 +191,9 @@
         $('.btn').click(function(){
             var idCard = $('.idCard').val();
             if(idCard ==''){
-                $(this).isWrong('身份证号不能为空');
+                $(this).isTip('身份证号不能为空');
             }else if(!checkIdCard(idCard)){
-                $(this).isWrong('身份证号有误');
+                $(this).isTip('身份证号有误');
             }
         });
 

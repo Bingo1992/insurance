@@ -578,6 +578,16 @@
 		margin: 2px;
 	}
 }
+.star {
+	display: inline-block;
+	span {
+		color: #ccc;
+		font-size: 14px;
+	}
+	.star-full {
+		color: #ffab33;
+	}
+}
 .btn-edit {
 	position: absolute;
 	right: $gauge;
@@ -1333,6 +1343,65 @@ h3.list-info {font-size: $lg-font;}
 	    	color: $color-theme;
 	    }
     }
+}
+
+// -----制作海报-----
+.poster-list {
+	padding: 1rem .5rem;
+	overflow: hidden;
+	li {
+		width: 50%;
+		float: left;
+		box-sizing: border-box;
+		padding: 0 .5rem .5rem .5rem;
+	}
+	img {
+		width: 7.875rem;
+    	height: 7.875rem;
+    	border-radius: 4px;
+	}
+}
+.upload-img {
+	position: relative;
+	a {
+		@include btnRadius(7.875rem);
+	    width: 7.875rem;
+	    border: 1px solid $border-color;
+	    position: relative;
+	    color: #898989;
+	}
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 7.875rem;
+    	height: 7.875rem;
+    	opacity: 0;
+    	z-index: 3;
+	}
+	img {
+		width: 7.875rem;
+    	height: 7.875rem;
+    	border-radius: 4px;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	z-index: 2;
+	}
+	
+}
+.pic-dialog {
+	@extend .fixed-body;
+	display: none;
+	background-color: #fff;
+	img {
+		margin-bottom: $bgMargin;
+	}
+}
+.pic-dialog.show {
+	display: -webkit-box;
+	// -webkit-box-align: center;
+	-webkit-box-pack: center;
 }
 
 // ---最后---

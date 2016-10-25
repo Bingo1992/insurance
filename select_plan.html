@@ -349,7 +349,7 @@
         $('.btn-zone').delegate($(this),'click',function(){
             var cityValue = $('.cityValue').val();
             if (cityValue=="") {
-                $(this).isWrong('请先选择城市');
+                $(this).isTip('请先选择城市');
             }else {
                 var slide = new SlideDialog({
                     dialogList : $('.zone-list'),
