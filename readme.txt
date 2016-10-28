@@ -56,3 +56,4 @@
 我的应用：my_apply.html
 文章发布：article.html
 
+车辆保险：car_insurance.html
