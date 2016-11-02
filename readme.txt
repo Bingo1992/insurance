@@ -1,4 +1,4 @@
-首页：idex.html
+首页：index.html
 客户：client.html
 分享：share.html
 分享详情：share_detail.html
@@ -38,12 +38,16 @@
 修改信息：modify_info.html
 
 营业部：sales_department.html
+建立营业部：build_department.html
+我的营业部：my_department.html
 我的团队：my_team.html
 邀请好友：invite_friend.html
 
 我的名片：my_card.html
 推荐奖励：recommend_prize.html
-认证升级：certify_update.html
+资格认证：seniority_certify.html
+身份认证：id_certify.html
+会员升级：member_update.html
 
 违章查办：break_rules.html
 查询结果：breakRules_result.html
@@ -57,3 +61,6 @@
 文章发布：article.html
 
 车辆保险：car_insurance.html
+
+绑定银行卡：bind_card.html
+银行卡管理：bank_manage.html

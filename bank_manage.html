@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>绑定银行卡</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/fonts.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</head>
+
+<body>
+
+    <ul class="content-list">
+        <li>
+            <div class="bank-card">
+                <div class="card-info">
+                    <h5>中信银行</h5>
+                </div>
+                 <h2 class="cardNum">**** **** **** **** 6589</h2>
+            </div>
+            <div class="setting-card">
+                <div class="fl">
+                    <p class="default-card">默认卡片</p>
+                </div>
+                <div class="btn-setting fr">
+                    <i class="icon-setting"></i>
+                    <span>设置</span>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="bank-card">
+                <div class="card-info">
+                    <h5>中信银行</h5>
+                </div>
+                 <h2 class="cardNum">**** **** **** **** 6589</h2>
+            </div>
+            <div class="setting-card">
+                <div class="fl">
+                    <p class="default-card hide">默认卡片</p>
+                </div>
+                <div class="btn-setting fr">
+                    <i class="icon-setting"></i>
+                    <span>设置</span>
+                </div>
+            </div>
+        </li>
+    </ul>   
+	<a class="btn-addCard" href="bind_card.html">添加银行卡</a>
+
+    <!-- 设置遮罩 -->
+    <div class="setting-dialog">
+        <div class="ui-dialog"></div>
+        <ul class="setting-list border-list">
+            <li class="btn-remove">解除绑定</li>
+            <li class="btn-default">设为默认</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        //卡片设置
+        $('.btn-setting').click(function(){
+            var $li = $(this).closest('li');
+            var $defCard = $li.find('.default-card');
+            $('.setting-dialog').find('.ui-dialog').addClass('show')
+                                .siblings('ul').addClass('more-top-open');
+            $('.btn-remove').unbind('click').click(function(){
+                $li.remove();
+                hideDialog();
+            });
+            $('.btn-default').click(function(){
+                $defCard.removeClass('hide');
+                $li.siblings('li').find('.default-card').addClass('hide');
+                hideDialog();
+            });
+        });
+
+        function hideDialog(){
+            $('.setting-dialog').find('.ui-dialog').removeClass('show')
+            .siblings('ul').removeClass('more-top-open');
+        }
+    })
+    </script>
+</body>
+
+</html>

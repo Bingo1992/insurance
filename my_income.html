@@ -20,7 +20,11 @@
             <div class="my-income">
                 <h2>7800</h2>
                 <p class="income-title">本月收入（元）</p>
-                <a class="btn-white" href="income_detail.html">收入明细</a>
+                <!-- <a class="btn-white" href="income_detail.html">收入明细</a> -->
+                <div class="sales-btn">
+                    <a class="btn-white" href="income_detail.html">明细</a>
+                    <a class="btn-drawCash btn-white">提现</a>
+                </div>
             </div>
             <ul class="equably-layout">
                 <li class="border-right">
@@ -45,56 +49,83 @@
         <a class="btn" href="#">结算</a> 
         
     <!-- </div> -->
-      
-    
-    <!-- 底部固定内容 -->
-<!--     <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li class="active">
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
+        <div class="bank-dialog ui-dialog">
+            <div class="dialog-cnt">
+                <h2>提现到银行卡</h2>
+                <div class="dialog-content">
+                    <p class="font-gray">最多可提现：<span>3000</span>元</p>
+                    <ul class="form-list border-list">
+                        <li>
+                            <label>提现金额：</label>
+                            <input type="tel" placeholder="请输入提现金额">
+                        </li>
+                    </ul>
+                    <p class="font-gray">选择银行卡</p>
+                    <ul class="form-list border-list">
+                        <li>
+                            <img class="border-img" src="images/pingan.jpg">
+                            <div class="list-info">
+                                <h4>平安银行</h4>
+                                <p>尾号<span>1243</span></p>
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio" name="bank" checked>
+                                <i class="icon-hook"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="border-img" src="images/jiaohang.jpg">
+                            <div class="list-info">
+                                <h4>交通银行</h4>
+                                <p>尾号<span>1243</span></p>
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio" name="bank">
+                                <i class="icon-hook"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <img class="border-img" src="images/guangfa.jpg">
+                            <div class="list-info">
+                                <h4>广发银行</h4>
+                                <p>尾号<span>1243</span></p>
+                            </div>
+                            <div class="checkbox">
+                                <input type="radio" name="bank">
+                                <i class="icon-hook"></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="two-btn">
+                        <a class="cancel btn">取消</a>
+                        <a class="confirm btn">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script type="text/javascript">
-    $(function(){
-        var datas = [10000, 21000, 35052,12000, 20200, 15000];//(6个月数据)
-        var myDate = new Date();
-        var nowMonth = myDate.getMonth(); //获取当前月份(0-11,0代表1月)
-        LineChart($(".recordCvs")[0], datas, {
-            beginMonth: nowMonth-5, //起始月
-            endMonth: nowMonth, //结束月
-            stepY: 10000 //y轴梯度
-        });  
-    });
-    </script>
+        <script type="text/javascript">
+         $(function(){
+            //----折线图
+            var datas = [10000, 21000, 35052,12000, 20200, 15000];//(6个月数据)
+            var myDate = new Date();
+            var nowMonth = myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+            LineChart($(".recordCvs")[0], datas, {
+                beginMonth: nowMonth-5, //起始月
+                endMonth: nowMonth, //结束月
+                stepY: 10000 //y轴梯度
+            });  
+
+
+            // -----提现到银行卡---
+            $('.btn-drawCash').click(function(){
+                $(this).showUiDialog('.bank-dialog');
+                $('.confirm').unbind('click').click(function(){
+                    $('.bank-dialog').removeClass('show');
+                })
+            })
+        });   
+        </script>
 </body>
 
 </html>

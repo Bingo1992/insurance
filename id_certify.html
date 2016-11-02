@@ -6,7 +6,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
-	<title>升级认证</title>
+	<title>身份认证</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -23,10 +23,6 @@
                 <li>
                     <label>身份证号</label>
                     <input type="text" placeholder="请输入身份证号">
-                </li>
-                <li>
-                    <span class="list-info">上传从业资格证</span>
-                    <span class="file-src font-gray"></span>
                     <div class="upload-file">
                         <i class="icon-camera"></i>
                         <input class="file" type="file">
@@ -35,48 +31,13 @@
             </ul>
             
             <a class="btn">立刻认证</a>
-            <a class="btn-history" href="#">认证客户权益</a>
+            <!-- <a class="btn-history" href="#">认证客户权益</a> -->
         </form> 
     <!-- </div> -->
     <!-- -banner- -->
 
-    <!-- 底部固定内容 -->
-<!--     <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
 
-    <div class="ui-dialog">
+   <!--  <div class="ui-dialog">
         <div class="dialog-cnt">
             <i class="icon-cancel"></i>
             <h2>认证用户权益</h2>
@@ -101,21 +62,7 @@
                 11、售后保养：可终身免费清洗、保养、维护、个性刻字、改手寸。</p>
            </div>
         </div>
-    </div>
-    <script type="text/javascript">
-    $(function(){
-        $('.file').change(function(){
-            var src = $(this).val();//获取文件路径
-            var arr=src.split('\\');//注split可以用字符或字符串分割 
-            var name=arr[arr.length-1];//取得的文件名称 
-            $(this).closest('.upload-file').siblings('.file-src').html(name);
-        });
-        //认证客户权益
-        $('.btn-history').click(function(){
-            $(this).showUiDialog('.ui-dialog');
-        });
-    });
-    </script>
-  
+    </div> -->
+    
 </body>
 </html>

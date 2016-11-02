@@ -24,7 +24,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-id:before {
+  content: "\e930";
+}
+.icon-setting:before {
+  content: "\e931";
+}
+.icon-vip:before {
+  content: "\e932";
+}
 .icon-wish:before {
   content: "\e900";
 }

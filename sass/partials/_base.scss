@@ -490,7 +490,10 @@ input.btn {
         .blue {background-color: #8abdf8;}
         .blue-2{background-color: #26c8f0;}
         .pink{background-color: #fe7bb2;}
+        .gray{background-color: #999;}
+        .green-2{background-color: #1bce8d;}
     }
+
     a{
     	display:-webkit-box;
         -webkit-box-align:center;
@@ -505,6 +508,9 @@ input.btn {
 	    font-size: 1.6rem;
     }
     span {padding-left: 4px;}
+}
+.domyself-poster i{
+    border-radius: 8px;
 }
 
 // loading

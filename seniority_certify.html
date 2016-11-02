@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>资格认证</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+</head>
+<body>
+	<!-- <div class="banner"> -->
+        <form>
+            <ul class="form-list border-list">
+       <!--          <li>
+                    <label>真实姓名</label>
+                    <input type="text" placeholder="请输入真实姓名">
+                </li>
+                <li>
+                    <label>身份证号</label>
+                    <input type="text" placeholder="请输入身份证号">
+                </li> -->
+                <li>
+                    <span class="list-info">上传从业资格证</span>
+                    <span class="file-src font-gray"></span>
+                    <div class="upload-file">
+                        <i class="icon-camera"></i>
+                        <input class="file" type="file">
+                    </div>
+                </li>
+            </ul>
+            
+            <a class="btn">立刻认证</a>
+            <!-- <a class="btn-history" href="#">认证客户权益</a> -->
+        </form> 
+    <!-- </div> -->
+    <!-- -banner- -->
+<!-- 
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>认证用户权益</h2>
+            <div class="dialog-content">
+                <p class="font-gray">1、原价回购业务：凡会员钻石带满一年后可终身享有原价回购；<br>
+                2、高额投资回报：会员可获得每年高于银行固定利率的5%作为投
+                     资收益；<br>
+                3、产品寄售业务：可帮会员代售本会所钻石产品，享受更高投资
+                     成果；<br>
+                4、分期付款零利率：零手续费、零利率，满足您多方面的投资需求<br>
+                5、DIY个性化定制：拥有强大资深的设计研发团队，特聘日本珠宝
+                     设计大师朴载林，亲自手工制作为您量身订制，打造国际顶级奢
+                     华款式。设计师为您个性化定制服务的同时，更加重视原创设计，
+                     保证每一件珠宝首饰都是不可复制的艺术品；<br>
+                6、奢侈品定购：低于市场价格2/3的价格，圆您奢侈品的梦想；<br>
+                7、会员积分换钻石：特设尊贵会员星级制度及会员推荐累计积分形
+                     式，让您获得更多的会员利益与惊喜；<br>
+                8、会员大礼包：会员可享受店内提供的所有精美礼品，以及会所合
+                     作商户提供的礼品等；<br>
+                9、珠宝评估：会员珍藏珠宝，可免费评估鉴赏并收购；<br>
+                10、换购业务：钻石可以小换大，会员享有三月内彩宝可免费换戴；<br>
+                11、售后保养：可终身免费清洗、保养、维护、个性刻字、改手寸。</p>
+           </div>
+        </div>
+    </div> -->
+    <script type="text/javascript">
+    $(function(){
+        $('.file').change(function(){
+            var src = $(this).val();//获取文件路径
+            var arr=src.split('\\');//注split可以用字符或字符串分割 
+            var name=arr[arr.length-1];//取得的文件名称 
+            $(this).closest('.upload-file').siblings('.file-src').html(name);
+        });
+        //认证客户权益
+        // $('.btn-history').click(function(){
+        //     $(this).showUiDialog('.ui-dialog');
+        // });
+    });
+    </script>
+  
+</body>
+</html>

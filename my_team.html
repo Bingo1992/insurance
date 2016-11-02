@@ -19,6 +19,10 @@
             <div class="my-team">
                 <h2>广州平安天河团队</h2>
             </div>
+            <a class="btn-edit" href="#">
+                <i class="icon-edit"></i>
+                <span>编辑</span>
+            </a>   
             <ul class="equably-layout">
                 <li class="border-right">
                     <h3>57389.00</h3>
@@ -155,11 +159,35 @@
         </ul> -->
     </div>
 
+    <div class="ui-dialog bank-dialog">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <ul class="form-list border-list">
+                    <li>
+                        <input class="teamName" type="text" placeholder="请输入团队名">
+                    </li>
+                </ul>
+                <div class="two-btn">
+                    <a href="#" class="btn cancel">取消</a>
+                    <a href="#" class="btn confirm">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript">
     $(function(){
         // 选项卡
         $('.team-tabs li').click(function(){
             $(this).switchTabs('.team-tabs li','.table');
+        });
+        //修改团队名称
+        $('.btn-edit').click(function(){
+            $(this).showUiDialog('.ui-dialog');
+            $('.confirm').click(function(){
+                var value = $('.teamName').val();
+                $('.my-team h2').html(value);
+                $('.ui-dialog').removeClass('show');
+            })
         });
     });
     </script>

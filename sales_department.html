@@ -1,131 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
-    <title>我的营业部</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <title>营业部</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
 </head>
-
 <body>
-    <!-- <div class="banner"> -->
-        <div class="grid-bg">
-            <div class="my-team">
-                <h2>广州平安天河区营业部</h2>
-            </div>
-            <ul class="equably-layout">
-                <li class="border-right">
-                    <h3>57389.00</h3>
-                   <p class="income-title">保费总额（元）</p> 
-                </li>
-                <li class="border-right">
-                    <h3>57389.00</h3>
-                   <p class="income-title">月保费（元）</p> 
-                </li>
-                <li>
-                    <h3>3000</h3>
-                   <p class="income-title">参保人数（人）</p> 
-                </li>
-            </ul>
-            <div class="sales-btn">
-                <a class="btn-white" href="my_team.html">团队</a>
-                <a class="btn-white">订单</a>
-            </div>
-        </div>  
-        <div class="list-box bg-show">
-          <i class="icon-map"></i>
-          <div class="list-info">
-            <p>广州市天河区黄埔大道西88号国防大厦18楼</p></div>
-        </div>  
-        <table class="table-team table border-top show">
-            <thead class="font-black">
-                <tr>
-                    <th>姓名</th>
-                    <th>保费（元）</th>
-                    <th>排名</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>邰小宝</td>
-                    <td class="font-theme">52535.00</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
-        </table>
-        
-         <!-- 加载 -->
-        <div class="scroll_load">
-            <span class="pullUpLabel">点击加载更多</span>
-        </div>
-    <!-- </div> -->
-    
-    
-    <!-- 底部固定内容 -->
-  <!--   <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
+    <form>
+        <p class="title-gray">建立条件</p>
+        <ul class="form-list border-list">
             <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
+                <label>条件一：</label>
+                <div class="list-info">
+                    <p>孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</p>
+                </div>
             </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
+           <li>
+                <label>条件二：</label>
+                <div class="list-info">
+                    <p>孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。</p>
+                </div>
             </li>
         </ul>
-    </div> -->
+        
+        <a class="btn" href="bulid_department.html">建立营业部</a>
+        
+        <!-- 不合条件时无法建立营业部 -->
+        <a class="btn-cancel" href="#">建立营业部</a>
+      
+    </form> 
 
-    <script type="text/javascript">
-    $(function(){
-        // 选项卡
-        $('.team-tabs li').click(function(){
-            $(this).switchTabs('.team-tabs li','.table');
-        });
-    });
-    </script>
 </body>
-
 </html>

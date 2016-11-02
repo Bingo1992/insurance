@@ -591,7 +591,7 @@
 .btn-edit {
 	position: absolute;
 	right: $gauge;
-	top: $gauge;
+	top: 12px;
 	@include btnBorder(24px,#fff);
 	i {font-size: 20px;}
 }
@@ -742,6 +742,15 @@ p.income-title {
 	max-width: 414px;
 	display: block;
 	margin: 0 auto;
+}
+
+.bank-dialog {
+	.dialog-content {
+		padding: $bgMargin 0;
+	}
+	.font-gray {
+		margin: 0 10px -10px 10px;
+	}
 }
 // -----收入明细----
 .line-info {
@@ -1280,7 +1289,65 @@ h3.list-info {font-size: $lg-font;}
 	}
 }
 
+// 银行卡管理
+// .card-list li {padding: 0;}
+.bank-card {
+    background-color: #e85a68;
+    color: #fff;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+    padding: .8rem 1rem;
+}
+.bank-card h5 {
+    display: inline-block;
+    padding: 0 .3rem;
+}
+.bank-card span {
+    font-size: .6rem;
+    padding-left: .3rem;
+}
+.bank-card i {font-size: 1.8rem;}
+.cardNum {font-size: 1rem;margin-top: .3rem;}
 
+.setting-card {
+    padding: .5rem;
+    overflow: hidden;
+    color: #999;
+}
+.default-card {
+    font-size: .6rem;
+    color: #fff;
+    background-color: #6395d0;
+    padding: 0 .5rem;
+    line-height: 1rem;
+    display: block;
+    border-radius: .2rem;
+}
+
+.btn-addCard {
+    width: 15rem;
+    margin: 1rem auto;
+    text-align: center;
+    color: #999;
+    line-height: 2.2rem;
+    border: 1px dashed #999;
+    display: block;
+    box-sizing: border-box;
+    border-radius: .3rem;
+}
+.setting-list{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    line-height: 2rem;
+    text-align: center;
+    z-index: 20;
+    -webkit-transform: translateY(150%) translateZ(0) !important;
+    -webkit-transition: all .4s;
+    margin: 0;
+}
 // -----红包----
 .big-red {
 	color: #ff5e4b;
@@ -1404,10 +1471,24 @@ h3.list-info {font-size: $lg-font;}
 	-webkit-box-pack: center;
 }
 
+.btn-small {
+	@include height(30px);
+	padding: 0 10px;
+	margin-left: 1rem;
+}
+
+.form-makePic {
+	margin: -16px 0;
+	padding: 16px 0;
+}
 // ---最后---
 .show {display:block;}
 .hide {display: none !important;}
 .more-wp-open {
     -webkit-transform: translateX(0) translateZ(0) !important;
     -webkit-transition: all .4s;
+}
+.more-top-open {
+    -webkit-transform: translateY(0) translateZ(0) !important;
+    -webkit-transition: all .4s !important;
 }
