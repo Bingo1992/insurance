@@ -61,7 +61,7 @@
             </div>
             <!-- 每一列 -->
             <div class="swiper-slide">
-                <ul class="poster-list content-slide">
+                <ul class="poster-list-2 poster-list content-slide">
                     <li>
                         <a>
                             <img src="images/p1.jpg">
@@ -109,7 +109,7 @@
     $(function(){
 
         //图片放大
-        $('.poster-list img').click(function(){
+        $('.poster-list-2 img').click(function(){
             var src = $(this).attr('src');
             $(this).showUiDialog('.bigPic-dialog');
             $('.bigPic-dialog img').attr('src',src);
