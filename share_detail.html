@@ -127,6 +127,28 @@
         <div class="share-banner">
             <img src="images/bg1.jpg">  
         </div>
+
+
+        <!-- 评论列表 -->
+        <a id="commentList" class="comment-list">
+            <p class="title-gray">评论列表</p>
+            <ul class="border-list">
+                <li>
+                    <div>
+                        <img class="small-img" src="images/per.jpg">
+                        <span class="font-blue">网友昵称</span>
+                    </div>
+                    <p>孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</p>
+                </li>
+                <li>
+                    <div>
+                        <img class="small-img"src="images/user.png">
+                        <span class="font-blue">网友昵称</span>
+                    </div>
+                    <p>评论内容评论内容评论内容评论内容</p>
+                </li>
+            </ul>
+        </a>
 	</div>
 
 
@@ -135,13 +157,20 @@
 		<!-- 结账 -->
         <div class="actionBar-container list-box border-top">
            <input class="comment-input list-info" type="text" placeholder="写评论" readonly>
-           <div class="btn-hand comment-i">
+           <!-- 评论 -->
+           <a class="btn-comment comment-i" href="#commentList">
                <i class="icon-star-empty"></i>
-               <span>633</span>
+               <span class="semCirclePoint">99+</span>
+           </a>
+           <!-- 收藏 -->
+           <div class="btn-collect comment-i">
+               <i class="icon-star-empty"></i>
+               <!-- <span class="semCirclePoint">116</span> -->
            </div>
+           <!-- 点赞 -->
            <div class="btn-hand comment-i">
                <i class="icon-handUp"></i>
-               <span>6</span>
+               <span class="semCirclePoint">6</span>
            </div>
            <div class="comment-i">
                <i class="js-btn-share icon-share"></i>
@@ -150,7 +179,7 @@
 
 	</div>
     <!-- //遮罩 -->
-    <div class="ui-dialog" id="dialog1">
+<!--     <div class="ui-dialog" id="dialog1">
         <div class="dialog-cnt">
             <i class="icon-cancel"></i>
             <h2>分享方式</h2>
@@ -183,7 +212,7 @@
                 </ul>
            </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 添加好友遮罩 -->
     <div class="ui-dialog" id="dialog2">
@@ -197,16 +226,50 @@
         </div>
     </div>
 
+   
+    <!-- 分享遮罩 -->
+    <div class="fixedBottom-dialog" id="dialog1">
+        <div class="ui-dialog"></div>
+        <div class="f-dialog-cnt border-list">
+            <ul class="equably-layout">
+                <li>
+                    <a href="#">
+                        <span class="qq sprite-share"></span>
+                        <h6 class="font-black">QQ</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="wchat sprite-share"></span>
+                        <h6 class="font-black">微信好友</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="weibo sprite-share"></span>
+                        <h6 class="font-black">微博好友</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="link sprite-share"></span>
+                        <h6 class="font-black">复制链接</h6>
+                    </a>
+                </li>
+            </ul>
+           <p class="btn-close btn-unShare">取消</p>
+        </div>
+    </div>
+
+
     <!-- 写评论遮罩 -->
-    <div class="ui-dialog" id="dialog3">
-        <div class="dialog-cnt">
-            <i class="icon-cancel"></i>
-            <h2>填写评论</h2>
-            <div class="dialog-content">
-                <textarea class="com-text" placeholder="请输入评论内容"></textarea>
-                <a class="btn">发送</a>
-           </div>
-           
+    <div class="fixedBottom-dialog" id="dialog3">
+        <div class="ui-dialog"></div>
+        <div class="f-dialog-cnt">
+            <textarea class="com-text" placeholder="请输入评论内容"></textarea>
+            <div class="fr">
+                <a class="btn-issue btn btn-close disBtn">发表</a>
+            </div>
         </div>
     </div>
 
@@ -214,8 +277,10 @@
     $(function(){
         //分享给好友
         $('.js-btn-share').click(function(){
-            $(this).showUiDialog('#dialog1');
+            $(this).showfixBtmDialog('#dialog1');
+            
         });
+
         //微信
         $('.btn-wchat').click(function(){
             $(this).showUiDialog('#dialog2');
@@ -224,9 +289,29 @@
         $('.btn-hand').click(function(){
             $(this).find('i').toggleClass('font-theme');
         });
+        //收藏
+        $('.btn-collect').click(function(){
+            var $i = $(this).find('i');
+            $(this).find('i').toggleClass('icon-star').toggleClass('font-theme');
+            if($i.hasClass('font-theme')){
+                $(this).isTip('收藏成功');
+            }else {
+                $(this).isTip('取消收藏');
+            }
+            
+        });
         //评论
         $('.comment-input').click(function(){
-            $(this).showUiDialog('#dialog3');
+            $(this).showfixBtmDialog('#dialog3');
+
+            $('.com-text').keyup(function(){
+                var value = $(this).val();
+                if(value!=""){
+                    $('.btn-issue').removeClass('disBtn');
+                }else {
+                    $('.btn-issue').addClass('disBtn');
+                }
+            })
         })
     })
     </script>

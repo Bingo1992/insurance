@@ -88,28 +88,38 @@
 // ------保险业务--------
 .nav-tabs {
 	background-color:#fff;
-	@include height(48px);
 	box-sizing:border-box;
 	position: fixed;
 	z-index: 3;
 	left: 0;
 	width: 100%;
+	a{
+		padding: 0 6px;
+ 		display: inline-block;
+ 		position: relative;
+ 		z-index: 4;
+ 		font-size: 12px;
+ 		top: -14px;
+	}
+
 	li {
 		position: relative;
-		a{
-			padding: 14px 6px;
-	 		display: inline;
-	 		position: relative;
-	 		z-index: 4;
-	 		font-size: 12px;
-		}
+		@include height(48px);
 		&.active a{
 			color: $color-theme;
 			border-bottom: 3px solid $color-theme;
-		}	
-	}			
+		}
+	}	
 }
-.nav-tabs-2 li a{padding: 14px 0;}
+.tabs-name {
+	display: block;
+	margin: 10px 0;
+	height: 24px;
+	position: relative;
+	&:after {
+		@extend .border-right;
+	}
+}
 
 // ----表单----
 //地区简写
@@ -143,19 +153,21 @@
 .select-box.list-info {padding: 0;}
 
 //上传文件
+input[type="file"] {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: block;
+    z-index: 3;
+}
+
 .upload-file {
 	position: relative;
     overflow: hidden;
     height: 24px;
-	input[type="file"] {
-		position: absolute;
-	    top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
-	    opacity: 0;
-	    display: block;
-	}
 	i{
 		font-size:26px;
 		margin-right: 0 !important;
@@ -602,12 +614,10 @@
 	    font-size: $md-font;
 	}
 	.circlePoint {
-		top: 4px;
     	right: 10%;
     	z-index: 5;
 	}   
 	.semCirclePoint {
-		top: 4px;
     	right: 4%;
     	z-index: 5;
 	}   
@@ -751,6 +761,11 @@ p.income-title {
 	.font-gray {
 		margin: 0 10px -10px 10px;
 	}
+}
+.form-list {position: relative;}
+.errorTip {
+	margin: -10px 10px 10px 10px;
+	display: none;
 }
 // -----收入明细----
 .line-info {
@@ -1001,6 +1016,14 @@ i.icon-map {font-size: 20px;color:#ccc;}
 	width:100%;
 	z-index: 4;
 	background-color: #fff;
+	a {
+		margin: 10px 0;
+		padding: 0;
+		position: relative;
+		&:after {
+			@extend .border-right;
+		}
+	}
 	li.active a{
 		color: $color-theme;
 	}
@@ -1144,20 +1167,48 @@ i.icon-wchat {
 	font-size: 16px;
 	position: relative;
 	margin-left: 12px;
-	span {
-		position: absolute;
-		top: -6px;
-		left: 22px;
-		font-size: 10px;
+	display: block;
+	.semCirclePoint {
+		right: auto;
+		left: 18px;
+		top: 10px;
+		height: 14px;
+		line-height: 15px;
+		min-width: 14px;
 	}
 }
 .com-text {
-	width: 100%;
+	width: 17.75rem;
+	margin: $bgMargin .5rem;
 	height: 5rem;
 	border: 1px solid $border-color;
 	border-radius: 4px;
 	padding: 10px;
 	box-sizing: border-box;
+}
+
+.btn-unShare {
+	text-align: center;
+	line-height: 50px;
+	background-color: #fff;
+}
+.btn-issue{
+	margin-top: 0;
+	@include height(30px);
+}
+
+// ----评论内容----
+.comment-list {
+	li {
+		padding:10px;
+	}
+	p {padding-top: 6px;}
+}
+.small-img {
+	@include circle(32px);
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 6px;
 }
 // ----邀请好友----
 .invite-list {
@@ -1284,8 +1335,37 @@ h3.list-info {font-size: $lg-font;}
 	input,textarea,.getDate{
 		color: #666 !important;
 	}
-	.per-img img {
-		margin: 20px auto;
+}
+
+// ----我的资料编辑---
+.head-portrait {
+	margin: 20px auto;
+	width: 100px;
+	height: 130px;
+	position: relative;
+}
+
+.cutPic-container{
+	@extend .fixed-body;
+	background-color: #000;
+	display: none;
+	a {position: relative;}
+}
+
+#clipArea {
+    margin: 40px auto;
+    height: 300px;
+}
+#view {
+    margin: 0 auto;
+    width: 100px;
+    height: 130px;
+    background-image: url(../images/resume.png);
+}
+.my-codeImg {
+	position: relative;
+	img {
+		width: 100px;
 	}
 }
 
@@ -1335,19 +1415,7 @@ h3.list-info {font-size: $lg-font;}
     box-sizing: border-box;
     border-radius: .3rem;
 }
-.setting-list{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #fff;
-    line-height: 2rem;
-    text-align: center;
-    z-index: 20;
-    -webkit-transform: translateY(150%) translateZ(0) !important;
-    -webkit-transition: all .4s;
-    margin: 0;
-}
+
 // -----红包----
 .big-red {
 	color: #ff5e4b;
@@ -1431,24 +1499,16 @@ h3.list-info {font-size: $lg-font;}
 .upload-img {
 	position: relative;
 	a {
-		@include btnRadius(7.875rem);
-	    width: 7.875rem;
+		@include btnRadius(13rem);
+	    width: 13rem;
 	    border: 1px solid $border-color;
 	    position: relative;
 	    color: #898989;
 	}
-	input {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 7.875rem;
-    	height: 7.875rem;
-    	opacity: 0;
-    	z-index: 3;
-	}
+
 	img {
-		width: 7.875rem;
-    	height: 7.875rem;
+		width: 13rem;
+    	height: 13rem;
     	border-radius: 4px;
     	position: absolute;
     	top: 0;
@@ -1484,6 +1544,8 @@ h3.list-info {font-size: $lg-font;}
 // ---最后---
 .show {display:block;}
 .hide {display: none !important;}
+.pdr {margin-right: 10px;}
+.disBtn{pointer-events: none;background-color: #ccc;}
 .more-wp-open {
     -webkit-transform: translateX(0) translateZ(0) !important;
     -webkit-transition: all .4s;

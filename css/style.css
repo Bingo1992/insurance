@@ -90,6 +90,8 @@ img {
 .dialog-end-list li:after,
 .border-right,
 .rc-1:after,
+.tabs-name:after,
+.share-tabs-1 a:after,
 .sort-tabs li:nth-child(1):after,
 .border-list,
 .border-list li,
@@ -98,7 +100,7 @@ img {
   position: relative;
 }
 
-.border-top:after, .bg-show:before, .border-list:before, .nav-bar:after, .rc-3:after, .border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after, .table-team th:after, .border-right:after, .rc-1:after, .sort-tabs li:nth-child(1):after, .border-left:after, .rc-3:nth-child(3):after, .ui-border:after, .content-list li:after, .lifeInsure_detail:after, .insure-state:after, .break-rules li:after, .msg-list li:after {
+.border-top:after, .bg-show:before, .border-list:before, .nav-bar:after, .rc-3:after, .border-bottom:after, .bg-show:after, .border-list li:after, .dialog-cnt h2:after, .dialog-start-list li:after, .dialog-end-list li:after, .table td:after, .table-2 th:after, .table-team th:after, .border-right:after, .rc-1:after, .tabs-name:after, .share-tabs-1 a:after, .sort-tabs li:nth-child(1):after, .border-left:after, .rc-3:nth-child(3):after, .ui-border:after, .content-list li:after, .lifeInsure_detail:after, .insure-state:after, .break-rules li:after, .msg-list li:after {
   position: absolute;
   display: block;
   content: "";
@@ -122,7 +124,7 @@ img {
   border-bottom: 1px solid #e1e1e1;
 }
 
-.border-right:after, .rc-1:after, .sort-tabs li:nth-child(1):after {
+.border-right:after, .rc-1:after, .tabs-name:after, .share-tabs-1 a:after, .sort-tabs li:nth-child(1):after {
   border-right: 1px solid #e1e1e1;
 }
 
@@ -227,7 +229,6 @@ input.btn {
 .equably-layout {
   display: -webkit-box;
   -webkit-box-orient: horizontal;
-  -webkit-box-align: center;
 }
 .equably-layout li {
   -webkit-box-flex: 1;
@@ -364,6 +365,19 @@ input.btn {
   overflow-y: auto;
 }
 
+.f-dialog-cnt {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  z-index: 20;
+  -webkit-transform: translateY(150%) translateZ(0) !important;
+  -webkit-transition: all .4s;
+  margin: 0;
+}
+
 .p-center {
   text-align: center;
 }
@@ -396,11 +410,11 @@ input.btn {
 .tip-content {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 10px;
+  padding: 4px 10px;
   line-height: 24px;
   border-radius: .3rem;
   max-width: 240px;
-  min-width: 100px;
+  min-width: 40px;
   text-align: center;
   font-size: 12px;
 }
@@ -591,7 +605,7 @@ input.btn {
 .scroll_load {
   text-align: center;
   color: #999;
-  line-height: 30px;
+  margin-bottom: 16px;
   font-size: 12px;
 }
 
@@ -610,7 +624,7 @@ i.icon-loading {
     -webkit-transform: rotate(360deg) translateZ(0);
   }
 }
-.fixed-bottom, .fixed-body, .pic-dialog, .dialog-list {
+.fixed-bottom, .fixed-body, .cutPic-container, .pic-dialog, .dialog-list {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -618,7 +632,7 @@ i.icon-loading {
   z-index: 3;
 }
 
-.fixed-body, .pic-dialog {
+.fixed-body, .cutPic-container, .pic-dialog {
   height: 100%;
 }
 
@@ -695,13 +709,14 @@ h4.font-theme {
 
 .circlePoint, .semCirclePoint {
   position: absolute;
-  top: -4px;
+  top: 6px;
   right: 0;
-  width: 18px;
-  height: 18px;
-  line-height: 18px;
-  border-radius: 18px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  border-radius: 16px;
   text-align: center;
+  line-height: 17px;
   display: block;
   color: #fff;
   background-color: #f74c31;
@@ -710,7 +725,9 @@ h4.font-theme {
 
 .semCirclePoint {
   width: auto;
+  min-width: 16px;
   padding: 0 4px;
+  box-sizing: border-box;
 }
 
 i.icon-right, i.icon-up, i.icon-down, i.icon-left {
@@ -800,31 +817,35 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .nav-tabs {
   background-color: #fff;
-  height: 48px;
-  line-height: 48px;
   box-sizing: border-box;
   position: fixed;
   z-index: 3;
   left: 0;
   width: 100%;
 }
-.nav-tabs li {
-  position: relative;
-}
-.nav-tabs li a {
-  padding: 14px 6px;
-  display: inline;
+.nav-tabs a {
+  padding: 0 6px;
+  display: inline-block;
   position: relative;
   z-index: 4;
   font-size: 12px;
+  top: -14px;
+}
+.nav-tabs li {
+  position: relative;
+  height: 48px;
+  line-height: 48px;
 }
 .nav-tabs li.active a {
   color: #f63;
   border-bottom: 3px solid #f63;
 }
 
-.nav-tabs-2 li a {
-  padding: 14px 0;
+.tabs-name {
+  display: block;
+  margin: 10px 0;
+  height: 24px;
+  position: relative;
 }
 
 .region {
@@ -870,12 +891,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   padding: 0;
 }
 
-.upload-file {
-  position: relative;
-  overflow: hidden;
-  height: 24px;
-}
-.upload-file input[type="file"] {
+input[type="file"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -883,6 +899,13 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   height: 100%;
   opacity: 0;
   display: block;
+  z-index: 3;
+}
+
+.upload-file {
+  position: relative;
+  overflow: hidden;
+  height: 24px;
 }
 .upload-file i {
   font-size: 26px;
@@ -1388,12 +1411,10 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   font-size: 12px;
 }
 .equably-layout .circlePoint {
-  top: 4px;
   right: 10%;
   z-index: 5;
 }
 .equably-layout .semCirclePoint {
-  top: 4px;
   right: 4%;
   z-index: 5;
 }
@@ -1499,7 +1520,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   padding: 16px 0;
   color: #fff;
 }
-.grid-bg li.border-right:after, .grid-bg li.rc-1:after, .grid-bg .sort-tabs li:nth-child(1):after, .sort-tabs .grid-bg li:nth-child(1):after {
+.grid-bg li.border-right:after, .grid-bg li.rc-1:after, .grid-bg li.tabs-name:after, .grid-bg .sort-tabs li:nth-child(1):after, .sort-tabs .grid-bg li:nth-child(1):after {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1554,6 +1575,15 @@ p.income-title {
 }
 .bank-dialog .font-gray, .bank-dialog .customer-name .letter, .customer-name .bank-dialog .letter {
   margin: 0 10px -10px 10px;
+}
+
+.form-list {
+  position: relative;
+}
+
+.errorTip {
+  margin: -10px 10px 10px 10px;
+  display: none;
 }
 
 .line-info {
@@ -1842,6 +1872,11 @@ i.icon-map {
   z-index: 4;
   background-color: #fff;
 }
+.share-tabs-1 a {
+  margin: 10px 0;
+  padding: 0;
+  position: relative;
+}
 .share-tabs-1 li.active a {
   color: #f63;
 }
@@ -1988,21 +2023,55 @@ i.icon-wchat {
   font-size: 16px;
   position: relative;
   margin-left: 12px;
+  display: block;
 }
-.comment-i span {
-  position: absolute;
-  top: -6px;
-  left: 22px;
-  font-size: 10px;
+.comment-i .semCirclePoint {
+  right: auto;
+  left: 18px;
+  top: 10px;
+  height: 14px;
+  line-height: 15px;
+  min-width: 14px;
 }
 
 .com-text {
-  width: 100%;
+  width: 17.75rem;
+  margin: 16px 0.5rem;
   height: 5rem;
   border: 1px solid #e1e1e1;
   border-radius: 4px;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.btn-unShare {
+  text-align: center;
+  line-height: 50px;
+  background-color: #fff;
+}
+
+.btn-issue {
+  margin-top: 0;
+  height: 30px;
+  line-height: 30px;
+}
+
+.comment-list li {
+  padding: 10px;
+}
+.comment-list p {
+  padding-top: 6px;
+}
+
+.small-img {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 32px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
 }
 
 .invite-list img, .invite-list .border-top, .invite-list .rc-3:after {
@@ -2128,8 +2197,39 @@ h3.list-info {
 .modify-form input, .modify-form textarea, .modify-form .getDate {
   color: #666 !important;
 }
-.modify-form .per-img img {
+
+.head-portrait {
   margin: 20px auto;
+  width: 100px;
+  height: 130px;
+  position: relative;
+}
+
+.cutPic-container {
+  background-color: #000;
+  display: none;
+}
+.cutPic-container a {
+  position: relative;
+}
+
+#clipArea {
+  margin: 40px auto;
+  height: 300px;
+}
+
+#view {
+  margin: 0 auto;
+  width: 100px;
+  height: 130px;
+  background-image: url(../images/resume.png);
+}
+
+.my-codeImg {
+  position: relative;
+}
+.my-codeImg img {
+  width: 100px;
 }
 
 .bank-card {
@@ -2185,20 +2285,6 @@ h3.list-info {
   display: block;
   box-sizing: border-box;
   border-radius: .3rem;
-}
-
-.setting-list {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  line-height: 2rem;
-  text-align: center;
-  z-index: 20;
-  -webkit-transform: translateY(150%) translateZ(0) !important;
-  -webkit-transition: all .4s;
-  margin: 0;
 }
 
 .big-red {
@@ -2287,28 +2373,19 @@ h3.list-info {
   position: relative;
 }
 .upload-img a {
-  height: 7.875rem;
-  line-height: 7.875rem;
+  height: 13rem;
+  line-height: 13rem;
   border-radius: 4px;
   text-align: center;
   display: block;
-  width: 7.875rem;
+  width: 13rem;
   border: 1px solid #e1e1e1;
   position: relative;
   color: #898989;
 }
-.upload-img input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 7.875rem;
-  height: 7.875rem;
-  opacity: 0;
-  z-index: 3;
-}
 .upload-img img {
-  width: 7.875rem;
-  height: 7.875rem;
+  width: 13rem;
+  height: 13rem;
   border-radius: 4px;
   position: absolute;
   top: 0;
@@ -2347,6 +2424,15 @@ h3.list-info {
 
 .hide {
   display: none !important;
+}
+
+.pdr {
+  margin-right: 10px;
+}
+
+.disBtn {
+  pointer-events: none;
+  background-color: #ccc;
 }
 
 .more-wp-open {

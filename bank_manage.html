@@ -54,9 +54,9 @@
 	<a class="btn-addCard" href="bind_card.html">添加银行卡</a>
 
     <!-- 设置遮罩 -->
-    <div class="setting-dialog">
+    <div class="fixedBottom-dialog">
         <div class="ui-dialog"></div>
-        <ul class="setting-list border-list">
+        <ul class="f-dialog-cnt border-list">
             <li class="btn-remove">解除绑定</li>
             <li class="btn-default">设为默认</li>
         </ul>
@@ -66,25 +66,19 @@
     $(function(){
         //卡片设置
         $('.btn-setting').click(function(){
+            $(this).showfixBtmDialog('.fixedBottom-dialog');
             var $li = $(this).closest('li');
             var $defCard = $li.find('.default-card');
-            $('.setting-dialog').find('.ui-dialog').addClass('show')
-                                .siblings('ul').addClass('more-top-open');
             $('.btn-remove').unbind('click').click(function(){
                 $li.remove();
-                hideDialog();
+                $(this).hidefixBtmDialog();
             });
             $('.btn-default').click(function(){
                 $defCard.removeClass('hide');
                 $li.siblings('li').find('.default-card').addClass('hide');
-                hideDialog();
+                $(this).hidefixBtmDialog();
             });
         });
-
-        function hideDialog(){
-            $('.setting-dialog').find('.ui-dialog').removeClass('show')
-            .siblings('ul').removeClass('more-top-open');
-        }
     })
     </script>
 </body>

@@ -9,122 +9,118 @@
 	<title>我的资料</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	
 </head>
 <body>
-	<!-- <div class="banner"> -->
-        <form class="modify-form">
-            <div class="per-img">
-                <img src="images/user.png">
-            </div>
-            <ul class="form-list border-list">
-                <li>
-                    <label>用户姓名</label>
-                    <input type="text" value="邰小宝">
-                </li>
-                <li>
-                    <label>手机号码</label>
-                    <input type="text" value="13800138000">
-                </li>
-                <li>
-                    <label>身份证号</label>
-                    <input type="text" value="440106198410211006">
-                </li>
-                <li>
-                    <label>职位</label>
-                    <input type="text" value="前端工程师">
-                </li>
-                <li>
-                    <label>从业年限</label>
-                    <input type="text" value="2年">
-                </li>
-                <li>
-                    <label>擅长领域</label>
-                    <input type="text" value="html">
-                </li>
-                <li>
-                    <label>工作范围</label>
-                    <input type="text" value="天河区">
-                </li>
-                <li>
-                    <label>所属营业部</label>
-                    <input type="text" value="广州天河营业部">
-                </li>
-                <li>
-                    <label>联系地址</label>
-                    <input type="text" value="广州市天河区中山大道38号10楼1003广州市天河区中山大道38号10楼1003">
-                </li>
-                <li>
-                    <label>简介</label>
-                    <textarea class="list-info" cols="100" rows="4">孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</textarea>
-                </li>
-            </ul>
+    <form class="modify-form">
+        <div class="head-portrait">
+            <!-- <img src="images/resume.png"> -->
+            <div id="view"></div>
+            <input class="portraitFile" id="portraitFile" type="file">
+        </div>
+        <ul class="form-list border-list">
+            <li>
+                <label>用户姓名</label>
+                <input type="text" value="邰小宝">
+            </li>
+            <li>
+                <label>手机号码</label>
+                <input type="text" value="13800138000">
+            </li>
+            <li>
+                <label>身份证号</label>
+                <input type="text" value="440106198410211006">
+            </li>
+            <li>
+                <label>职位</label>
+                <input type="text" value="前端工程师">
+            </li>
+            <li>
+                <label>从业年限</label>
+                <input type="text" value="2年">
+            </li>
+            <li>
+                <label>擅长领域</label>
+                <input type="text" value="html">
+            </li>
+            <li>
+                <label>工作范围</label>
+                <input type="text" value="天河区">
+            </li>
+            <li>
+                <label>所属营业部</label>
+                <input type="text" value="广州天河营业部">
+            </li>
+            <li>
+                <label>联系地址</label>
+                <input type="text" value="广州市天河区中山大道38号10楼1003广州市天河区中山大道38号10楼1003">
+            </li>
+            <li>
+                <label>简介</label>
+                <textarea class="list-info" cols="100" rows="4">孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</textarea>
+            </li>
+            <li>
+                <label>我的二维码</label>
+                <div class="my-codeImg list-info">
+                    <img src="images/code_02.png">
+                    <input class="file" type="file">
+                </div>
+                
+            </li>
+        </ul>
 
-            <ul class="border-list">
-                <li>
-                    <a class="list-box" href="modify_password.html">
-                        <span class="list-info">修改密码</span>
-                        <i class="icon-right"></i>
-                    </a>
-                </li>
-            </ul>
-            
-            <a class="btn">保存信息</a>
-        </form>
-           
-    <!-- </div> -->
-    <!-- -banner- -->
-
-    <!-- 底部固定内容 -->
-<!--     <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
+        <ul class="border-list">
             <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
+                <a class="list-box" href="modify_password.html">
+                    <span class="list-info">修改密码</span>
+                    <i class="icon-right"></i>
                 </a>
             </li>
         </ul>
-    </div> -->
+        <a class="btn">保存信息</a>
+    </form>
+           
+    <article class="cutPic-container">
+        <div id="clipArea"></div>
+        <div class="two-btn">
+            <a class="btn-cancel" href="#">取消</a>
+            <a id="clipBtn" class="btn" href="#">保存</a>
+        </div>
+    </article>
 
   
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- 图片裁剪插件 -->
+    <script src="js/iscroll-zoom.min.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <script src="js/jquery.photoClip.min.js"></script>
+
     <script type="text/javascript">
     $(function(){
-        $('.file').change(function(){
-            var src = $(this).val();//获取文件路径
-            var arr=src.split('\\');//注split可以用字符或字符串分割 
-            var name=arr[arr.length-1];//取得的文件名称 
-            $(this).closest('.upload-file').siblings('.file-src').html(name);
+        // 关闭裁剪窗口
+        $("#clipBtn").add('.btn-cancel').click(function(e){
+            $('.cutPic-container').hide();
         });
-        //认证客户权益
-        $('.btn-history').click(function(){
-            $(this).showUiDialog('.ui-dialog');
+        // 图片裁剪
+        $("#clipArea").photoClip({
+            width: 200,
+            height: 260,
+            file: "#portraitFile",
+            view: "#view",
+            ok: "#clipBtn",
+            loadStart: function () {
+                // console.log("照片读取中");
+            },
+            loadComplete: function () {
+                // console.log("照片读取完成");
+                $('.cutPic-container').show();
+            },
+            clipFinish: function (dataURL) {
+                // console.log(dataURL);
+            }
         });
+        
     });
     </script>
   

@@ -191,7 +191,7 @@ input.btn {
 .equably-layout {
 	display:-webkit-box;
 	-webkit-box-orient:horizontal;
-    -webkit-box-align: center;
+    // -webkit-box-align: center;
 	li{
 		-webkit-box-flex:1;
 		width: 100%;	
@@ -311,6 +311,21 @@ input.btn {
     max-height: 15rem;
     overflow-y: auto;
 }
+
+// 底部弹窗
+.f-dialog-cnt{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,.95);
+    text-align: center;
+    z-index: 20;
+    -webkit-transform: translateY(150%) translateZ(0) !important;
+    -webkit-transition: all .4s;
+    margin: 0;
+}
+
 .p-center {text-align: center;}
 .code-img {width: 60%;margin: 0 auto;}
 .two-btn {
@@ -341,11 +356,11 @@ input.btn {
 .tip-content{
     color: #fff;
     background-color: rgba(0,0,0,.7);
-    padding: 10px;
+    padding: 4px 10px;
     line-height: 24px;
     border-radius: .3rem;
     max-width: 240px;
-    min-width: 100px;
+    min-width: 40px;
     text-align: center;
     font-size: $md-font;
 }
@@ -517,7 +532,7 @@ input.btn {
 .scroll_load {
     text-align: center;
     color: #999;
-    line-height: 30px;
+    margin-bottom: $bgMargin;
     font-size: $md-font;
 }
 
@@ -576,9 +591,10 @@ h4.font-theme {font-size: 14px;display: inline-block;}
 // 红点：
 .circlePoint,.semCirclePoint {
     position: absolute;
-    top: -4px;
+    top: 6px;
     right: 0;
-    @include circle(18px);
+    @include circle(16px);
+    line-height: 17px;
     display: block;
     color: #fff;
     background-color: #f74c31;
@@ -586,7 +602,9 @@ h4.font-theme {font-size: 14px;display: inline-block;}
 }
 .semCirclePoint {
     width: auto;
+    min-width: 16px;
     padding: 0 4px;
+    box-sizing: border-box;
 }
 
 

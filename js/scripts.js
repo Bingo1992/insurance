@@ -39,10 +39,10 @@
                 $('.tip-dialog').addClass('show');
                 setTimeout(function() {
                     $('.tip-dialog').removeClass('show');
-                }, 1000);
+                }, 900);
             });
         },
-        //遮罩
+        //垂直居中的遮罩
         showUiDialog: function(option){
             return this.each(function() {
                 $(option).addClass('show');
@@ -53,6 +53,23 @@
                 });
             });
         },
+
+        hidefixBtmDialog: function(){
+            return this.each(function() {
+                $('.fixedBottom-dialog').find('.f-dialog-cnt').removeClass('more-top-open').siblings('.ui-dialog').removeClass('show');
+            });
+        },
+        //底部遮罩
+        showfixBtmDialog: function(option){
+            return this.each(function() {
+                $(option).find('.f-dialog-cnt').addClass('more-top-open')
+                        .siblings('.ui-dialog').addClass('show');
+                $('.ui-dialog').add('.btn-close').click(function(){
+                   $(this).hidefixBtmDialog();
+                });
+            });
+        },
+        
         //tabs
         switchTabs: function(option1,option2){
             return this.each(function() {
@@ -207,7 +224,24 @@ $(function(){
             $(this).find('span').html(dateValue);
             $(this).addClass('getDate');
         }
-    });   
+    });  
+
+
+    //是否上牌
+    $('.btn-getCarNum').click(function(){
+        var check = $(this).find(':checkbox').prop('checked');
+        if(!check){
+            $(this).siblings('.region').hide()
+                    .siblings('input').hide()
+                    .siblings('span').html('未上牌')
+                    .siblings('p').addClass('list-info').html('新车未上牌');
+        }else {
+            $(this).siblings('.region').show()
+                    .siblings('input').show()
+                    .siblings('span').html('已上牌')
+                    .siblings('p').removeClass('list-info').html('车牌号码');
+        }
+    });
 
     //是否显示checkbox下面的内容（添加客户车辆信息，选择投保方案）
     $('.slide-btn-check').click(function(){
@@ -239,3 +273,9 @@ $(function(){
     }); 
     
 });
+
+//input只能输入整数
+function onlynum(){
+    if ( ! ((event.keyCode >= 48 && event.keyCode <= 57 ) || (event.keyCode >= 96 && event.keyCode <= 105 ) || (event.keyCode == 8 )))
+        event.returnValue = false ;
+  }

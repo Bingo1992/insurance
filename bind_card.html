@@ -23,6 +23,11 @@
                 <label>银行卡号</label>
                 <input type="text" placeholder="请输入银行卡号">
             </li>
+            <li class="select-bank">
+                <label>开户行</label>
+                <span class="bankValue list-info"><input type="text" placeholder="请选择" readonly=""></span>
+                <i class="icon-right"></i>
+            </li>
             <li>
                 <label>身份证号</label>
                 <input type="text" placeholder="请输入身份证号">
@@ -35,6 +40,32 @@
         
         <a class="btn">绑定</a>
     </form> 
-
+    <!-- 开户行选择遮罩 -->
+    <div class="dialog-list">
+        <a class="return-back border-bottom">
+            <i class="icon-left"></i>
+            <h4>选择银行</h4>
+        </a>
+        <ul class="dialog-end-list whole-list">
+            <li>中国银行</li>
+            <li>中国工商银行</li>
+            <li>中国建设银行</li>
+            <li>中国农业银行</li>
+            <li>招商银行</li>
+            <li>平安银行</li>
+            <li>中信银行</li>
+            <li>中国民生银行</li>
+            <li>交通银行</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+    $(function(){
+         $('.select-bank').click(function(){
+            var slide1 = new SlideDialog({
+                slideElm : $('.bankValue')
+            }); 
+        });
+    })
+    </script>
 </body>
 </html>

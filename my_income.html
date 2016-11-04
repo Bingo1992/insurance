@@ -53,13 +53,15 @@
             <div class="dialog-cnt">
                 <h2>提现到银行卡</h2>
                 <div class="dialog-content">
-                    <p class="font-gray">最多可提现：<span>3000</span>元</p>
+                    <p class="font-gray">最多可提现：<span class="max-amount">3000</span>元</p>
                     <ul class="form-list border-list">
                         <li>
                             <label>提现金额：</label>
-                            <input type="tel" placeholder="请输入提现金额">
-                        </li>
+                            <input class="input-amount" type="tel" placeholder="只能输入100的整数倍" onkeydown="onlynum();">
+                        </li> 
                     </ul>
+                    <p class="font-red errorTip">只能输入100的整数倍</p>
+
                     <p class="font-gray">选择银行卡</p>
                     <ul class="form-list border-list">
                         <li>
@@ -120,10 +122,33 @@
             // -----提现到银行卡---
             $('.btn-drawCash').click(function(){
                 $(this).showUiDialog('.bank-dialog');
+
                 $('.confirm').unbind('click').click(function(){
                     $('.bank-dialog').removeClass('show');
-                })
-            })
+                    // var maxAmount = parseInt($('.max-amount').html());//最多可提取的额度
+                    // var value = parseInt($('.input-amount').val()); //当前输入的金额
+                    // if(value > maxAmount){
+                    //     $(this).isTip('输入的金额大于提取额度');
+                    // }else if(value%100 != 0){
+                    //     $(this).isTip('金额只能输入100的整数倍');
+                    // }else {
+                    //     $('.bank-dialog').removeClass('show');
+                    // }
+                });
+            });
+
+            //检查输入的金额
+            $('.input-amount').bind('input propertychange',function(){
+                var value = parseInt($('.input-amount').val()); //当前输入的金额
+                var maxAmount = parseInt($('.max-amount').html());//最多可提取的额度
+                if(value > maxAmount){
+                    $('.errorTip').show().html('输入的金额不能大于提取额度');
+                }else if(value%100 != 0){
+                    $('.errorTip').show().html('金额只能输入100的整数倍');
+                }else {
+                    $('.errorTip').hide();
+                }
+            });
         });   
         </script>
 </body>

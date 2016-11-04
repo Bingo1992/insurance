@@ -39,8 +39,12 @@
                     </div>
                     <i class="icon-right"></i>
                 </a>
-                <a class="list-box" href="car_info.html">
+                <a class="list-box border-bottom" href="car_info.html">
                     <span class="list-info">车险报价出单</span>  
+                    <i class="icon-right"></i>
+                </a>
+                <a class="check-breakRule list-box" href="#">
+                    <span class="list-info">违章查询</span>  
                     <i class="icon-right"></i>
                 </a>
             </li>
@@ -53,46 +57,36 @@
     <!-- 底部固定内容 -->
     <div class="fixed-bottom"> 
         <div class="actionBar-container list-box border-top">
-            <!-- <div class="two-btn"> -->
-                 <a class="btn list-info" href="addCar.html">添加车辆</a>
-               <!-- <a href="add_client.html" class="btn list-info">添加客户</a> -->
-            <!-- </div> -->
-              
+            <a class="btn list-info" href="addCar.html">添加车辆</a>
         </div>
-        <!-- 底部导航 -->
-       <!--  <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li class="active">
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul> -->
     </div>
+
+    <!-- 违章查询遮罩 -->
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <div class="dialog-content">
+                <p class="p-center">确定查询违章吗？</p>
+                <p class="font-gray p-center">资费：查询一次0.1元</p>
+            </div>
+            
+            <div class="two-btn">
+                <a class="cancel btn">取消</a>
+                <a class="confirm btn">确定</a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    $(function(){
+        //查询违章
+        $('.check-breakRule').click(function(){
+            $(this).showUiDialog('.ui-dialog');
+            $('.confirm').unbind('click').click(function(){
+                window.location.href = "break_rules.html";
+            });
+        });
+    });
+    </script>
 
 </body>
 
