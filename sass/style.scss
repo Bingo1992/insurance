@@ -94,12 +94,14 @@
 	left: 0;
 	width: 100%;
 	a{
-		padding: 0 6px;
+		padding: 0 8px;
  		display: inline-block;
  		position: relative;
  		z-index: 4;
  		font-size: 12px;
- 		top: -14px;
+ 		top: -13px;
+ 		height: 48px;
+ 		box-sizing: border-box;
 	}
 
 	li {
@@ -113,7 +115,7 @@
 }
 .tabs-name {
 	display: block;
-	margin: 10px 0;
+	margin: 12px 0;
 	height: 24px;
 	position: relative;
 	&:after {
@@ -247,7 +249,7 @@ input[type="file"] {
 //左边填写信息
 .form-list {	
 	label {
-		width: 4rem;
+		width: 80px;
 		display: inline-block;
 	}
 	input[type="text"],
@@ -329,7 +331,8 @@ input[type="file"] {
 	width: 100%;
 	li {text-align: left;}
 }
-.city-list ul,.zone-list ul,.province-list ul{
+.city-list ul,.zone-list ul,
+.province-list ul,.Procity-list ul{
 	text-align: left;
 	li {
 		padding: 0 .5rem;
@@ -1187,9 +1190,9 @@ i.icon-wchat {
 	box-sizing: border-box;
 }
 
-.btn-unShare {
+.btn-unShare,.btn-remove,.btn-default {
 	text-align: center;
-	line-height: 50px;
+	line-height: 44px;
 	background-color: #fff;
 }
 .btn-issue{
@@ -1202,7 +1205,9 @@ i.icon-wchat {
 	li {
 		padding:10px;
 	}
-	p {padding-top: 6px;}
+	.list-box {
+		padding: 0 0 4px 0; 
+	}
 }
 .small-img {
 	@include circle(32px);
@@ -1360,13 +1365,24 @@ h3.list-info {font-size: $lg-font;}
     margin: 0 auto;
     width: 100px;
     height: 130px;
-    background-image: url(../images/resume.png);
+    background-image: url(../images/user-2.png);
 }
 .my-codeImg {
 	position: relative;
 	img {
-		width: 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 122px;
+		height: 122px;
 	}
+}
+.upload-codeImg p {
+	width: 120px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
 }
 
 // 银行卡管理
@@ -1404,16 +1420,17 @@ h3.list-info {font-size: $lg-font;}
     border-radius: .2rem;
 }
 
-.btn-addCard {
-    width: 15rem;
-    margin: 1rem auto;
+.btn-addsth {
+    width: 13rem;
+    margin: $bgMargin auto;
     text-align: center;
     color: #999;
-    line-height: 2.2rem;
+    line-height: 40px;
     border: 1px dashed #999;
     display: block;
     box-sizing: border-box;
-    border-radius: .3rem;
+    border-radius: 4px;
+    position: relative;
 }
 
 // -----红包----
@@ -1499,31 +1516,43 @@ h3.list-info {font-size: $lg-font;}
 .upload-img {
 	position: relative;
 	a {
-		@include btnRadius(13rem);
-	    width: 13rem;
-	    border: 1px solid $border-color;
-	    position: relative;
-	    color: #898989;
+	    width: 17.5rem;
+	    height: 13rem;
+	    display: block;
+	    overflow: hidden;
 	}
 
 	img {
-		width: 13rem;
-    	height: 13rem;
-    	border-radius: 4px;
-    	position: absolute;
-    	top: 0;
-    	left: 0;
-    	z-index: 2;
+		height: 100%;
+	    width: auto;
+	    left: 50%;
+	    position: relative;
+	    -webkit-transform: translateX(-50%);
 	}
 	
+}
+.exportImg {
+	width: 100%;
+    // height: 13rem;
+    // display: block;
+    // overflow: hidden;
+    margin-bottom: $bgMargin; 
+    margin-top: 2rem; 
+    img {
+    	// max-height: 10rem;
+       // 	height: 100%;
+	   //  width: auto;
+	   //  left: 50%;
+	   //  position: relative;
+	   //  -webkit-transform: translateX(-50%);
+		
+    }
 }
 .pic-dialog {
 	@extend .fixed-body;
 	display: none;
 	background-color: #fff;
-	img {
-		margin-bottom: $bgMargin;
-	}
+
 }
 .pic-dialog.show {
 	display: -webkit-box;
@@ -1536,7 +1565,9 @@ h3.list-info {font-size: $lg-font;}
 	padding: 0 10px;
 	margin-left: 1rem;
 }
-
+.btn-getCode {
+	margin: 0;
+}
 .form-makePic {
 	margin: -16px 0;
 	padding: 16px 0;

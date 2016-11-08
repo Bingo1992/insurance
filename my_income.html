@@ -124,16 +124,16 @@
                 $(this).showUiDialog('.bank-dialog');
 
                 $('.confirm').unbind('click').click(function(){
-                    $('.bank-dialog').removeClass('show');
-                    // var maxAmount = parseInt($('.max-amount').html());//最多可提取的额度
-                    // var value = parseInt($('.input-amount').val()); //当前输入的金额
-                    // if(value > maxAmount){
-                    //     $(this).isTip('输入的金额大于提取额度');
-                    // }else if(value%100 != 0){
-                    //     $(this).isTip('金额只能输入100的整数倍');
-                    // }else {
-                    //     $('.bank-dialog').removeClass('show');
-                    // }
+                    // $('.bank-dialog').removeClass('show');
+                    var maxAmount = parseInt($('.max-amount').html());//最多可提取的额度
+                    var value = parseInt($('.input-amount').val()); //当前输入的金额
+                    if(value > maxAmount){
+                        $(this).isTip('输入的金额大于提取额度');
+                    }else if(value%100 != 0){
+                        $(this).isTip('金额只能输入100的整数倍');
+                    }else {
+                        $('.bank-dialog').removeClass('show');
+                    }
                 });
             });
 

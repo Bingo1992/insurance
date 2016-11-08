@@ -50,32 +50,33 @@
                     </div>
                 </div>
                 <p class="state">个人简介：孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</p>
+                 <ul class="equably-layout border-top">
+                    <li class="border-right">
+                        <a href="tel:13845796311">
+                            <i class="icon-phone"></i>
+                            <label>拨打电话</label>
+                            <p>13845796311</p>
+                        </a>
+                    </li>
+                    <li class="border-right btn-wchat">
+                        <a>
+                            <i class="icon-wchat"></i>
+                            <label>添加好友</label>
+                        </a>
+                    </li>
+                    <li class="btn-hand">
+                        <a>
+                            <i class="icon-handUp"></i>
+                            <label>点赞</label>
+                        </a>
+                    </li>
+                </ul>
             </li>
                 
         </ul>
     <!-- </div> -->
 
-         <ul class="equably-layout border-top">
-            <li class="border-right">
-                <a href="tel:13845796311">
-                    <i class="icon-phone"></i>
-                    <label>拨打电话</label>
-                    <p>13845796311</p>
-                </a>
-            </li>
-            <li class="border-right btn-wchat">
-                <a>
-                    <i class="icon-wchat"></i>
-                    <label>添加好友</label>
-                </a>
-            </li>
-            <li class="btn-hand">
-                <a>
-                    <i class="icon-handUp"></i>
-                    <label>点赞</label>
-                </a>
-            </li>
-        </ul>
+            
 
         <ul class="border-list">
             <li>
@@ -133,5 +134,13 @@
         </ul>
     </div> -->
 </body>
+<script type="text/javascript">
+$(function(){
+    // 点赞
+    $('.btn-hand').click(function(){
+        $(this).find('i').toggleClass('icon-handUp-2').toggleClass('font-theme');
+    });
+});
+</script>
 
 </html>

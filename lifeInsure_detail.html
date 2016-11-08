@@ -66,41 +66,6 @@
     <!-- </div> -->
     <!-- -banner- -->
 
-    <!-- 底部固定内容 -->
- <!--    <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
 
     <div class="ui-dialog" id="dialog1">
         <div class="dialog-cnt">
@@ -131,7 +96,7 @@
         </div>
     </div>
 
-    <div class="ui-dialog" id="share-dialog">
+<!--     <div class="ui-dialog" id="share-dialog">
         <div class="dialog-cnt">
             <i class="icon-cancel"></i>
             <h2>分享方式</h2>
@@ -164,7 +129,43 @@
                 </ul>
            </div>
         </div>
+    </div> -->
+
+    <!-- 分享遮罩 -->
+    <div class="fixedBottom-dialog" id="dialog3">
+        <div class="ui-dialog"></div>
+        <div class="f-dialog-cnt border-list">
+            <ul class="equably-layout">
+                <li>
+                    <a href="#">
+                        <span class="qq sprite-share"></span>
+                        <h6 class="font-black">QQ</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="wchat sprite-share"></span>
+                        <h6 class="font-black">微信好友</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="weibo sprite-share"></span>
+                        <h6 class="font-black">微博好友</h6>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="link sprite-share"></span>
+                        <h6 class="font-black">复制链接</h6>
+                    </a>
+                </li>
+            </ul>
+           <p class="btn-close btn-unShare">取消分享</p>
+        </div>
     </div>
+
+
    <script type="text/javascript">
    $(function(){
         // 保险投款,投保须知
@@ -174,10 +175,12 @@
         $('.btn-insurance2').click(function(){
             $(this).showUiDialog('#dialog2');
         });
-        //分享
+        //分享给好友
         $('#btn-share').click(function(){
-            $(this).showUiDialog('#share-dialog');
+            $(this).showfixBtmDialog('#dialog3');
+            
         });
+
    });
    </script>
 </body>

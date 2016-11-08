@@ -106,26 +106,22 @@
     //选择车牌号,省市遮罩
     function SlideDialog(option){
         var self = this;
-        // var $dialogList = $('.dialog-list');
-        // var $slideElm = $('.slideValue');
-        // self.dialogList = $(dialogList);
-        // self.slideElm = $slideElm;
         var opt = {
             dialogList : $('.dialog-list'),
             slideElm : $('.slideValue')
         };
         opt = $.extend(opt, option||{});
 
-        var $startLi = opt.dialogList.find('.dialog-start-list li');
-        var $endLi = opt.dialogList.find('.dialog-end-list li');
+        var $startList = opt.dialogList.find('.dialog-start-list');
+        var $endList = opt.dialogList.find('.dialog-end-list');
         var $returnBack = opt.dialogList.find('.return-back');    
         var slideValue = '';
    
         self.opt = opt;
         self.dialogList = self.opt.dialogList;
         self.slideElm = self.opt.slideElm;
-        self.startLi = $startLi;
-        self.endLi = $endLi;
+        self.startList = $startList;
+        self.endList = $endList;
         self.returnBack = $returnBack;     
         self.slideValue = slideValue;
 
@@ -137,17 +133,19 @@
         self.dialogList.addClass('more-wp-open');
         $('body').addClass('fixed-body');
         //点击左边
-        self.startLi.delegate($(this),'click',function(){
-            $(this).switchTabs(self.startLi);
+        self.startList.delegate('li','click',function(){
+            $(this).switchTabs(self.startList.find('li'));
         });
         // 点击右边
-        self.endLi.delegate($(this),'click',function(){
-            self.startLi.each(function(){
+        self.endList.delegate('li','click',function(){
+            self.startList.find('li').each(function(){
                 if($(this).hasClass('active')){
                     self.slideValue += $(this).html();
                 }//获取左边选中的值
             });
-            if($(this).html()!=self.slideValue) {
+            if(self.opt.dialogList.hasClass('Procity-list')){
+                self.slideValue += ' - ' + $(this).html();
+            }else {
                 self.slideValue += $(this).html();
             }
             self.slideElm.html(self.slideValue);//span

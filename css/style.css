@@ -824,12 +824,14 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
   width: 100%;
 }
 .nav-tabs a {
-  padding: 0 6px;
+  padding: 0 8px;
   display: inline-block;
   position: relative;
   z-index: 4;
   font-size: 12px;
-  top: -14px;
+  top: -13px;
+  height: 48px;
+  box-sizing: border-box;
 }
 .nav-tabs li {
   position: relative;
@@ -843,7 +845,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .tabs-name {
   display: block;
-  margin: 10px 0;
+  margin: 12px 0;
   height: 24px;
   position: relative;
 }
@@ -993,7 +995,7 @@ input[type="file"] {
 }
 
 .form-list label {
-  width: 4rem;
+  width: 80px;
   display: inline-block;
 }
 .form-list .region {
@@ -1076,10 +1078,12 @@ input[type="file"] {
   text-align: left;
 }
 
-.city-list ul, .zone-list ul, .province-list ul {
+.city-list ul, .zone-list ul,
+.province-list ul, .Procity-list ul {
   text-align: left;
 }
-.city-list ul li, .zone-list ul li, .province-list ul li {
+.city-list ul li, .zone-list ul li,
+.province-list ul li, .Procity-list ul li {
   padding: 0 .5rem;
 }
 
@@ -2044,9 +2048,9 @@ i.icon-wchat {
   box-sizing: border-box;
 }
 
-.btn-unShare {
+.btn-unShare, .btn-remove, .btn-default {
   text-align: center;
-  line-height: 50px;
+  line-height: 44px;
   background-color: #fff;
 }
 
@@ -2059,8 +2063,8 @@ i.icon-wchat {
 .comment-list li {
   padding: 10px;
 }
-.comment-list p {
-  padding-top: 6px;
+.comment-list .list-box, .comment-list .form-list li, .form-list .comment-list li, .comment-list .plan-list li, .plan-list .comment-list li {
+  padding: 0 0 4px 0;
 }
 
 .small-img {
@@ -2222,14 +2226,26 @@ h3.list-info {
   margin: 0 auto;
   width: 100px;
   height: 130px;
-  background-image: url(../images/resume.png);
+  background-image: url(../images/user-2.png);
 }
 
 .my-codeImg {
   position: relative;
 }
 .my-codeImg img {
-  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 122px;
+  height: 122px;
+}
+
+.upload-codeImg p {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  border: 1px solid #e1e1e1;
 }
 
 .bank-card {
@@ -2275,16 +2291,17 @@ h3.list-info {
   border-radius: .2rem;
 }
 
-.btn-addCard {
-  width: 15rem;
-  margin: 1rem auto;
+.btn-addsth {
+  width: 13rem;
+  margin: 16px auto;
   text-align: center;
   color: #999;
-  line-height: 2.2rem;
+  line-height: 40px;
   border: 1px dashed #999;
   display: block;
   box-sizing: border-box;
-  border-radius: .3rem;
+  border-radius: 4px;
+  position: relative;
 }
 
 .big-red {
@@ -2373,32 +2390,28 @@ h3.list-info {
   position: relative;
 }
 .upload-img a {
+  width: 17.5rem;
   height: 13rem;
-  line-height: 13rem;
-  border-radius: 4px;
-  text-align: center;
   display: block;
-  width: 13rem;
-  border: 1px solid #e1e1e1;
-  position: relative;
-  color: #898989;
+  overflow: hidden;
 }
 .upload-img img {
-  width: 13rem;
-  height: 13rem;
-  border-radius: 4px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
+  height: 100%;
+  width: auto;
+  left: 50%;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+}
+
+.exportImg {
+  width: 100%;
+  margin-bottom: 16px;
+  margin-top: 2rem;
 }
 
 .pic-dialog {
   display: none;
   background-color: #fff;
-}
-.pic-dialog img {
-  margin-bottom: 16px;
 }
 
 .pic-dialog.show {
@@ -2411,6 +2424,10 @@ h3.list-info {
   line-height: 30px;
   padding: 0 10px;
   margin-left: 1rem;
+}
+
+.btn-getCode {
+  margin: 0;
 }
 
 .form-makePic {

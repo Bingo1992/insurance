@@ -64,3 +64,6 @@
 
 绑定银行卡：bind_card.html
 银行卡管理：bank_manage.html
+
+注册：register.html
+登录：login.html

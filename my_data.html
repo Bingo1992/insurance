@@ -17,6 +17,7 @@
             <!-- <img src="images/resume.png"> -->
             <div id="view"></div>
             <input class="portraitFile" id="portraitFile" type="file">
+            
         </div>
         <ul class="form-list border-list">
             <li>
@@ -62,8 +63,12 @@
             <li>
                 <label>我的二维码</label>
                 <div class="my-codeImg list-info">
-                    <img src="images/code_02.png">
-                    <input class="file" type="file">
+                    <div class="upload-codeImg">
+                        <!-- <img class="uploadImg" src="images/code_02.png"> -->
+                        <input class="code-file" type="file">
+                        <p><span class="icon-plus"></span>上传二维码</p>
+                    </div>
+                    
                 </div>
                 
             </li>
@@ -120,6 +125,19 @@
                 // console.log(dataURL);
             }
         });
+
+        //上传二维码
+        $('.code-file').change(function(){
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var dataUri = event.target.result;
+                if($('.upload-codeImg img').length<=0){
+                    $('.upload-codeImg').prepend('<img class="uploadImg">');
+                }
+                $('.uploadImg').attr('src',dataUri);
+            };
+            reader.readAsDataURL(this.files[0]);
+        })
         
     });
     </script>

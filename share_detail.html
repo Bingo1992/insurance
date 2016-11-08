@@ -134,16 +134,22 @@
             <p class="title-gray">评论列表</p>
             <ul class="border-list">
                 <li>
-                    <div>
-                        <img class="small-img" src="images/per.jpg">
-                        <span class="font-blue">网友昵称</span>
+                    <div class="list-box">
+                        <div class="list-info">
+                             <img class="small-img" src="images/per.jpg">
+                            <span class="font-blue">网友昵称</span>
+                        </div>
+                        <p class="font-gray">2016-09-10</p>   
                     </div>
                     <p>孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</p>
                 </li>
                 <li>
-                    <div>
-                        <img class="small-img"src="images/user.png">
-                        <span class="font-blue">网友昵称</span>
+                    <div class="list-box">
+                        <div class="list-info">
+                             <img class="small-img" src="images/user.png">
+                            <span class="font-blue">网友昵称</span>
+                        </div>
+                        <p class="font-gray">2016-09-10</p>   
                     </div>
                     <p>评论内容评论内容评论内容评论内容</p>
                 </li>
@@ -159,7 +165,7 @@
            <input class="comment-input list-info" type="text" placeholder="写评论" readonly>
            <!-- 评论 -->
            <a class="btn-comment comment-i" href="#commentList">
-               <i class="icon-star-empty"></i>
+               <i class="icon-comment"></i>
                <span class="semCirclePoint">99+</span>
            </a>
            <!-- 收藏 -->
@@ -257,7 +263,7 @@
                     </a>
                 </li>
             </ul>
-           <p class="btn-close btn-unShare">取消</p>
+           <p class="btn-close btn-unShare">取消分享</p>
         </div>
     </div>
 
@@ -287,7 +293,7 @@
         });
         // 点赞
         $('.btn-hand').click(function(){
-            $(this).find('i').toggleClass('font-theme');
+            $(this).find('i').toggleClass('icon-handUp-2').toggleClass('font-theme');
         });
         //收藏
         $('.btn-collect').click(function(){

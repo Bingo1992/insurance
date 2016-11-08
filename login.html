@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<title>登录</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <!-- 表单验证函数 -->
+    <script type="text/javascript" src="js/validate.js"></script>
+</head>
+<body>
+    <form action="#">
+        <ul class="form-list border-list">
+            <li>
+                <label>登录账户</label>
+                <input class="mobile" type="tel" placeholder="请输入注册的手机号">
+            </li>
+            <li>
+                <label>登录密码</label>
+                <input type="password" placeholder="请输入登录密码">
+            </li>
+            <li>
+                <label>短信验证码</label>
+                <input type="tel" placeholder="填写手机获取的验证码">
+                <button class="btn-getCode btn btn-small">获取验证码</button>
+            </li>
+        </ul>
+        <a id="btn-login" class="btn">登录</a>
+    </form>
+ 
+   <script type="text/javascript">
+   $(function(){
+        //表单验证
+        $('#btn-login').click(function(){
+            var telVal = $('.mobile').val();
+            if(!isCellphone(telVal)){
+                $(this).isTip('请输入正确的手机号码');
+            }
+        });
+
+        
+        // 获取短信验证码
+        $('.btn-getCode').click(function() {
+           $(this).addClass('disBtn').html('剩余60s');
+        });
+   });
+   </script>
+</body>
+</html>

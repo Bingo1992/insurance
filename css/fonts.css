@@ -24,6 +24,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-comment:before {
+  content: "\e933";
+}
 .icon-id:before {
   content: "\e930";
 }
@@ -197,6 +201,9 @@
 }
 .icon-handUp:before {
   content: "\e92f";
+}
+.icon-handUp-2:before {
+  content: "\e934";
 }
 .icon-loading:before {
   content: "\e97a";
