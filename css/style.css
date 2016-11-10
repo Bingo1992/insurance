@@ -282,7 +282,7 @@ input.btn {
   z-index: 2;
   display: block;
   float: left;
-  margin-right: .3rem;
+  margin-right: 3px;
 }
 .checkbox input:checked, .all-check input:checked {
   background-color: transparent;
@@ -374,7 +374,7 @@ input.btn {
   text-align: center;
   z-index: 20;
   -webkit-transform: translateY(150%) translateZ(0) !important;
-  -webkit-transition: all .4s;
+  -webkit-transition: all .6s;
   margin: 0;
 }
 
@@ -1046,7 +1046,7 @@ input[type="file"] {
   top: 0;
   box-sizing: border-box;
   -webkit-transform: translateX(150%) translateZ(0);
-  -webkit-transition: all .4s linear 0s;
+  -webkit-transition: all .6s linear 0s;
 }
 
 .dialog-start-list, .dialog-end-list {
@@ -1644,6 +1644,7 @@ i.icon-map {
   color: #ccc;
 }
 
+/* -------违章查办------*/
 .break-rules li {
   position: relative;
   background-color: #fff;
@@ -2198,7 +2199,7 @@ h3.list-info {
   font-size: 16px;
 }
 
-.modify-form input, .modify-form textarea, .modify-form .getDate {
+.modify-form input, .modify-form textarea, .modify-form .getDate, .modify-form select, .modify-form span {
   color: #666 !important;
 }
 
@@ -2226,7 +2227,7 @@ h3.list-info {
   margin: 0 auto;
   width: 100px;
   height: 130px;
-  background-image: url(../images/user-2.png);
+  background-image: url(../images/user-3.png);
 }
 
 .my-codeImg {
@@ -2435,6 +2436,43 @@ h3.list-info {
   padding: 16px 0;
 }
 
+.btn-tip {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #898989;
+  color: #898989;
+  position: absolute;
+  top: 20px;
+  right: 0.5rem;
+}
+
+.expert-box label {
+  width: auto;
+  margin: 5px 6px 5px 0;
+}
+.expert-box input, .expert-box i {
+  height: 20px;
+  line-height: 20px;
+  border-radius: 4px;
+  text-align: center;
+  display: block;
+  width: 20px;
+  line-height: 19px !important;
+}
+
+.pic-input {
+  border: 1px solid #e1e1e1;
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 4px 10px;
+  box-sizing: border-box;
+  height: 36px;
+  border-radius: 4px;
+}
+
 .show {
   display: block;
 }
@@ -2447,6 +2485,10 @@ h3.list-info {
   margin-right: 10px;
 }
 
+.pdt {
+  margin-top: 10px;
+}
+
 .disBtn {
   pointer-events: none;
   background-color: #ccc;
@@ -2454,10 +2496,10 @@ h3.list-info {
 
 .more-wp-open {
   -webkit-transform: translateX(0) translateZ(0) !important;
-  -webkit-transition: all .4s;
+  -webkit-transition: all .6s;
 }
 
 .more-top-open {
   -webkit-transform: translateY(0) translateZ(0) !important;
-  -webkit-transition: all .4s !important;
+  -webkit-transition: all .6s !important;
 }

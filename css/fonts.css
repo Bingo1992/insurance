@@ -24,39 +24,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-.icon-comment:before {
-  content: "\e933";
-}
-.icon-id:before {
-  content: "\e930";
-}
-.icon-setting:before {
-  content: "\e931";
-}
-.icon-vip:before {
-  content: "\e932";
-}
-.icon-wish:before {
+.icon-lock:before {
   content: "\e900";
-}
-.icon-inspire:before {
-  content: "\e901";
-}
-.icon-insurance:before {
-  content: "\e902";
-}
-.icon-job:before {
-  content: "\e903";
-}
-.icon-morning:before {
-  content: "\e904";
-}
-.icon-sift:before {
-  content: "\e905";
-}
-.icon-poster:before {
-  content: "\e906";
 }
 .icon-up:before {
   content: "\e601";
@@ -79,131 +48,164 @@
 .icon-gantan:before {
   content: "\e62d";
 }
-.icon-envelope-open:before {
+.icon-wish:before {
+  content: "\e901";
+}
+.icon-inspire:before {
+  content: "\e902";
+}
+.icon-insurance:before {
+  content: "\e903";
+}
+.icon-job:before {
+  content: "\e904";
+}
+.icon-morning:before {
+  content: "\e905";
+}
+.icon-sift:before {
+  content: "\e906";
+}
+.icon-poster:before {
   content: "\e907";
 }
-.icon-pic:before {
+.icon-envelope-open:before {
   content: "\e908";
 }
-.icon-article:before {
+.icon-pic:before {
   content: "\e909";
 }
-.icon-life-insure:before {
+.icon-article:before {
   content: "\e90a";
 }
-.icon-coin:before {
+.icon-life-insure:before {
   content: "\e90b";
 }
-.icon-car:before {
+.icon-coin:before {
   content: "\e90c";
 }
-.icon-star-empty:before {
+.icon-car:before {
   content: "\e90d";
 }
-.icon-star:before {
+.icon-star-empty:before {
   content: "\e90e";
 }
-.icon-order:before {
+.icon-star:before {
   content: "\e90f";
 }
-.icon-share:before {
+.icon-order:before {
   content: "\e910";
 }
-.icon-user:before {
+.icon-share:before {
   content: "\e911";
 }
-.icon-users:before {
+.icon-user:before {
   content: "\e912";
 }
-.icon-minus:before {
+.icon-users:before {
   content: "\e913";
 }
-.icon-plus:before {
+.icon-minus:before {
   content: "\e914";
 }
-.icon-search:before {
+.icon-plus:before {
   content: "\e915";
 }
-.icon-money:before {
+.icon-search:before {
   content: "\e916";
 }
-.icon-home:before {
+.icon-money:before {
   content: "\e917";
 }
-.icon-camera:before {
+.icon-home:before {
   content: "\e918";
 }
-.icon-camera-2:before {
+.icon-camera:before {
   content: "\e919";
 }
-.icon-bell:before {
+.icon-camera-2:before {
   content: "\e91a";
 }
-.icon-calendar:before {
+.icon-bell:before {
   content: "\e91b";
 }
-.icon-breakRules:before {
+.icon-calendar:before {
   content: "\e91c";
 }
-.icon-edit:before {
+.icon-breakRules:before {
   content: "\e91d";
 }
-.icon-map:before {
+.icon-edit:before {
   content: "\e91e";
 }
-.icon-refund:before {
+.icon-map:before {
   content: "\e91f";
 }
-.icon-car-order:before {
+.icon-refund:before {
   content: "\e920";
 }
-.icon-life-order:before {
+.icon-car-order:before {
   content: "\e921";
 }
-.icon-rule-order:before {
+.icon-life-order:before {
   content: "\e922";
 }
-.icon-activity:before {
+.icon-rule-order:before {
   content: "\e923";
 }
-.icon-card:before {
+.icon-activity:before {
   content: "\e924";
 }
-.icon-coin-2:before {
+.icon-card:before {
   content: "\e925";
 }
-.icon-certificate:before {
+.icon-coin-2:before {
   content: "\e926";
 }
-.icon-house:before {
+.icon-certificate:before {
   content: "\e927";
 }
-.icon-phone:before {
+.icon-house:before {
   content: "\e928";
 }
-.icon-building:before {
+.icon-phone:before {
   content: "\e929";
 }
-.icon-msg:before {
+.icon-building:before {
   content: "\e92a";
 }
-.icon-plan:before {
+.icon-msg:before {
   content: "\e92b";
 }
-.icon-wchat:before {
+.icon-plan:before {
   content: "\e92c";
 }
-.icon-envelope:before {
+.icon-wchat:before {
   content: "\e92d";
 }
-.icon-apply:before {
+.icon-envelope:before {
   content: "\e92e";
 }
-.icon-handUp:before {
+.icon-apply:before {
   content: "\e92f";
 }
-.icon-handUp-2:before {
+.icon-handUp:before {
+  content: "\e930";
+}
+.icon-id:before {
+  content: "\e931";
+}
+.icon-setting:before {
+  content: "\e932";
+}
+.icon-vip:before {
+  content: "\e933";
+}
+.icon-comment:before {
   content: "\e934";
+}
+.icon-handUp-2:before {
+  content: "\e935";
 }
 .icon-loading:before {
   content: "\e97a";

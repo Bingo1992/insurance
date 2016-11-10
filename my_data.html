@@ -13,11 +13,13 @@
 </head>
 <body>
     <form class="modify-form">
+        <div class="btn-tip">
+            <p>?</p>
+        </div>
         <div class="head-portrait">
             <!-- <img src="images/resume.png"> -->
             <div id="view"></div>
             <input class="portraitFile" id="portraitFile" type="file">
-            
         </div>
         <ul class="form-list border-list">
             <li>
@@ -33,32 +35,97 @@
                 <input type="text" value="440106198410211006">
             </li>
             <li>
+                <label>公司名称</label>
+                <!-- <input type="text" value="前端工程师"> -->
+                <div class="select-box list-info">
+                    <select class="list-info">
+                        <option>人保</option>
+                        <option>平安</option>
+                    </select>
+                </div>
+                <i class="icon-right"></i>
+            </li>
+            <li>
                 <label>职位</label>
-                <input type="text" value="前端工程师">
+                <!-- <input type="text" value="前端工程师"> -->
+                <div class="select-box list-info">
+                    <select class="list-info">
+                        <option>Java开发</option>
+                        <option>PHP开发</option>
+                    </select>
+                </div>
+                <i class="icon-right"></i>
             </li>
             <li>
                 <label>从业年限</label>
                 <input type="text" value="2年">
             </li>
             <li>
-                <label>擅长领域</label>
-                <input type="text" value="html">
+                <label>
+                    <p>擅长领域</p>
+                    <p class="font-gray">(最多3个)</p>
+                </label>
+                <!-- <input type="text" value="html"> -->
+                <div class="expert-box list-info">
+                    <label>
+                        <span class="checkbox">
+                            <input type="checkbox" name="expert">
+                            <i class="icon-hook"></i>
+                        </span>
+                        <span>人寿</span>
+                    </label>
+                    <label>
+                        <span class="checkbox">
+                            <input type="checkbox" name="expert">
+                            <i class="icon-hook"></i>
+                        </span>
+                        <span>汽车</span>
+                    </label>
+                    <label>
+                        <span class="checkbox">
+                            <input type="checkbox" name="expert">
+                            <i class="icon-hook"></i>
+                        </span>
+                        <span>车险</span>
+                    </label>
+                    <label>
+                        <span class="checkbox">
+                            <input type="checkbox" name="expert">
+                            <i class="icon-hook"></i>
+                        </span>
+                        <span>文案</span>
+                    </label>
+                    <label>
+                        <span class="checkbox">
+                            <input type="checkbox" name="expert">
+                            <i class="icon-hook"></i>
+                        </span>
+                        <span>违章</span>
+                    </label>
+                </div>
             </li>
             <li>
-                <label>工作范围</label>
+                <label>服务区域</label>
                 <input type="text" value="天河区">
             </li>
             <li>
                 <label>所属营业部</label>
                 <input type="text" value="广州天河营业部">
+            <!--     <div class="select-box list-info">
+                    <select class="list-info">
+                        <option>风牛营业部</option>
+                        <option>风牛营业部</option>
+                    </select>
+                </div> 
+                <i class="icon-right"></i>-->
             </li>
             <li>
                 <label>联系地址</label>
-                <input type="text" value="广州市天河区中山大道38号10楼1003广州市天河区中山大道38号10楼1003">
+                <input type="text" value="广州市天河区中山大道38号10楼">
             </li>
             <li>
                 <label>简介</label>
-                <textarea class="list-info" cols="100" rows="4">孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</textarea>
+                <textarea class="list-info" cols="100" rows="7">孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同孙德棣网易的新经营策略很简单，将数目巨大的网民变为有价值的客户。孙德棣说：通过提供给他们的产品服务，应该是未来主要的营收方向。和另两大门户网站的策略不同</textarea>
             </li>
             <li>
                 <label>我的二维码</label>
@@ -73,7 +140,7 @@
                 
             </li>
         </ul>
-
+<!-- 
         <ul class="border-list">
             <li>
                 <a class="list-box" href="modify_password.html">
@@ -81,7 +148,7 @@
                     <i class="icon-right"></i>
                 </a>
             </li>
-        </ul>
+        </ul> -->
         <a class="btn">保存信息</a>
     </form>
            
@@ -93,6 +160,17 @@
         </div>
     </article>
 
+    <!-- 提示遮罩 -->
+    <div class="ui-dialog">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>提示</h2>
+            <div class="dialog-content">
+                <p>1、点击头像可以上传、修改图片；</p>
+                <p>2、点击上传的图片后可以自由拖动、旋转、等比例缩放。</p>
+           </div>
+        </div>
+    </div>
   
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
@@ -137,6 +215,29 @@
                 $('.uploadImg').attr('src',dataUri);
             };
             reader.readAsDataURL(this.files[0]);
+        });
+
+        //擅长领域
+        $('.expert-box :checkbox').click(function(){
+            var amount = 3;//最多选3个
+            var count = 0;
+            var $self = $(this);
+
+            $('.expert-box :checkbox').each(function(i){
+                var check = $('.expert-box :checkbox').eq(i).prop("checked");
+                if(check){
+                    count++;
+                    if(count > amount){
+                        $self.prop("checked",false);
+                        $(this).isTip('最多只能选3个');
+                    }
+                }
+            });
+        });
+
+        // 图片上传提示
+        $('.btn-tip').click(function(){
+            $(this).showUiDialog('.ui-dialog');
         })
         
     });

@@ -238,7 +238,7 @@ input.btn {
 	    z-index: 2;
 	    display: block;
         float: left;
-        margin-right: .3rem;
+        margin-right: 3px;
 	    &:checked{
 	    	background-color: transparent;
 	    }
@@ -322,7 +322,7 @@ input.btn {
     text-align: center;
     z-index: 20;
     -webkit-transform: translateY(150%) translateZ(0) !important;
-    -webkit-transition: all .4s;
+    -webkit-transition: all .6s;
     margin: 0;
 }
 

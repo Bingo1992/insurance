@@ -27,7 +27,7 @@
                             <span class="label-green">资格认证</span>
                         </h4>
                         <div>
-                            <span>人气：</span>
+                            <span class="font-gray">人气：</span>
                             <div class="star">
                                 <span class="icon-star star-full"></span>
                                 <span class="icon-star star-full"></span>
@@ -37,11 +37,11 @@
                             </div>
                         </div>
                         <p>职位：<span>前端工程师</span></p>
-                        <p>从业年限：<span>2</span>年
+                        <p>手机号：<span>13845796311</span>
                         </p>
-                        <p>擅长领域：<span>html,css,js,jquery</span>
+                        <p>擅长领域：<span>车险</span>
                         </p>
-                        <p>工作范围：<span>天河区</span></p>
+                        <p>服务区域：<span>天河区</span></p>
                         <p>
                 <!--         <div>
                             <i class="icon-wchat"></i>
@@ -55,7 +55,7 @@
                         <a href="tel:13845796311">
                             <i class="icon-phone"></i>
                             <label>拨打电话</label>
-                            <p>13845796311</p>
+                            <!-- <p>13845796311</p> -->
                         </a>
                     </li>
                     <li class="border-right btn-wchat">
@@ -98,47 +98,29 @@
         </ul>
         <a href="my_data.html" class="btn">编辑</a>
 
-    <!-- 底部固定内容 -->
-   <!--  <div class="fixed-bottom"> 
-        <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul>
-    </div> -->
+    <!-- 添加好友遮罩 -->
+    <div class="ui-dialog" id="dialog2">
+        <div class="dialog-cnt">
+            <i class="icon-cancel"></i>
+            <h2>微信二维码</h2>
+            <div class="dialog-content">
+                <img class="code-img" src="images/code_02.png">
+                <p class="p-center font-gray">长按识别二维码添加好友</p>
+           </div>
+        </div>
+    </div>
+
 </body>
 <script type="text/javascript">
 $(function(){
     // 点赞
     $('.btn-hand').click(function(){
         $(this).find('i').toggleClass('icon-handUp-2').toggleClass('font-theme');
+    });
+
+    //微信
+    $('.btn-wchat').click(function(){
+        $(this).showUiDialog('#dialog2');
     });
 });
 </script>

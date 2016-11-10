@@ -1,4 +1,5 @@
-首页：index.html
+首页：index.html（简略版）
+首页：index_rich.hrml（完整版）
 客户：client.html
 分享：share.html
 分享详情：share_detail.html
