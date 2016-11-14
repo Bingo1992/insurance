@@ -2219,7 +2219,7 @@ h3.list-info {
 }
 
 #clipArea {
-  margin: 40px auto;
+  margin: 30px auto;
   height: 300px;
 }
 
@@ -2391,10 +2391,7 @@ h3.list-info {
   position: relative;
 }
 .upload-img a {
-  width: 17.5rem;
-  height: 13rem;
   display: block;
-  overflow: hidden;
 }
 .upload-img img {
   height: 100%;
@@ -2402,6 +2399,13 @@ h3.list-info {
   left: 50%;
   position: relative;
   -webkit-transform: translateX(-50%);
+}
+
+#uploadImg {
+  margin: 0 auto;
+  width: 12rem;
+  height: 18rem;
+  background-image: url(../images/pic.png);
 }
 
 .exportImg {

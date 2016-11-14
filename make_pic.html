@@ -32,17 +32,15 @@
 					           </li> -->
 					           <li class="upload-img">
 					                <a href="make_pic.html">
-<!-- 					                    <span class="icon-plus"></span> 
-					                    <span>上传图片</span>
-					                    <input type="file"> -->
-					                    <img class="uploadImg" src="images/pic.png">
+					                    <!-- <img class="uploadImg" src="images/pic.png"> -->
+					                    <div id="uploadImg"></div>
 					                </a>
 					            </li>
 					        </ul>
 
 					        <div class="btn-addsth">
 					        	<span class="icon-plus"></span> 上传图片
-					        	<input type="file">
+					        	<input id="file" type="file">
 					        </div>
 					    </div>   
 	            	</div>
@@ -121,28 +119,67 @@
 			<img src="images/p1.jpg">
 		</div>
 	</div>
+	<!-- 图片裁剪 -->
+	<article class="cutPic-container">
+		<div id="clipArea"></div>
+       
+        <div class="fixed-bottom two-btn">
+            <a class="btn-cancel" href="#">取消</a>
+            <a id="clipBtn" class="btn" href="#">保存</a>
+        </div>
+    </article>
+
+    <!-- 图片裁剪插件 -->
+    <script src="js/iscroll-zoom.min.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <script src="js/jquery.photoClip.min.js"></script>
 	<script type="text/javascript">
 	$(function(){
 		//上传图片
-		$('.btn-addsth').find('input').change(function(){
-			// var src = $(this).val();//获取文件路径
-   //          $('.upload-img p').append('<img class="uploadImg">');//添加图片
-   //          $('.uploadImg').attr('src',src);
-   			var reader = new FileReader();
-			reader.onload = function(event) {
-			    var dataUri = event.target.result;
-			    // var img  = document.createElement("img");
-			    // img.src = dataUri;
-			    // document.body.appendChild(img);
-			    // if($('.upload-img img').length<=0){
-			    // 	$('.upload-img a').append('<img class="uploadImg">');
-			    // }
-			 	$('.uploadImg').attr('src',dataUri);
-			 	$('.pic-dialog img').attr('src',dataUri);
-			};
-			reader.readAsDataURL(this.files[0]);
+		// $('.btn-addsth').find('input').change(function(){
+  //  			var reader = new FileReader();
+		// 	reader.onload = function(event) {
+		// 	    var dataUri = event.target.result;
+		// 	    // var img  = document.createElement("img");
+		// 	    // img.src = dataUri;
+		// 	    // document.body.appendChild(img);
+		// 	    // if($('.upload-img img').length<=0){
+		// 	    // 	$('.upload-img a').append('<img class="uploadImg">');
+		// 	    // }
+		// 	 	$('.uploadImg').attr('src',dataUri);
+		// 	 	$('.pic-dialog img').attr('src',dataUri);
+		// 	};
+		// 	reader.readAsDataURL(this.files[0]);
 
-		});
+		// });
+
+		// 关闭裁剪窗口
+        $("#clipBtn").add('.btn-cancel').click(function(e){
+            $('.cutPic-container').hide();
+        });
+
+        // 图片裁剪（修改海报宽高在style.css 2402行的#uploadImg)
+        var picwidth = document.body.clientWidth * 0.8;//裁剪的宽度
+        var picheight = picwidth * 3/2;//裁剪的高度
+
+        $('#clipArea').css('height',picheight+2);
+        $("#clipArea").photoClip({
+            width: picwidth,
+            height: picheight,
+            file: "#file",
+            view: "#uploadImg",
+            ok: "#clipBtn",
+            loadStart: function () {
+                // console.log("照片读取中");
+            },
+            loadComplete: function () {
+                // console.log("照片读取完成");
+                $('.cutPic-container').show();
+            },
+            clipFinish: function (dataURL) {
+                // console.log(dataURL);
+            }
+        });
 
 
 		//生成图片

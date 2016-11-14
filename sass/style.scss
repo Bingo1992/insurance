@@ -1359,15 +1359,17 @@ h3.list-info {font-size: $lg-font;}
 }
 
 #clipArea {
-    margin: 40px auto;
-    height: 300px;
+    margin: 30px auto;
+    height: 300px;  
 }
+
 #view {
     margin: 0 auto;
     width: 100px;
     height: 130px;
     background-image: url(../images/user-3.png);
 }
+
 .my-codeImg {
 	position: relative;
 	img {
@@ -1517,10 +1519,10 @@ h3.list-info {font-size: $lg-font;}
 .upload-img {
 	position: relative;
 	a {
-	    width: 17.5rem;
-	    height: 13rem;
+	    // width: 17.5rem;
+	    // height: 13rem;
 	    display: block;
-	    overflow: hidden;
+	    // overflow: hidden;
 	}
 
 	img {
@@ -1531,6 +1533,13 @@ h3.list-info {font-size: $lg-font;}
 	    -webkit-transform: translateX(-50%);
 	}
 	
+}
+
+#uploadImg {
+    margin: 0 auto;
+    width: 12rem;
+    height: 18rem;
+    background-image: url(../images/pic.png);
 }
 .exportImg {
 	width: 100%;
