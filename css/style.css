@@ -399,12 +399,8 @@ input.btn {
   max-width: 120px;
   margin: 0 0.5rem;
 }
-.two-btn .confirm {
-  box-sizing: border-box;
-}
 .two-btn .cancel {
   background-color: #ccc;
-  box-sizing: border-box;
 }
 
 .tip-content {
@@ -882,9 +878,9 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 }
 .select-box .icon-right {
   position: absolute;
-  height: 24px;
   right: 0;
-  top: 2px;
+  top: 50%;
+  margin-top: -12px;
 }
 
 .select-box.list-info, .form-list input.select-box[type="text"],

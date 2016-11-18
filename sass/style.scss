@@ -147,9 +147,9 @@
 	}
     .icon-right {
     	position: absolute;
-    	height: 24px;
 	    right: 0;
-	    top: 2px;
+	    top: 50%;
+	    margin-top: -12px;
     }
 }
 .select-box.list-info {padding: 0;}
