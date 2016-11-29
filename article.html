@@ -9,15 +9,93 @@
 	<title>文章发布</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/fonts.css">
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script type="text/javascript" src="js/swipeSlide.min.js"></script>
-    <script type="text/javascript" src="js/validate.js"></script>
-	<script type="text/javascript" src="js/scripts.js"></script>
+	<style type="text/css">
+		.article-content p {
+		    color: #b9b9b9;
+		}
+		input[type=text]:active,
+		input[type=password]:active,
+		textarea:active,
+		input[type=text]:focus,
+		input[type=password]:focus,
+		textarea:focus {
+		  border: none;
+		  background: #ffffff;
+		  outline: none;
+		}
+		::-webkit-input-placeholder {
+		  -webkit-text-fill-color: #bdbdbd;
+		}
+		::-moz-placeholder {
+		  color: #dddddd;
+		}
+		input:-ms-input-placeholder {
+		  color: #dddddd;
+		}
+		textarea:-ms-input-placeholder {
+		  color: #dddddd;
+		}
+		
+		.publish-article-title {
+		  padding: 15px;
+		  background: #fff;
+		  margin-bottom: 10px;
+		  box-sizing: border-box;
+		  /*border-bottom: 1px solid #dddddd;*/
+		}
+		.title-tips {
+		  font-weight: bold;
+		  margin-bottom: 3px;
+		}
+		.publish-article-content {
+		  padding: 15px;
+		  background: #fff;
+		  box-sizing: border-box;
+/*		  border-bottom: 1px solid #dddddd;
+		  border-top: 1px solid #dddddd;*/
+		}
+		.article-content {
+		  height: 250px;
+		  /*border-bottom: 1px solid #dddddd;*/
+		}
+		.footer-btn {
+		  text-align: center;
+		  padding-top: 10px;
+		}
+		.upload-img {
+		  display: inline-block;
+		  vertical-align: bottom;
+		  width: 25px;
+		  height: 20px;
+		  margin-right: 10px;
+		  background: url(images/up_load_img.png) 0 no-repeat;
+		  background-size: 100%;
+		}
+    </style>
+	
 </head>
 <body>
-	<div class="banner">
-        <textarea class="article"  placeholder="在这里输入文字..."></textarea>
+
+    <div class="banner">
+    	<div class="publish-article-title bg-show">
+			<div class="title-tips">标题</div>
+			<input type="text" id="title" class="w100" placeholder="文章标题">
+		</div>
+		<div class="publish-article-content bg-show">
+			<div class="title-tips">正文</div>
+			<input type="hidden" id="target">
+			<div class="article-content" id="content">
+			</div>
+			<div class="footer-btn g-image-upload-box border-top" style="position:relative;">
+				<div class="upload-button">
+					<span class="upload"><i class="upload-img"></i>插入图片</span>
+					<input class="input-file" id="imageUpload" type="file" name="fileInput" capture="camera" accept="image/*" style="position:absolute;left:0;opacity:0;width:100%;">
+				</div>
+			</div>
+		</div>
     </div>
+		
+	
     <!-- -banner- -->
 
     <!-- 底部固定内容 -->
@@ -29,42 +107,35 @@
             </div>
            
         </div>
-        <!-- 底部导航 -->
-       <!--  <ul class="nav-bar equably-layout">
-            <li>
-                <a href="index.html">
-                    <i class="icon-home"></i>
-                    <p>首页</p>
-                </a>
-            </li>
-            <li>
-                <a href="client.html">
-                    <i class="icon-users"></i>
-                    <p>客户</p>
-                </a>
-            </li>
-            <li>
-                <a href="share.html">
-                    <i class="icon-share"></i>
-                    <p>分享</p>
-                </a>
-            </li>
-            <li>
-                <a href="msg.html">
-                    <i class="icon-bell"></i>
-                    <p>提醒</p>
-                </a>
-            </li>
-            <li>
-                <a href="personnel.html">
-                    <i class="icon-user"></i>
-                    <p>我的</p>
-                </a>
-            </li>
-        </ul> -->
     </div>
-
-
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/artEditor.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script  type="text/javascript" >
+		$(function() {
+			"use strict";
+		
+			$('#content').artEditor({
+				imgTar: '#imageUpload',
+				limitSize: 5,   // 兆
+				showServer: false,
+				uploadUrl: '',
+				data: {},
+				uploadField: 'image',
+				placeholader: '<p>请输入文章正文内容</p>',
+				validHtml: ["<br/>"],
+				formInputId: 'target',
+				uploadSuccess: function(res) {
+					// return img url
+					return res.path;
+				},
+				uploadError: function(res) {
+					// something error
+					console.log(res);
+				}
+			});
+		});
+    </script>
 
 
 </body>
