@@ -841,7 +841,7 @@ i.icon-right, i.icon-up, i.icon-down, i.icon-left {
 
 .tabs-name {
   display: block;
-  margin: 12px 0;
+  padding: 12px 0;
   height: 24px;
   position: relative;
 }
@@ -1874,8 +1874,7 @@ i.icon-map {
   background-color: #fff;
 }
 .share-tabs-1 a {
-  margin: 10px 0;
-  padding: 0;
+  padding: 10px 0;
   position: relative;
 }
 .share-tabs-1 li.active a {
@@ -1883,7 +1882,7 @@ i.icon-map {
 }
 
 .share-tabs-2 {
-  margin-top: 44px;
+  padding-top: 44px;
   margin-bottom: -29px;
   height: 49px;
 }
